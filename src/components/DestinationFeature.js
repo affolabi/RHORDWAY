@@ -9,12 +9,12 @@ export function renderDestinationFeature() {
           <p class="ref-section-subheading">Experience the world's top destinations like never before</p>
         </div>
 
-        <!-- 4-Column Bento / Mosaic Grid (Exact Reference Composition) -->
-        <div class="ref-bento-grid">
+        <!-- 4-Column Bento / Mosaic Grid (Exact Reference Composition with Mobile Swipe-In) -->
+        <div class="ref-bento-grid" id="destinationCollageGrid">
           
           <!-- Column 1: Tall Editorial Portrait Card (Zanzibar Stone Town) -->
-          <div class="ref-bento-col col-1">
-            <div class="ref-mosaic-card card-tall-editorial">
+          <div class="ref-bento-col col-1 collage-swipe-col" data-swipe="left">
+            <div class="ref-mosaic-card card-tall-editorial collage-card-swipe" data-swipe-mobile="left">
               <img 
                 src="./assets/images/zanzibar-stone-town.jpg" 
                 alt="Historic Stone Town Zanzibar carved doors and ancient architecture" 
@@ -32,8 +32,8 @@ export function renderDestinationFeature() {
           </div>
 
           <!-- Column 2: 2 Stacked Cards (Doha Museum + Zanzibar Lagoons) -->
-          <div class="ref-bento-col col-2">
-            <div class="ref-mosaic-card card-half">
+          <div class="ref-bento-col col-2 collage-swipe-col" data-swipe="right">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="right">
               <img 
                 src="./assets/images/doha-museum.jpg" 
                 alt="Museum of Islamic Art reflection pool in Doha" 
@@ -46,7 +46,7 @@ export function renderDestinationFeature() {
               </div>
             </div>
 
-            <div class="ref-mosaic-card card-half">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="left">
               <img 
                 src="./assets/images/zanzibar-kayak.jpg" 
                 alt="Crystal clear sea kayaking in Zanzibar" 
@@ -61,8 +61,8 @@ export function renderDestinationFeature() {
           </div>
 
           <!-- Column 3: Extra Tall Feature Card (Doha Skyline) -->
-          <div class="ref-bento-col col-3">
-            <div class="ref-mosaic-card card-tall-center">
+          <div class="ref-bento-col col-3 collage-swipe-col" data-swipe="left">
+            <div class="ref-mosaic-card card-tall-center collage-card-swipe" data-swipe-mobile="right">
               <img 
                 src="./assets/images/doha-skyline.jpg" 
                 alt="Illuminated modern skyline along Doha Corniche" 
@@ -77,8 +77,8 @@ export function renderDestinationFeature() {
           </div>
 
           <!-- Column 4: 2 Stacked Cards (Formula 1 Lusail + Sea Turtle Sanctuary) -->
-          <div class="ref-bento-col col-4">
-            <div class="ref-mosaic-card card-half">
+          <div class="ref-bento-col col-4 collage-swipe-col" data-swipe="right">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="left">
               <img 
                 src="./assets/images/doha-f1-grand-prix.jpg" 
                 alt="Lusail International Circuit Formula 1 night racing" 
@@ -91,7 +91,7 @@ export function renderDestinationFeature() {
               </div>
             </div>
 
-            <div class="ref-mosaic-card card-half">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="right">
               <img 
                 src="./assets/images/zanzibar-turtles.jpg" 
                 alt="Giant sea turtles at Baraka Natural Aquarium Zanzibar" 

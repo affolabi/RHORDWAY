@@ -15,14 +15,14 @@ export function renderExperienceSelector() {
             <p class="ref-section-subheading">Fire up your savings with our hot deals</p>
           </div>
 
-          <div class="ref-nav-arrows-box" aria-hidden="true">
-            <button type="button" class="ref-arrow-circle" aria-label="Previous deal">&larr;</button>
-            <button type="button" class="ref-arrow-circle" aria-label="Next deal">&rarr;</button>
+          <div class="ref-nav-arrows-box" aria-label="Carousel navigation">
+            <button type="button" class="ref-arrow-circle" id="dealPrevBtn" aria-label="Previous deal">&larr;</button>
+            <button type="button" class="ref-arrow-circle" id="dealNextBtn" aria-label="Next deal">&rarr;</button>
           </div>
         </div>
 
-        <!-- 4 Hot Deals Cards (Reference Grid) -->
-        <div class="ref-deals-grid">
+        <!-- 4 Hot Deals Cards (Reference Grid / Mobile Swipe Carousel) -->
+        <div class="ref-deals-grid" id="refDealsGrid">
           
           <!-- Deal 1: Doha + Zanzibar -->
           <article class="ref-deal-card">
@@ -222,6 +222,14 @@ export function renderExperienceSelector() {
             </div>
           </article>
 
+        </div>
+
+        <!-- Mobile Carousel Pagination Dots -->
+        <div class="ref-deals-dots" id="dealsDots" aria-hidden="true">
+          <span class="ref-deal-dot active" data-index="0"></span>
+          <span class="ref-deal-dot" data-index="1"></span>
+          <span class="ref-deal-dot" data-index="2"></span>
+          <span class="ref-deal-dot" data-index="3"></span>
         </div>
       </div>
     </section>

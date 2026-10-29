@@ -920,14 +920,14 @@ function renderExperienceSelector() {
             <p class="ref-section-subheading">Fire up your savings with our hot deals</p>
           </div>
 
-          <div class="ref-nav-arrows-box" aria-hidden="true">
-            <button type="button" class="ref-arrow-circle" aria-label="Previous deal">&larr;</button>
-            <button type="button" class="ref-arrow-circle" aria-label="Next deal">&rarr;</button>
+          <div class="ref-nav-arrows-box" aria-label="Carousel navigation">
+            <button type="button" class="ref-arrow-circle" id="dealPrevBtn" aria-label="Previous deal">&larr;</button>
+            <button type="button" class="ref-arrow-circle" id="dealNextBtn" aria-label="Next deal">&rarr;</button>
           </div>
         </div>
 
-        <!-- 4 Hot Deals Cards (Reference Grid) -->
-        <div class="ref-deals-grid">
+        <!-- 4 Hot Deals Cards (Reference Grid / Mobile Swipe Carousel) -->
+        <div class="ref-deals-grid" id="refDealsGrid">
           
           <!-- Deal 1: Doha + Zanzibar -->
           <article class="ref-deal-card">
@@ -1128,6 +1128,14 @@ function renderExperienceSelector() {
           </article>
 
         </div>
+
+        <!-- Mobile Carousel Pagination Dots -->
+        <div class="ref-deals-dots" id="dealsDots" aria-hidden="true">
+          <span class="ref-deal-dot active" data-index="0"></span>
+          <span class="ref-deal-dot" data-index="1"></span>
+          <span class="ref-deal-dot" data-index="2"></span>
+          <span class="ref-deal-dot" data-index="3"></span>
+        </div>
       </div>
     </section>
   `;
@@ -1146,12 +1154,12 @@ function renderDestinationFeature() {
           <p class="ref-section-subheading">Experience the world's top destinations like never before</p>
         </div>
 
-        <!-- 4-Column Bento / Mosaic Grid (Exact Reference Composition) -->
-        <div class="ref-bento-grid">
+        <!-- 4-Column Bento / Mosaic Grid (Exact Reference Composition with Mobile Swipe-In) -->
+        <div class="ref-bento-grid" id="destinationCollageGrid">
           
           <!-- Column 1: Tall Editorial Portrait Card (Zanzibar Stone Town) -->
-          <div class="ref-bento-col col-1">
-            <div class="ref-mosaic-card card-tall-editorial">
+          <div class="ref-bento-col col-1 collage-swipe-col" data-swipe="left">
+            <div class="ref-mosaic-card card-tall-editorial collage-card-swipe" data-swipe-mobile="left">
               <img 
                 src="./assets/images/zanzibar-stone-town.jpg" 
                 alt="Historic Stone Town Zanzibar carved doors and ancient architecture" 
@@ -1169,8 +1177,8 @@ function renderDestinationFeature() {
           </div>
 
           <!-- Column 2: 2 Stacked Cards (Doha Museum + Zanzibar Lagoons) -->
-          <div class="ref-bento-col col-2">
-            <div class="ref-mosaic-card card-half">
+          <div class="ref-bento-col col-2 collage-swipe-col" data-swipe="right">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="right">
               <img 
                 src="./assets/images/doha-museum.jpg" 
                 alt="Museum of Islamic Art reflection pool in Doha" 
@@ -1183,7 +1191,7 @@ function renderDestinationFeature() {
               </div>
             </div>
 
-            <div class="ref-mosaic-card card-half">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="left">
               <img 
                 src="./assets/images/zanzibar-kayak.jpg" 
                 alt="Crystal clear sea kayaking in Zanzibar" 
@@ -1198,8 +1206,8 @@ function renderDestinationFeature() {
           </div>
 
           <!-- Column 3: Extra Tall Feature Card (Doha Skyline) -->
-          <div class="ref-bento-col col-3">
-            <div class="ref-mosaic-card card-tall-center">
+          <div class="ref-bento-col col-3 collage-swipe-col" data-swipe="left">
+            <div class="ref-mosaic-card card-tall-center collage-card-swipe" data-swipe-mobile="right">
               <img 
                 src="./assets/images/doha-skyline.jpg" 
                 alt="Illuminated modern skyline along Doha Corniche" 
@@ -1214,8 +1222,8 @@ function renderDestinationFeature() {
           </div>
 
           <!-- Column 4: 2 Stacked Cards (Formula 1 Lusail + Sea Turtle Sanctuary) -->
-          <div class="ref-bento-col col-4">
-            <div class="ref-mosaic-card card-half">
+          <div class="ref-bento-col col-4 collage-swipe-col" data-swipe="right">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="left">
               <img 
                 src="./assets/images/doha-f1-grand-prix.jpg" 
                 alt="Lusail International Circuit Formula 1 night racing" 
@@ -1228,7 +1236,7 @@ function renderDestinationFeature() {
               </div>
             </div>
 
-            <div class="ref-mosaic-card card-half">
+            <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="right">
               <img 
                 src="./assets/images/zanzibar-turtles.jpg" 
                 alt="Giant sea turtles at Baraka Natural Aquarium Zanzibar" 
@@ -2036,6 +2044,8 @@ class RhordwayApplication {
     this.renderApp();
     this.bindGlobalEvents();
     this.updateCollationPackage('doha-zanzibar');
+    this.initScrollAnimations();
+    this.initDealsCarousel();
   }
 
   renderApp() {
@@ -2112,6 +2122,99 @@ class RhordwayApplication {
           mobileBar.style.display = 'flex';
         } else {
           mobileBar.style.display = 'none';
+        }
+      }
+    }, { passive: true });
+  }
+
+  /* ---------------- Scroll Swipe-In Animations (Bento / Collage) ---------------- */
+  initScrollAnimations() {
+    const swipeTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe');
+    if (!swipeTargets.length) return;
+
+    if (typeof IntersectionObserver !== 'undefined') {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-inview');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      swipeTargets.forEach((target) => observer.observe(target));
+    } else {
+      swipeTargets.forEach((target) => target.classList.add('is-inview'));
+    }
+  }
+
+  /* ---------------- Hot Deals Mobile Carousel Controls & Touch Swiping ---------------- */
+  initDealsCarousel() {
+    const grid = document.getElementById('refDealsGrid');
+    const prevBtn = document.getElementById('dealPrevBtn');
+    const nextBtn = document.getElementById('dealNextBtn');
+    const dots = document.querySelectorAll('.ref-deal-dot');
+    if (!grid) return;
+
+    const getScrollStep = () => {
+      const firstCard = grid.querySelector('.ref-deal-card');
+      return firstCard ? firstCard.offsetWidth + 14 : 300;
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+      });
+    }
+
+    // Synchronize active dot indicator on scroll
+    grid.addEventListener('scroll', () => {
+      if (!dots.length) return;
+      const scrollPos = grid.scrollLeft;
+      const step = getScrollStep();
+      const activeIdx = Math.min(dots.length - 1, Math.max(0, Math.round(scrollPos / step)));
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIdx);
+      });
+    }, { passive: true });
+
+    // Click dot to jump directly
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        const step = getScrollStep();
+        grid.scrollTo({ left: idx * step, behavior: 'smooth' });
+      });
+    });
+
+    // Mobile touch swipe gestures
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    grid.addEventListener('touchstart', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+
+    grid.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) {
+            grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+          } else {
+            grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+          }
         }
       }
     }, { passive: true });

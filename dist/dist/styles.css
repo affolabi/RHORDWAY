@@ -511,18 +511,36 @@ h1, h2, h3, h4 {
 .ref-floating-card.card-tall {
   width: clamp(140px, 16vw, 190px);
   height: clamp(230px, 26vw, 320px);
+  animation: heroFloat1 4.8s ease-in-out infinite;
 }
 
 .ref-floating-card.card-mid {
   width: clamp(130px, 15vw, 175px);
   height: clamp(200px, 23vw, 280px);
   transform: translateY(20px);
+  animation: heroFloat2 5.2s ease-in-out infinite 0.6s;
 }
 
 .ref-floating-card.card-compact {
   width: clamp(110px, 12vw, 140px);
   height: clamp(170px, 19vw, 230px);
   transform: translateY(40px);
+  animation: heroFloat3 4.5s ease-in-out infinite 1.2s;
+}
+
+@keyframes heroFloat1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes heroFloat2 {
+  0%, 100% { transform: translateY(20px); }
+  50% { transform: translateY(12px); }
+}
+
+@keyframes heroFloat3 {
+  0%, 100% { transform: translateY(40px); }
+  50% { transform: translateY(32px); }
 }
 
 @media (max-width: 600px) {
@@ -533,16 +551,31 @@ h1, h2, h3, h4 {
   .ref-floating-card.card-tall {
     width: 105px;
     height: 170px;
+    animation: heroFloat1Mobile 4.8s ease-in-out infinite;
   }
   .ref-floating-card.card-mid {
     width: 95px;
     height: 150px;
     transform: translateY(10px);
+    animation: heroFloat2Mobile 5.2s ease-in-out infinite 0.6s;
   }
   .ref-floating-card.card-compact {
     width: 85px;
     height: 130px;
     transform: translateY(20px);
+    animation: heroFloat3Mobile 4.5s ease-in-out infinite 1.2s;
+  }
+  @keyframes heroFloat1Mobile {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  @keyframes heroFloat2Mobile {
+    0%, 100% { transform: translateY(10px); }
+    50% { transform: translateY(5px); }
+  }
+  @keyframes heroFloat3Mobile {
+    0%, 100% { transform: translateY(20px); }
+    50% { transform: translateY(15px); }
   }
   .ref-card-glass-tag {
     font-size: 0.65rem;
@@ -657,6 +690,60 @@ h1, h2, h3, h4 {
   }
 }
 
+@media (max-width: 599px) {
+  .ref-deals-wrapper {
+    padding: 24px 16px 28px;
+    border-radius: 22px;
+  }
+  .ref-deals-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ref-deals-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .ref-deal-card {
+    flex: 0 0 84%;
+    max-width: 84%;
+    scroll-snap-align: center;
+  }
+}
+
+/* Deals Pagination Dots */
+.ref-deals-dots {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.ref-deal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ref-deal-dot.active {
+  width: 24px;
+  border-radius: 12px;
+  background: var(--brand-primary);
+}
+
+@media (max-width: 599px) {
+  .ref-deals-dots {
+    display: flex;
+  }
+}
+
 .ref-deal-card {
   border-radius: 18px;
   overflow: hidden;
@@ -669,7 +756,7 @@ h1, h2, h3, h4 {
 
 .ref-deal-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(139, 30, 109, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 128, 232, 0.22);
 }
 
 .ref-deal-img-box {
@@ -887,6 +974,74 @@ h1, h2, h3, h4 {
 .card-half {
   height: calc(50% - 9px);
   min-height: 240px;
+}
+
+@media (max-width: 767px) {
+  .card-tall-editorial,
+  .card-tall-center {
+    min-height: 310px;
+    height: 310px;
+  }
+  .card-half {
+    min-height: 220px;
+    height: 220px;
+  }
+  .ref-container {
+    padding: 0 16px;
+  }
+}
+
+/* ==========================================================================
+   COLLAGE SWIPE-IN ANIMATIONS (DESKTOP & MOBILE)
+   ========================================================================== */
+
+/* Desktop Column-Level Swipe In */
+@media (min-width: 768px) {
+  .collage-swipe-col[data-swipe="left"] {
+    opacity: 0;
+    transform: translateX(-55px);
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+    will-change: transform, opacity;
+  }
+
+  .collage-swipe-col[data-swipe="right"] {
+    opacity: 0;
+    transform: translateX(55px);
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+    will-change: transform, opacity;
+  }
+
+  .collage-swipe-col.is-inview {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+  
+  .collage-swipe-col.col-1.is-inview { transition-delay: 0.05s; }
+  .collage-swipe-col.col-2.is-inview { transition-delay: 0.15s; }
+  .collage-swipe-col.col-3.is-inview { transition-delay: 0.25s; }
+  .collage-swipe-col.col-4.is-inview { transition-delay: 0.35s; }
+}
+
+/* Mobile & Tablet Card-Level Alternating Left / Right Swipe In */
+@media (max-width: 767px) {
+  .collage-card-swipe[data-swipe-mobile="left"] {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+    will-change: transform, opacity;
+  }
+
+  .collage-card-swipe[data-swipe-mobile="right"] {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+    will-change: transform, opacity;
+  }
+
+  .collage-card-swipe.is-inview {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
 }
 
 /* --------------------------------------------------------------------------

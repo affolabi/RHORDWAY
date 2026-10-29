@@ -26,6 +26,8 @@ class RhordwayApplication {
     this.renderApp();
     this.bindGlobalEvents();
     this.updateCollationPackage('doha-zanzibar');
+    this.initScrollAnimations();
+    this.initDealsCarousel();
   }
 
   renderApp() {
@@ -102,6 +104,99 @@ class RhordwayApplication {
           mobileBar.style.display = 'flex';
         } else {
           mobileBar.style.display = 'none';
+        }
+      }
+    }, { passive: true });
+  }
+
+  /* ---------------- Scroll Swipe-In Animations (Bento / Collage) ---------------- */
+  initScrollAnimations() {
+    const swipeTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe');
+    if (!swipeTargets.length) return;
+
+    if (typeof IntersectionObserver !== 'undefined') {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-inview');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      swipeTargets.forEach((target) => observer.observe(target));
+    } else {
+      swipeTargets.forEach((target) => target.classList.add('is-inview'));
+    }
+  }
+
+  /* ---------------- Hot Deals Mobile Carousel Controls & Touch Swiping ---------------- */
+  initDealsCarousel() {
+    const grid = document.getElementById('refDealsGrid');
+    const prevBtn = document.getElementById('dealPrevBtn');
+    const nextBtn = document.getElementById('dealNextBtn');
+    const dots = document.querySelectorAll('.ref-deal-dot');
+    if (!grid) return;
+
+    const getScrollStep = () => {
+      const firstCard = grid.querySelector('.ref-deal-card');
+      return firstCard ? firstCard.offsetWidth + 14 : 300;
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+      });
+    }
+
+    // Synchronize active dot indicator on scroll
+    grid.addEventListener('scroll', () => {
+      if (!dots.length) return;
+      const scrollPos = grid.scrollLeft;
+      const step = getScrollStep();
+      const activeIdx = Math.min(dots.length - 1, Math.max(0, Math.round(scrollPos / step)));
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIdx);
+      });
+    }, { passive: true });
+
+    // Click dot to jump directly
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        const step = getScrollStep();
+        grid.scrollTo({ left: idx * step, behavior: 'smooth' });
+      });
+    });
+
+    // Mobile touch swipe gestures
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    grid.addEventListener('touchstart', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+
+    grid.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) {
+            grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+          } else {
+            grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+          }
         }
       }
     }, { passive: true });
