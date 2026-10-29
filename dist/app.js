@@ -845,19 +845,24 @@ function renderCampaignHero() {
           
           <!-- Left Column: Display Typography & CTA -->
           <div class="ref-hero-content">
-            <h1 class="ref-hero-title">
-              EXPLORE<br />
-              BEAUTIFUL<br />
-              WORLD WITH US
+            <span class="ref-hero-eyebrow anim-reveal-text">✦ EXCLUSIVE 2026 HOLIDAYS</span>
+
+            <h1 class="ref-hero-title anim-reveal-text anim-delay-1">
+              Explore Beautiful<br />
+              World With Us
             </h1>
 
-            <p class="ref-hero-subtitle">
-              &ldquo;Let us take the hassle out of travel planning, so you can focus on the adventure ahead.&rdquo;
+            <p class="ref-hero-subtitle anim-reveal-text anim-delay-2">
+              &ldquo;Let us take the hassle out of travel planning, so you can focus on the extraordinary adventure ahead.&rdquo;
             </p>
 
-            <div class="ref-hero-btn-row">
+            <div class="ref-hero-btn-row anim-reveal-text anim-delay-3">
               <a href="#hot-deals" class="ref-hero-discover-btn">
-                Discover Now
+                <span>Discover Now</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
               </a>
             </div>
           </div>
@@ -915,7 +920,7 @@ function renderExperienceSelector() {
         
         <!-- Section Header Bar (Reference style) -->
         <div class="ref-deals-header">
-          <div class="ref-deals-title-box">
+          <div class="ref-deals-title-box anim-reveal-text">
             <h2 class="ref-section-heading">HOT DEALS</h2>
             <p class="ref-section-subheading">Fire up your savings with our hot deals</p>
           </div>
@@ -975,7 +980,11 @@ function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -1025,7 +1034,11 @@ function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -1073,7 +1086,11 @@ function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -1121,7 +1138,11 @@ function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -1149,7 +1170,7 @@ function renderDestinationFeature() {
       <div class="ref-container">
         
         <!-- Section Header -->
-        <div class="ref-destinations-header text-center">
+        <div class="ref-destinations-header text-center anim-reveal-text">
           <h2 class="ref-section-heading">TOP DESTINATION</h2>
           <p class="ref-section-subheading">Experience the world's top destinations like never before</p>
         </div>
@@ -1415,8 +1436,8 @@ function renderInformationCollation() {
               Official Reservation Collation
             </span>
           </div>
-          <h2 class="section-title">Collate Your Details & Receive Your Official Travel Dossier</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title anim-reveal-text">Collate Your Details & Receive Your Official Travel Dossier</h2>
+          <p class="section-subtitle anim-reveal-text anim-delay-1">
             Choose your package, enter your travel details below, and generate your official PDF reservation dossier to send directly to our consultant on WhatsApp.
           </p>
         </header>
@@ -1727,12 +1748,12 @@ function renderTrustSection() {
           <div class="ref-responsibilities-scrim"></div>
 
           <div class="ref-responsibilities-content">
-            <h2 class="ref-responsibilities-title">Our Responsibilities</h2>
+            <h2 class="ref-responsibilities-title anim-reveal-text">Our Responsibilities</h2>
 
             <div class="ref-glass-cards-grid">
               
               <!-- Card 1 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-1">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -1743,7 +1764,7 @@ function renderTrustSection() {
               </div>
 
               <!-- Card 2 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-2">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -1754,7 +1775,7 @@ function renderTrustSection() {
               </div>
 
               <!-- Card 3 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-3">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -1765,7 +1786,7 @@ function renderTrustSection() {
               </div>
 
               <!-- Card 4 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-4">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -2127,27 +2148,29 @@ class RhordwayApplication {
     }, { passive: true });
   }
 
-  /* ---------------- Scroll Swipe-In Animations (Bento / Collage) ---------------- */
+  /* ---------------- Scroll Animations (Bidirectional: Scrolling Down & Up) ---------------- */
   initScrollAnimations() {
-    const swipeTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe');
-    if (!swipeTargets.length) return;
+    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card');
+    if (!animTargets.length) return;
 
     if (typeof IntersectionObserver !== 'undefined') {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-inview');
-            observer.unobserve(entry.target);
+          } else {
+            // Remove class so it re-triggers smoothly when scrolling up from footer
+            entry.target.classList.remove('is-inview');
           }
         });
       }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.12,
+        rootMargin: '20px 0px -20px 0px'
       });
 
-      swipeTargets.forEach((target) => observer.observe(target));
+      animTargets.forEach((target) => observer.observe(target));
     } else {
-      swipeTargets.forEach((target) => target.classList.add('is-inview'));
+      animTargets.forEach((target) => target.classList.add('is-inview'));
     }
   }
 

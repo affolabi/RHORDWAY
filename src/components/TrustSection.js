@@ -13,12 +13,12 @@ export function renderTrustSection() {
           <div class="ref-responsibilities-scrim"></div>
 
           <div class="ref-responsibilities-content">
-            <h2 class="ref-responsibilities-title">Our Responsibilities</h2>
+            <h2 class="ref-responsibilities-title anim-reveal-text">Our Responsibilities</h2>
 
             <div class="ref-glass-cards-grid">
               
               <!-- Card 1 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-1">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -29,7 +29,7 @@ export function renderTrustSection() {
               </div>
 
               <!-- Card 2 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-2">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -40,7 +40,7 @@ export function renderTrustSection() {
               </div>
 
               <!-- Card 3 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-3">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -51,7 +51,7 @@ export function renderTrustSection() {
               </div>
 
               <!-- Card 4 -->
-              <div class="ref-glass-card">
+              <div class="ref-glass-card anim-reveal-text anim-delay-4">
                 <div class="ref-glass-check-badge" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>

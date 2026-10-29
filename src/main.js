@@ -109,27 +109,29 @@ class RhordwayApplication {
     }, { passive: true });
   }
 
-  /* ---------------- Scroll Swipe-In Animations (Bento / Collage) ---------------- */
+  /* ---------------- Scroll Animations (Bidirectional: Scrolling Down & Up) ---------------- */
   initScrollAnimations() {
-    const swipeTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe');
-    if (!swipeTargets.length) return;
+    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card');
+    if (!animTargets.length) return;
 
     if (typeof IntersectionObserver !== 'undefined') {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-inview');
-            observer.unobserve(entry.target);
+          } else {
+            // Remove class so it re-triggers smoothly when scrolling up from footer
+            entry.target.classList.remove('is-inview');
           }
         });
       }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.12,
+        rootMargin: '20px 0px -20px 0px'
       });
 
-      swipeTargets.forEach((target) => observer.observe(target));
+      animTargets.forEach((target) => observer.observe(target));
     } else {
-      swipeTargets.forEach((target) => target.classList.add('is-inview'));
+      animTargets.forEach((target) => target.classList.add('is-inview'));
     }
   }
 

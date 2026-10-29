@@ -4,7 +4,7 @@ export function renderDestinationFeature() {
       <div class="ref-container">
         
         <!-- Section Header -->
-        <div class="ref-destinations-header text-center">
+        <div class="ref-destinations-header text-center anim-reveal-text">
           <h2 class="ref-section-heading">TOP DESTINATION</h2>
           <p class="ref-section-subheading">Experience the world's top destinations like never before</p>
         </div>

@@ -10,7 +10,7 @@ export function renderExperienceSelector() {
         
         <!-- Section Header Bar (Reference style) -->
         <div class="ref-deals-header">
-          <div class="ref-deals-title-box">
+          <div class="ref-deals-title-box anim-reveal-text">
             <h2 class="ref-section-heading">HOT DEALS</h2>
             <p class="ref-section-subheading">Fire up your savings with our hot deals</p>
           </div>
@@ -70,7 +70,11 @@ export function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -120,7 +124,11 @@ export function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -168,7 +176,11 @@ export function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -216,7 +228,11 @@ export function renderExperienceSelector() {
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  Discover Now
+                  <span>Discover Now</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>
