@@ -79,8 +79,55 @@ def build_js():
         f.write(combined_js)
     print(f"Compiled JS -> {out_path} ({len(combined_js)} bytes)")
 
+import shutil
+
+def sync_assets_and_html():
+    # 1. Copy assets/ into dist/assets/
+    assets_src = os.path.join(BASE_DIR, 'assets')
+    assets_dst = os.path.join(DIST_DIR, 'assets')
+    if os.path.exists(assets_src):
+        if os.path.exists(assets_dst):
+            shutil.rmtree(assets_dst)
+        shutil.copytree(assets_src, assets_dst)
+        print(f"Copied assets -> {assets_dst}")
+
+    # 2. Generate dist/index.html tailored for dist-rooted deployment (Vite preset)
+    root_index = os.path.join(BASE_DIR, 'index.html')
+    if os.path.exists(root_index):
+        with open(root_index, 'r', encoding='utf-8') as f:
+            html = f.read()
+        
+        # Replace dist/paths with direct relative paths for when dist/ is the deployment root
+        dist_html = html.replace('href="./dist/styles.css"', 'href="./styles.css"')
+        dist_html = dist_html.replace('src="./dist/app.js"', 'src="./app.js"')
+        dist_index_path = os.path.join(DIST_DIR, 'index.html')
+        with open(dist_index_path, 'w', encoding='utf-8') as f:
+            f.write(dist_html)
+        print(f"Generated dist/index.html -> {dist_index_path}")
+
+    # 3. Create dist/dist alias so both ./dist/app.js and ./app.js work seamlessly
+    nested_dist = os.path.join(DIST_DIR, 'dist')
+    os.makedirs(nested_dist, exist_ok=True)
+    shutil.copy2(os.path.join(DIST_DIR, 'styles.css'), os.path.join(nested_dist, 'styles.css'))
+    shutil.copy2(os.path.join(DIST_DIR, 'app.js'), os.path.join(nested_dist, 'app.js'))
+    print("Created fallback dist/dist/ assets")
+
+    # 4. Sync to public/
+    public_dir = os.path.join(BASE_DIR, 'public')
+    if os.path.exists(public_dir):
+        public_dist = os.path.join(public_dir, 'dist')
+        os.makedirs(public_dist, exist_ok=True)
+        shutil.copy2(os.path.join(DIST_DIR, 'styles.css'), os.path.join(public_dist, 'styles.css'))
+        shutil.copy2(os.path.join(DIST_DIR, 'app.js'), os.path.join(public_dist, 'app.js'))
+        public_assets = os.path.join(public_dir, 'assets')
+        if os.path.exists(assets_src):
+            if os.path.exists(public_assets):
+                shutil.rmtree(public_assets)
+            shutil.copytree(assets_src, public_assets)
+
 if __name__ == '__main__':
     ensure_dirs()
     build_css()
     build_js()
+    sync_assets_and_html()
     print("Build complete.")
