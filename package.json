@@ -1,0 +1,26 @@
+{
+  "name": "rhordway-landing-page",
+  "version": "1.0.0",
+  "description": "Rhordway Luxury Holiday Landing Page (Doha + Zanzibar & Doha Grand Prix 2026)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "python3 scripts/build.py",
+    "preview": "vite preview",
+    "serve": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "rhordway",
+    "travel",
+    "luxury-tourism",
+    "landing-page",
+    "vite",
+    "typescript"
+  ],
+  "author": "Rhordway",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0"
+  }
+}

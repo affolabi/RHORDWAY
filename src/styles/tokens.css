@@ -1,0 +1,116 @@
+/**
+ * RHORDWAY DESIGN TOKENS — MODERN DRIBBLE/UIXSHUVO STYLE
+ * Inspired by ultra-curved modern travel UI aesthetics:
+ * - Canvas Background: Soft modern off-white (#F3F5F9)
+ * - Container Surfaces: Pristine White (#FFFFFF) with 36px-44px border radius
+ * - Primary Action Accent: Rhordway Electric Blue (#0084E6) & Jet Black (#0F172A)
+ * - Contrast Accent: Rhordway Crimson Red (#E52E2E) & Sunburst Gold (#FFC72C)
+ */
+
+:root {
+  /* ==========================================================================
+     01. COLOR SYSTEM (WHITE DOMINANT · REFINED EDITORIAL TRAVEL COMMERCE)
+     ========================================================================== */
+  --canvas-bg: #FFFFFF;           /* Edge-to-edge pristine white background */
+  --surface-white: #FFFFFF;       /* Pure white surfaces */
+  --surface-card: #FFFFFF;        /* Elevated card surface */
+  --surface-soft: #F8FAFD;        /* Soft card fill (subtle cool grey/blue) */
+  --surface-muted: #F1F5F9;       /* Light neutral fill */
+  --surface-hero-sky: #D8ECFD;    /* Pristine hero sky tint */
+
+  /* Brand Accents — Rhordway Signature Electric Azure Blue */
+  --brand-primary: #0080E8;       /* Primary Brand Electric Azure Blue */
+  --brand-primary-hover: #006DC7; /* Darker blue on hover */
+  --brand-primary-light: #EFF6FF; /* Soft ice-blue pill fill */
+  --brand-primary-glow: rgba(0, 128, 232, 0.2);
+
+  --brand-dark: #0F172A;          /* Deep obsidian for headlines and pill buttons */
+  --brand-dark-hover: #1E293B;
+
+  --brand-red: #E11D48;           /* Refined crimson red (badge accent) */
+  --brand-red-hover: #BE123C;
+  --brand-red-light: #FFF1F2;
+
+  --brand-gold: #F59E0B;          /* Rating gold */
+
+  /* Neutral Typography Hierarchy */
+  --text-dark: #0F172A;           /* Primary headline text (deep charcoal obsidian) */
+  --text-body: #475569;           /* Secondary body text (readable slate) */
+  --text-muted: #64748B;          /* Subtle supporting metadata */
+  --text-light: #94A3B8;          /* Light tertiary caption */
+
+  /* Clean Borders */
+  --border-subtle: #E6EDF5;       /* Hairline card & divider border */
+  --border-medium: #CBD5E1;       /* Active input & separator */
+  --border-card: #EAF0F7;
+
+  /* Semantic Compatibility Tokens */
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F8FAFD;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-inverse: #FFFFFF;
+  --page-background: #F0F4F8;
+
+  /* Spacing Scale (Tokens based on 4px/8px increments) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-28: 112px;
+  --space-36: 144px;
+
+  /* Containers & Section Spacing */
+  --container-max: 1360px;
+  --container-narrow: 940px;
+  --section-padding-y: clamp(48px, 6vw, 96px);
+
+  /* ==========================================================================
+     02. TYPOGRAPHY (MODERN GEOMETRIC SANS WITH EDITORIAL TITLES)
+     ========================================================================== */
+  --font-main: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  /* Type Scale */
+  --text-hero: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  --text-display-l: clamp(2rem, 3.8vw + 0.5rem, 3.2rem);
+  --text-h1: clamp(1.85rem, 3vw + 0.4rem, 2.75rem);
+  --text-h2: clamp(1.4rem, 2.2vw + 0.3rem, 2rem);
+  --text-h3: clamp(1.15rem, 1.4vw + 0.2rem, 1.45rem);
+  --text-body-large: 1.125rem;
+  --text-body: 0.95rem;
+  --text-supporting: 0.85rem;
+  --text-caption: 0.75rem;
+
+  /* ==========================================================================
+     03. ULTRA-CURVED RADIUS SYSTEM (UIXSHUVO STYLE)
+     ========================================================================== */
+  --radius-pill: 9999px;
+  --radius-canvas: 44px;
+  --radius-hero: 36px;
+  --radius-card: 26px;
+  --radius-item: 18px;
+  --radius-badge: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+
+  /* ==========================================================================
+     04. SHADOWS & ELEVATION
+     ========================================================================== */
+  --shadow-canvas: 0 20px 80px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 20px 40px rgba(15, 23, 42, 0.08);
+  --shadow-blue: 0 10px 25px rgba(0, 132, 230, 0.3);
+  --shadow-dark: 0 10px 25px rgba(15, 23, 42, 0.2);
+
+  /* Transitions */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
