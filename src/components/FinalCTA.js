@@ -13,11 +13,10 @@ export function renderSiteFooter() {
           <!-- Col 1: Brand & Socials -->
           <div class="ref-footer-brand-col">
             <a href="#" class="ref-footer-logo" aria-label="Rhordway Home">
-              <span class="ref-brand-chevron">&gt;&gt;</span>
-              <span class="ref-brand-name">Rhordway</span>
+              <span class="ref-brand-name">Rhordway<span class="ref-brand-dot">.</span></span>
             </a>
             <p class="ref-footer-tagline">
-              Escape the ordinary with<br />our travel experiences
+              Escape the ordinary with curated holiday escapes.
             </p>
 
             <div class="ref-social-icons-row" aria-label="Social media channels">

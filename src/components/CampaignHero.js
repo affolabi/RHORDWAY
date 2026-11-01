@@ -16,24 +16,26 @@ export function renderCampaignHero() {
           
           <!-- Left Column: Display Typography & CTA -->
           <div class="ref-hero-content">
-            <span class="ref-hero-eyebrow anim-reveal-text">✦ EXCLUSIVE 2026 HOLIDAYS</span>
+            <span class="ref-hero-eyebrow anim-reveal-text">✦ CURATED ESCAPES · 2026</span>
 
             <h1 class="ref-hero-title anim-reveal-text anim-delay-1">
-              Explore Beautiful<br />
-              World With Us
+              Explore Extraordinary Worlds With Us
             </h1>
 
             <p class="ref-hero-subtitle anim-reveal-text anim-delay-2">
-              &ldquo;Let us take the hassle out of travel planning, so you can focus on the extraordinary adventure ahead.&rdquo;
+              Handcrafted luxury journeys to Doha, Zanzibar, and the Formula 1 Grand Prix with 5-star comfort and personal concierge care.
             </p>
 
             <div class="ref-hero-btn-row anim-reveal-text anim-delay-3">
-              <a href="#hot-deals" class="ref-hero-discover-btn">
-                <span>Discover Now</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <a href="#hot-deals" class="ref-hero-discover-btn ref-btn-primary">
+                <span>Explore Packages</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
+              </a>
+              <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-outline">
+                <span>Plan My Escape</span>
               </a>
             </div>
           </div>

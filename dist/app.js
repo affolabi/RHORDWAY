@@ -757,16 +757,15 @@ function renderSiteHeader() {
     <header class="ref-header" id="siteHeader">
       <div class="ref-header-container">
         <a href="#" class="ref-brand-logo" aria-label="${siteConfig.brandName} Home">
-          <span class="ref-brand-chevron">&gt;&gt;</span>
-          <span class="ref-brand-name">Rhordway</span>
+          <span class="ref-brand-name">Rhordway<span class="ref-brand-dot">.</span></span>
         </a>
 
         <nav class="ref-nav-links" aria-label="Main Navigation">
           <a href="#" class="ref-nav-link active">Home</a>
-          <a href="#hot-deals" class="ref-nav-link">Packages Tour</a>
-          <a href="#top-destinations" class="ref-nav-link">Top Destinations</a>
-          <a href="#responsibilities" class="ref-nav-link">Our Commitments</a>
-          <a href="#booking-collation" class="ref-nav-link ref-nav-highlight">Reservation Collation</a>
+          <a href="#hot-deals" class="ref-nav-link">Packages</a>
+          <a href="#top-destinations" class="ref-nav-link">Destinations</a>
+          <a href="#responsibilities" class="ref-nav-link">Why Us</a>
+          <a href="#booking-collation" class="ref-nav-link ref-nav-highlight">Reservation</a>
         </nav>
 
         <div class="ref-header-actions">
@@ -796,29 +795,28 @@ function renderMobileNavigation() {
   return `
     <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
       <div style="display:flex; justify-content:space-between; align-items:center;">
-        <div class="brand-wrap">
-          <div class="brand-circle-icon"></div>
-          <span class="brand-text">RHORDWAY</span>
-        </div>
+        <a href="#" class="ref-brand-logo" onclick="window.rhordwayApp.closeMobileMenu()">
+          <span class="ref-brand-name" style="color:var(--brand-dark);">Rhordway<span class="ref-brand-dot">.</span></span>
+        </a>
         <button type="button" class="modal-close-btn" id="mobileNavCloseBtn" aria-label="Close menu">&times;</button>
       </div>
 
       <nav class="mobile-nav-links" aria-label="Mobile Navigation">
-        <a href="#about" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">About</a>
-        <a href="#experiences" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Tour</a>
-        <a href="#packages" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Package</a>
-        <a href="#booking-collation" class="mobile-nav-link" style="color:var(--brand-primary);" onclick="window.rhordwayApp.closeMobileMenu()">Collation & PDF</a>
-        <a href="#contact" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Contact</a>
+        <a href="#" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Home</a>
+        <a href="#hot-deals" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Holiday Packages</a>
+        <a href="#top-destinations" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Destinations</a>
+        <a href="#responsibilities" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Why Rhordway</a>
+        <a href="#booking-collation" class="mobile-nav-link" style="color:var(--brand-primary); font-weight:700;" onclick="window.rhordwayApp.closeMobileMenu()">Official Reservation</a>
       </nav>
 
       <div style="margin-top:auto; padding-top:24px;">
         <a 
           href="#booking-collation" 
-          class="btn-pill-dark" 
-          style="display:block; text-align:center; padding:16px;" 
+          class="ref-hero-discover-btn ref-btn-primary" 
+          style="display:flex; text-align:center; padding:15px; width:100%; justify-content:center;" 
           onclick="window.rhordwayApp.closeMobileMenu();"
         >
-          Book Trip Now
+          Book Your Trip
         </a>
       </div>
     </div>
@@ -845,24 +843,26 @@ function renderCampaignHero() {
           
           <!-- Left Column: Display Typography & CTA -->
           <div class="ref-hero-content">
-            <span class="ref-hero-eyebrow anim-reveal-text">✦ EXCLUSIVE 2026 HOLIDAYS</span>
+            <span class="ref-hero-eyebrow anim-reveal-text">✦ CURATED ESCAPES · 2026</span>
 
             <h1 class="ref-hero-title anim-reveal-text anim-delay-1">
-              Explore Beautiful<br />
-              World With Us
+              Explore Extraordinary Worlds With Us
             </h1>
 
             <p class="ref-hero-subtitle anim-reveal-text anim-delay-2">
-              &ldquo;Let us take the hassle out of travel planning, so you can focus on the extraordinary adventure ahead.&rdquo;
+              Handcrafted luxury journeys to Doha, Zanzibar, and the Formula 1 Grand Prix with 5-star comfort and personal concierge care.
             </p>
 
             <div class="ref-hero-btn-row anim-reveal-text anim-delay-3">
-              <a href="#hot-deals" class="ref-hero-discover-btn">
-                <span>Discover Now</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <a href="#hot-deals" class="ref-hero-discover-btn ref-btn-primary">
+                <span>Explore Packages</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
+              </a>
+              <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-outline">
+                <span>Plan My Escape</span>
               </a>
             </div>
           </div>
@@ -918,11 +918,11 @@ function renderExperienceSelector() {
     <section class="ref-hot-deals-section" id="hot-deals">
       <div class="ref-deals-wrapper">
         
-        <!-- Section Header Bar (Reference style) -->
+        <!-- Section Header Bar -->
         <div class="ref-deals-header">
           <div class="ref-deals-title-box anim-reveal-text">
-            <h2 class="ref-section-heading">HOT DEALS</h2>
-            <p class="ref-section-subheading">Fire up your savings with our hot deals</p>
+            <h2 class="ref-section-heading">Featured Packages</h2>
+            <p class="ref-section-subheading">Handpicked luxury itineraries with all-inclusive 5-star experiences</p>
           </div>
 
           <div class="ref-nav-arrows-box" aria-label="Carousel navigation">
@@ -935,7 +935,7 @@ function renderExperienceSelector() {
         <div class="ref-deals-grid" id="refDealsGrid">
           
           <!-- Deal 1: Doha + Zanzibar -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-1">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/zanzibar-beach.jpg" 
@@ -943,6 +943,7 @@ function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Dual Escape</span>
 
               <div class="ref-deal-overlay-content">
                 <h3 class="ref-deal-card-title">Doha + Zanzibar</h3>
@@ -967,20 +968,22 @@ function renderExperienceSelector() {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                       <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                      <line x1="6" y1="1" x2="6" y2="4"></line>
-                      <line x1="10" y1="1" x2="10" y2="4"></line>
-                      <line x1="14" y1="1" x2="14" y2="4"></line>
                     </svg>
                     <span>All-Inclusive Meals</span>
                   </li>
                 </ul>
+
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">₦4,350,000</span>
+                  <span class="ref-deal-price-note">per person sharing</span>
+                </div>
 
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -991,7 +994,7 @@ function renderExperienceSelector() {
           </article>
 
           <!-- Deal 2: Doha Grand Prix -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-2">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/doha-f1-grand-prix.jpg" 
@@ -999,6 +1002,7 @@ function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Formula 1 GP</span>
 
               <div class="ref-deal-overlay-content">
                 <h3 class="ref-deal-card-title">Doha Grand Prix</h3>
@@ -1029,12 +1033,17 @@ function renderExperienceSelector() {
                   </li>
                 </ul>
 
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">From ₦3,400,000</span>
+                  <span class="ref-deal-price-note">Double / ₦4,150,000 Single</span>
+                </div>
+
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -1045,7 +1054,7 @@ function renderExperienceSelector() {
           </article>
 
           <!-- Deal 3: Zanzibar Coral Atoll -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-3">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/zanzibar-mnemba.jpg" 
@@ -1053,9 +1062,10 @@ function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Island Escape</span>
 
               <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Mnemba Island</h3>
+                <h3 class="ref-deal-card-title">Mnemba Island Reefs</h3>
                 
                 <ul class="ref-deal-amenities-list">
                   <li class="ref-amenity-item">
@@ -1081,12 +1091,17 @@ function renderExperienceSelector() {
                   </li>
                 </ul>
 
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">₦4,350,000</span>
+                  <span class="ref-deal-price-note">All-Inclusive Dual Tour</span>
+                </div>
+
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -1097,7 +1112,7 @@ function renderExperienceSelector() {
           </article>
 
           <!-- Deal 4: Doha Desert Safari & Skyline -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-4">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/doha-desert-safari.jpg" 
@@ -1105,9 +1120,10 @@ function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Desert & Safari</span>
 
               <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Doha Safari & City</h3>
+                <h3 class="ref-deal-card-title">Doha Safari & Culture</h3>
                 
                 <ul class="ref-deal-amenities-list">
                   <li class="ref-amenity-item">
@@ -1133,12 +1149,17 @@ function renderExperienceSelector() {
                   </li>
                 </ul>
 
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">From ₦3,400,000</span>
+                  <span class="ref-deal-price-note">VIP Safari & F1 Access</span>
+                </div>
+
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -1171,8 +1192,8 @@ function renderDestinationFeature() {
         
         <!-- Section Header -->
         <div class="ref-destinations-header text-center anim-reveal-text">
-          <h2 class="ref-section-heading">TOP DESTINATION</h2>
-          <p class="ref-section-subheading">Experience the world's top destinations like never before</p>
+          <h2 class="ref-section-heading">Top Destinations</h2>
+          <p class="ref-section-subheading">Experience iconic landmarks, cultural treasures, and pristine coastal retreats</p>
         </div>
 
         <!-- 4-Column Bento / Mosaic Grid (Exact Reference Composition with Mobile Swipe-In) -->
@@ -1436,9 +1457,9 @@ function renderInformationCollation() {
               Official Reservation Collation
             </span>
           </div>
-          <h2 class="section-title anim-reveal-text">Collate Your Details & Receive Your Official Travel Dossier</h2>
+          <h2 class="section-title anim-reveal-text">Plan Your Escape & Receive Your Official Dossier</h2>
           <p class="section-subtitle anim-reveal-text anim-delay-1">
-            Choose your package, enter your travel details below, and generate your official PDF reservation dossier to send directly to our consultant on WhatsApp.
+            Select your package, enter your guest details, and generate an official PDF travel dossier for instant WhatsApp confirmation.
           </p>
         </header>
 
@@ -1748,7 +1769,7 @@ function renderTrustSection() {
           <div class="ref-responsibilities-scrim"></div>
 
           <div class="ref-responsibilities-content">
-            <h2 class="ref-responsibilities-title anim-reveal-text">Our Responsibilities</h2>
+            <h2 class="ref-responsibilities-title anim-reveal-text">Why Travel With Rhordway</h2>
 
             <div class="ref-glass-cards-grid">
               
@@ -1759,7 +1780,7 @@ function renderTrustSection() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <h3 class="ref-glass-card-title">Always Available</h3>
+                <h3 class="ref-glass-card-title">24/7 Concierge</h3>
                 <p class="ref-glass-card-desc">Dedicated WhatsApp Travel Desk</p>
               </div>
 
@@ -1770,8 +1791,8 @@ function renderTrustSection() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <h3 class="ref-glass-card-title">Cancel Free of Charge</h3>
-                <p class="ref-glass-card-desc">Flexible 2026 Reservation Terms</p>
+                <h3 class="ref-glass-card-title">Flexible Terms</h3>
+                <p class="ref-glass-card-desc">Transparent 2026 Reservation Policy</p>
               </div>
 
               <!-- Card 3 -->
@@ -1781,8 +1802,8 @@ function renderTrustSection() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <h3 class="ref-glass-card-title">Flight to Hotel</h3>
-                <p class="ref-glass-card-desc">Qatar Airways & VIP Chauffeurs</p>
+                <h3 class="ref-glass-card-title">Seamless Transit</h3>
+                <p class="ref-glass-card-desc">Qatar Airways Flights & Chauffeurs</p>
               </div>
 
               <!-- Card 4 -->
@@ -1792,8 +1813,8 @@ function renderTrustSection() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <h3 class="ref-glass-card-title">Instant PDF Dossier</h3>
-                <p class="ref-glass-card-desc">Direct Client WhatsApp Dispatch</p>
+                <h3 class="ref-glass-card-title">Instant Dossier</h3>
+                <p class="ref-glass-card-desc">Client-Side PDF WhatsApp Dispatch</p>
               </div>
 
             </div>
@@ -1872,11 +1893,10 @@ function renderSiteFooter() {
           <!-- Col 1: Brand & Socials -->
           <div class="ref-footer-brand-col">
             <a href="#" class="ref-footer-logo" aria-label="Rhordway Home">
-              <span class="ref-brand-chevron">&gt;&gt;</span>
-              <span class="ref-brand-name">Rhordway</span>
+              <span class="ref-brand-name">Rhordway<span class="ref-brand-dot">.</span></span>
             </a>
             <p class="ref-footer-tagline">
-              Escape the ordinary with<br />our travel experiences
+              Escape the ordinary with curated holiday escapes.
             </p>
 
             <div class="ref-social-icons-row" aria-label="Social media channels">
@@ -2090,13 +2110,13 @@ class RhordwayApplication {
       ${renderEnquiryModal()}
 
       <!-- Mobile Sticky Enquiry Bar -->
-      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.96); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--border-medium); box-shadow:0 -4px 20px rgba(0,0,0,0.06); padding:10px 16px; display:none; justify-content:space-between; align-items:center;">
+      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-top:1px solid rgba(0,0,0,0.06); box-shadow:0 -6px 24px rgba(15,23,42,0.08); padding:10px 18px max(10px, env(safe-area-inset-bottom)); display:none; justify-content:space-between; align-items:center;">
         <div>
-          <span style="font-size:0.7rem; color:var(--brand-primary); text-transform:uppercase; letter-spacing:0.05em; display:block; font-weight:700;">Rhordway 2026</span>
-          <span style="font-size:0.85rem; color:var(--text-primary); font-weight:700;">November & December Holidays</span>
+          <span style="font-size:0.68rem; color:var(--brand-primary); text-transform:uppercase; letter-spacing:0.06em; display:block; font-weight:800;">Rhordway 2026</span>
+          <span style="font-size:0.875rem; color:var(--brand-dark); font-weight:800; letter-spacing:-0.01em;">From ₦3,400,000 / sharing</span>
         </div>
-        <a href="#booking-collation" class="btn btn-primary" style="min-height:36px; font-size:0.75rem; padding:0 14px;">
-          Reserve Now
+        <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-primary" style="padding:10px 22px; font-size:0.85rem; border-radius:50px; min-height:42px;">
+          Book Now
         </a>
       </div>
     `;
@@ -2150,7 +2170,7 @@ class RhordwayApplication {
 
   /* ---------------- Scroll Animations (Bidirectional: Scrolling Down & Up) ---------------- */
   initScrollAnimations() {
-    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card');
+    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card, .ref-deal-card');
     if (!animTargets.length) return;
 
     if (typeof IntersectionObserver !== 'undefined') {
@@ -2160,12 +2180,15 @@ class RhordwayApplication {
             entry.target.classList.add('is-inview');
           } else {
             // Remove class so it re-triggers smoothly when scrolling up from footer
-            entry.target.classList.remove('is-inview');
+            const rect = entry.boundingClientRect;
+            if (rect.top > window.innerHeight || rect.bottom < 0) {
+              entry.target.classList.remove('is-inview');
+            }
           }
         });
       }, {
-        threshold: 0.12,
-        rootMargin: '20px 0px -20px 0px'
+        threshold: 0.08,
+        rootMargin: '10px 0px -10px 0px'
       });
 
       animTargets.forEach((target) => observer.observe(target));

@@ -36,22 +36,20 @@
 .ref-brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   text-decoration: none;
 }
 
-.ref-brand-chevron {
-  color: var(--brand-primary);
-  font-weight: 900;
-  font-size: 1.45rem;
-  letter-spacing: -0.06em;
-}
-
 .ref-brand-name {
-  font-size: 1.4rem;
+  font-family: var(--font-main);
+  font-size: 1.45rem;
   font-weight: 800;
   color: #FFFFFF;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
+}
+
+.ref-brand-dot {
+  color: var(--brand-primary);
+  font-weight: 900;
 }
 
 .ref-nav-links {
@@ -204,60 +202,81 @@
 }
 
 .ref-hero-title {
-  font-size: clamp(2.3rem, 4.8vw, 4rem);
+  font-family: var(--font-main);
+  font-size: clamp(2.3rem, 4.6vw, 3.8rem);
   font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.015em;
+  line-height: 1.14;
+  letter-spacing: -0.03em;
   color: #FFFFFF;
   margin: 0;
-  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.55);
+  text-wrap: balance;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
 }
 
 .ref-hero-subtitle {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.92);
-  line-height: 1.6;
-  max-width: 480px;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  max-width: 520px;
   margin: 0;
-  font-style: italic;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  font-style: normal;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
 .ref-hero-btn-row {
-  margin-top: 12px;
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
 }
 
 .ref-hero-discover-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 34px;
+  gap: 8px;
+  padding: 13px 28px;
   border-radius: 50px;
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #FFFFFF;
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  font-size: 0.925rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  transition: all 0.25s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ref-hero-discover-btn:hover {
+.ref-hero-discover-btn.ref-btn-primary {
   background: var(--brand-primary);
   color: #FFFFFF;
-  border-color: var(--brand-primary);
+  border: 1.5px solid var(--brand-primary);
+  box-shadow: 0 8px 24px rgba(0, 128, 232, 0.4);
+}
+
+.ref-hero-discover-btn.ref-btn-primary:hover {
+  background: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0, 128, 232, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 128, 232, 0.5);
+}
+
+.ref-hero-discover-btn.ref-btn-outline {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ref-hero-discover-btn.ref-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--brand-dark);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
   .ref-hero-title {
-    font-size: clamp(1.85rem, 7vw, 2.45rem);
+    font-size: clamp(1.9rem, 7.5vw, 2.5rem);
     line-height: 1.15;
     text-align: center;
   }
@@ -273,15 +292,17 @@
   }
   .ref-hero-btn-row {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    margin: 14px auto 0;
   }
   .ref-hero-discover-btn {
     width: 100%;
-    max-width: 260px;
-    background: var(--brand-primary);
-    border-color: var(--brand-primary);
-    box-shadow: 0 8px 24px rgba(0, 128, 232, 0.45);
-    padding: 14px 24px;
+    padding: 13px 20px;
+    font-size: 0.9rem;
   }
 }
 
@@ -445,19 +466,22 @@
 }
 
 .ref-section-heading {
-  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  color: var(--brand-primary);
-  text-transform: uppercase;
-  margin: 0 0 4px;
+  font-family: var(--font-main);
+  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--brand-dark);
+  margin: 0 0 6px;
+  line-height: 1.18;
 }
 
 .ref-section-subheading {
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   color: #64748B;
   margin: 0;
   font-weight: 500;
+  line-height: 1.55;
+  max-width: 620px;
 }
 
 .ref-nav-arrows-box {
@@ -645,21 +669,59 @@
   flex-shrink: 0;
 }
 
+.ref-deal-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 4px 12px;
+  border-radius: 50px;
+  z-index: 3;
+}
+
+.ref-deal-price-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 3px 0 2px;
+}
+
+.ref-deal-price-val {
+  font-family: var(--font-main);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.ref-deal-price-note {
+  font-size: 0.7rem;
+  color: #CBD5E1;
+  font-weight: 500;
+}
+
 .ref-deal-btn {
-  margin-top: 8px;
+  margin-top: 6px;
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 18px;
   border-radius: 50px;
   background: #FFFFFF;
-  color: var(--brand-primary);
-  font-weight: 800;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-  border: none;
+  color: var(--brand-dark);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   cursor: pointer;
   text-align: center;
-  transition: all var(--transition-fast);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -670,8 +732,9 @@
 .ref-deal-btn:active {
   background: var(--brand-primary);
   color: #FFFFFF;
+  border-color: var(--brand-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 128, 232, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 128, 232, 0.4);
 }
 
 .ref-deal-btn svg {
@@ -690,6 +753,7 @@
 .ref-top-destinations-section {
   padding: 40px 0 80px;
   background: #FFFFFF;
+  overflow: hidden;
 }
 
 .ref-container {
@@ -3307,7 +3371,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--text-dark);
+  background-color: #FFFFFF;
   border-radius: 2px;
   transition: all var(--transition-fast);
 }

@@ -16,9 +16,9 @@ export function renderInformationCollation() {
               Official Reservation Collation
             </span>
           </div>
-          <h2 class="section-title anim-reveal-text">Collate Your Details & Receive Your Official Travel Dossier</h2>
+          <h2 class="section-title anim-reveal-text">Plan Your Escape & Receive Your Official Dossier</h2>
           <p class="section-subtitle anim-reveal-text anim-delay-1">
-            Choose your package, enter your travel details below, and generate your official PDF reservation dossier to send directly to our consultant on WhatsApp.
+            Select your package, enter your guest details, and generate an official PDF travel dossier for instant WhatsApp confirmation.
           </p>
         </header>
 

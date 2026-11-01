@@ -51,13 +51,13 @@ class RhordwayApplication {
       ${renderEnquiryModal()}
 
       <!-- Mobile Sticky Enquiry Bar -->
-      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.96); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--border-medium); box-shadow:0 -4px 20px rgba(0,0,0,0.06); padding:10px 16px; display:none; justify-content:space-between; align-items:center;">
+      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-top:1px solid rgba(0,0,0,0.06); box-shadow:0 -6px 24px rgba(15,23,42,0.08); padding:10px 18px max(10px, env(safe-area-inset-bottom)); display:none; justify-content:space-between; align-items:center;">
         <div>
-          <span style="font-size:0.7rem; color:var(--brand-primary); text-transform:uppercase; letter-spacing:0.05em; display:block; font-weight:700;">Rhordway 2026</span>
-          <span style="font-size:0.85rem; color:var(--text-primary); font-weight:700;">November & December Holidays</span>
+          <span style="font-size:0.68rem; color:var(--brand-primary); text-transform:uppercase; letter-spacing:0.06em; display:block; font-weight:800;">Rhordway 2026</span>
+          <span style="font-size:0.875rem; color:var(--brand-dark); font-weight:800; letter-spacing:-0.01em;">From ₦3,400,000 / sharing</span>
         </div>
-        <a href="#booking-collation" class="btn btn-primary" style="min-height:36px; font-size:0.75rem; padding:0 14px;">
-          Reserve Now
+        <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-primary" style="padding:10px 22px; font-size:0.85rem; border-radius:50px; min-height:42px;">
+          Book Now
         </a>
       </div>
     `;
@@ -111,7 +111,7 @@ class RhordwayApplication {
 
   /* ---------------- Scroll Animations (Bidirectional: Scrolling Down & Up) ---------------- */
   initScrollAnimations() {
-    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card');
+    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card, .ref-deal-card');
     if (!animTargets.length) return;
 
     if (typeof IntersectionObserver !== 'undefined') {
@@ -121,12 +121,15 @@ class RhordwayApplication {
             entry.target.classList.add('is-inview');
           } else {
             // Remove class so it re-triggers smoothly when scrolling up from footer
-            entry.target.classList.remove('is-inview');
+            const rect = entry.boundingClientRect;
+            if (rect.top > window.innerHeight || rect.bottom < 0) {
+              entry.target.classList.remove('is-inview');
+            }
           }
         });
       }, {
-        threshold: 0.12,
-        rootMargin: '20px 0px -20px 0px'
+        threshold: 0.08,
+        rootMargin: '10px 0px -10px 0px'
       });
 
       animTargets.forEach((target) => observer.observe(target));

@@ -5,8 +5,8 @@ export function renderDestinationFeature() {
         
         <!-- Section Header -->
         <div class="ref-destinations-header text-center anim-reveal-text">
-          <h2 class="ref-section-heading">TOP DESTINATION</h2>
-          <p class="ref-section-subheading">Experience the world's top destinations like never before</p>
+          <h2 class="ref-section-heading">Top Destinations</h2>
+          <p class="ref-section-subheading">Experience iconic landmarks, cultural treasures, and pristine coastal retreats</p>
         </div>
 
         <!-- 4-Column Bento / Mosaic Grid (Exact Reference Composition with Mobile Swipe-In) -->

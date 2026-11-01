@@ -5,16 +5,15 @@ export function renderSiteHeader() {
     <header class="ref-header" id="siteHeader">
       <div class="ref-header-container">
         <a href="#" class="ref-brand-logo" aria-label="${siteConfig.brandName} Home">
-          <span class="ref-brand-chevron">&gt;&gt;</span>
-          <span class="ref-brand-name">Rhordway</span>
+          <span class="ref-brand-name">Rhordway<span class="ref-brand-dot">.</span></span>
         </a>
 
         <nav class="ref-nav-links" aria-label="Main Navigation">
           <a href="#" class="ref-nav-link active">Home</a>
-          <a href="#hot-deals" class="ref-nav-link">Packages Tour</a>
-          <a href="#top-destinations" class="ref-nav-link">Top Destinations</a>
-          <a href="#responsibilities" class="ref-nav-link">Our Commitments</a>
-          <a href="#booking-collation" class="ref-nav-link ref-nav-highlight">Reservation Collation</a>
+          <a href="#hot-deals" class="ref-nav-link">Packages</a>
+          <a href="#top-destinations" class="ref-nav-link">Destinations</a>
+          <a href="#responsibilities" class="ref-nav-link">Why Us</a>
+          <a href="#booking-collation" class="ref-nav-link ref-nav-highlight">Reservation</a>
         </nav>
 
         <div class="ref-header-actions">
@@ -44,29 +43,28 @@ export function renderMobileNavigation() {
   return `
     <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
       <div style="display:flex; justify-content:space-between; align-items:center;">
-        <div class="brand-wrap">
-          <div class="brand-circle-icon"></div>
-          <span class="brand-text">RHORDWAY</span>
-        </div>
+        <a href="#" class="ref-brand-logo" onclick="window.rhordwayApp.closeMobileMenu()">
+          <span class="ref-brand-name" style="color:var(--brand-dark);">Rhordway<span class="ref-brand-dot">.</span></span>
+        </a>
         <button type="button" class="modal-close-btn" id="mobileNavCloseBtn" aria-label="Close menu">&times;</button>
       </div>
 
       <nav class="mobile-nav-links" aria-label="Mobile Navigation">
-        <a href="#about" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">About</a>
-        <a href="#experiences" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Tour</a>
-        <a href="#packages" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Package</a>
-        <a href="#booking-collation" class="mobile-nav-link" style="color:var(--brand-primary);" onclick="window.rhordwayApp.closeMobileMenu()">Collation & PDF</a>
-        <a href="#contact" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Contact</a>
+        <a href="#" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Home</a>
+        <a href="#hot-deals" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Holiday Packages</a>
+        <a href="#top-destinations" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Destinations</a>
+        <a href="#responsibilities" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Why Rhordway</a>
+        <a href="#booking-collation" class="mobile-nav-link" style="color:var(--brand-primary); font-weight:700;" onclick="window.rhordwayApp.closeMobileMenu()">Official Reservation</a>
       </nav>
 
       <div style="margin-top:auto; padding-top:24px;">
         <a 
           href="#booking-collation" 
-          class="btn-pill-dark" 
-          style="display:block; text-align:center; padding:16px;" 
+          class="ref-hero-discover-btn ref-btn-primary" 
+          style="display:flex; text-align:center; padding:15px; width:100%; justify-content:center;" 
           onclick="window.rhordwayApp.closeMobileMenu();"
         >
-          Book Trip Now
+          Book Your Trip
         </a>
       </div>
     </div>

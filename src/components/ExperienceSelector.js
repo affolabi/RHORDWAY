@@ -8,11 +8,11 @@ export function renderExperienceSelector() {
     <section class="ref-hot-deals-section" id="hot-deals">
       <div class="ref-deals-wrapper">
         
-        <!-- Section Header Bar (Reference style) -->
+        <!-- Section Header Bar -->
         <div class="ref-deals-header">
           <div class="ref-deals-title-box anim-reveal-text">
-            <h2 class="ref-section-heading">HOT DEALS</h2>
-            <p class="ref-section-subheading">Fire up your savings with our hot deals</p>
+            <h2 class="ref-section-heading">Featured Packages</h2>
+            <p class="ref-section-subheading">Handpicked luxury itineraries with all-inclusive 5-star experiences</p>
           </div>
 
           <div class="ref-nav-arrows-box" aria-label="Carousel navigation">
@@ -25,7 +25,7 @@ export function renderExperienceSelector() {
         <div class="ref-deals-grid" id="refDealsGrid">
           
           <!-- Deal 1: Doha + Zanzibar -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-1">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/zanzibar-beach.jpg" 
@@ -33,6 +33,7 @@ export function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Dual Escape</span>
 
               <div class="ref-deal-overlay-content">
                 <h3 class="ref-deal-card-title">Doha + Zanzibar</h3>
@@ -57,20 +58,22 @@ export function renderExperienceSelector() {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                       <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                      <line x1="6" y1="1" x2="6" y2="4"></line>
-                      <line x1="10" y1="1" x2="10" y2="4"></line>
-                      <line x1="14" y1="1" x2="14" y2="4"></line>
                     </svg>
                     <span>All-Inclusive Meals</span>
                   </li>
                 </ul>
+
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">₦4,350,000</span>
+                  <span class="ref-deal-price-note">per person sharing</span>
+                </div>
 
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -81,7 +84,7 @@ export function renderExperienceSelector() {
           </article>
 
           <!-- Deal 2: Doha Grand Prix -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-2">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/doha-f1-grand-prix.jpg" 
@@ -89,6 +92,7 @@ export function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Formula 1 GP</span>
 
               <div class="ref-deal-overlay-content">
                 <h3 class="ref-deal-card-title">Doha Grand Prix</h3>
@@ -119,12 +123,17 @@ export function renderExperienceSelector() {
                   </li>
                 </ul>
 
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">From ₦3,400,000</span>
+                  <span class="ref-deal-price-note">Double / ₦4,150,000 Single</span>
+                </div>
+
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -135,7 +144,7 @@ export function renderExperienceSelector() {
           </article>
 
           <!-- Deal 3: Zanzibar Coral Atoll -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-3">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/zanzibar-mnemba.jpg" 
@@ -143,9 +152,10 @@ export function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Island Escape</span>
 
               <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Mnemba Island</h3>
+                <h3 class="ref-deal-card-title">Mnemba Island Reefs</h3>
                 
                 <ul class="ref-deal-amenities-list">
                   <li class="ref-amenity-item">
@@ -171,12 +181,17 @@ export function renderExperienceSelector() {
                   </li>
                 </ul>
 
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">₦4,350,000</span>
+                  <span class="ref-deal-price-note">All-Inclusive Dual Tour</span>
+                </div>
+
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -187,7 +202,7 @@ export function renderExperienceSelector() {
           </article>
 
           <!-- Deal 4: Doha Desert Safari & Skyline -->
-          <article class="ref-deal-card">
+          <article class="ref-deal-card anim-reveal-text anim-delay-4">
             <div class="ref-deal-img-box">
               <img 
                 src="./assets/images/doha-desert-safari.jpg" 
@@ -195,9 +210,10 @@ export function renderExperienceSelector() {
                 loading="lazy" 
               />
               <div class="ref-deal-gradient-scrim"></div>
+              <span class="ref-deal-badge">Desert & Safari</span>
 
               <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Doha Safari & City</h3>
+                <h3 class="ref-deal-card-title">Doha Safari & Culture</h3>
                 
                 <ul class="ref-deal-amenities-list">
                   <li class="ref-amenity-item">
@@ -223,12 +239,17 @@ export function renderExperienceSelector() {
                   </li>
                 </ul>
 
+                <div class="ref-deal-price-bar">
+                  <span class="ref-deal-price-val">From ₦3,400,000</span>
+                  <span class="ref-deal-price-note">VIP Safari & F1 Access</span>
+                </div>
+
                 <button 
                   type="button" 
                   class="ref-deal-btn"
                   onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
                 >
-                  <span>Discover Now</span>
+                  <span>Explore Package</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
