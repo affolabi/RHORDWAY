@@ -1,80 +1,115 @@
 export function renderCampaignHero() {
   return `
-    <section class="ref-hero-section" id="hero">
-      <div class="ref-hero-bg-wrap">
+    <section class="mw-hero-section" id="hero">
+      
+      <!-- 1. Full-Screen Cinematic Hero (Centered: headline top · image breathes in middle · CTA bottom) -->
+      <div class="mw-hero-frame mw-hero-centered">
         <img 
-          src="./assets/images/hero-reference-bridge.jpg" 
-          alt="Pont Alexandre III bridge illuminated at twilight with golden lamps" 
-          class="ref-hero-bg-img"
+          src="./assets/images/hero-rhordway-runway.jpg" 
+          alt="A traveller watching a plane take off at dawn — Rhordway makes travel processing simple and stress-free" 
+          class="mw-hero-img"
           fetchpriority="high"
         />
-        <div class="ref-hero-scrim"></div>
-      </div>
+        <div class="mw-hero-scrim"></div>
 
-      <div class="ref-hero-container">
-        <div class="ref-hero-grid">
-          
-          <!-- Left Column: Display Typography & CTA -->
-          <div class="ref-hero-content">
-            <span class="ref-hero-eyebrow anim-reveal-text">✦ CURATED ESCAPES · 2026</span>
+        <div class="mw-hero-inner mw-container mw-hero-centered-inner">
+          <!-- Top: Two-tone headline -->
+          <h1 class="mw-hero-title mw-hero-title-centered">
+            Travel processing, made simple.<br />
+            <span class="mw-hero-title-soft">The world, within reach.</span>
+          </h1>
 
-            <h1 class="ref-hero-title anim-reveal-text anim-delay-1">
-              Explore Extraordinary Worlds With Us
-            </h1>
-
-            <p class="ref-hero-subtitle anim-reveal-text anim-delay-2">
-              Handcrafted luxury journeys to Doha, Zanzibar, and the Formula 1 Grand Prix with 5-star comfort and personal concierge care.
+          <!-- Bottom: Blurb + single CTA + trust line -->
+          <div class="mw-hero-bottom-stack">
+            <p class="mw-hero-blurb mw-hero-blurb-centered">
+              Student visas, global migration, travel visas, passports and flights — handled end to end by one dedicated team.
+              <span class="mw-hero-blurb-soft">Every application is prepared with care, so you can focus on the journey.</span>
             </p>
 
-            <div class="ref-hero-btn-row anim-reveal-text anim-delay-3">
-              <a href="#hot-deals" class="ref-hero-discover-btn ref-btn-primary">
-                <span>Explore Packages</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-outline">
-                <span>Plan My Escape</span>
-              </a>
+            <a 
+              href="#booking-collation" 
+              class="mw-action-group"
+              onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+            >
+              <span class="mw-action-pill" style="background:#FFFFFF; color:#0F1115;">Book a Consultation</span>
+              <span class="mw-action-circle" style="background:#FFFFFF; color:#0F1115;" aria-hidden="true">↗</span>
+            </a>
+
+            <p class="mw-hero-trust">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Embassy-ready documentation · UK · Canada · Schengen · USA
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Editorial Split Intro Section Below Hero -->
+      <div class="mw-container">
+        <div class="mw-explore-split">
+          
+          <!-- Left Text & Black Pill CTA Column -->
+          <div class="mw-explore-left anim-reveal-text">
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              Welcome to Rhordway
+            </span>
+
+            <h2 class="mw-split-heading">
+              <strong>Explore the world, one breathtaking destination at a time</strong>
+              <span class="mw-text-grey">— backed by expert migration, student visa, travel visa, and passport processing.</span>
+            </h2>
+
+            <a 
+              href="#services" 
+              class="mw-action-group"
+            >
+              <span class="mw-action-pill">EXPLORE WHAT WE DO</span>
+              <span class="mw-action-circle" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <!-- Center Portrait Card: Student Visa & Study Abroad -->
+          <div 
+            class="mw-explore-card-portrait anim-reveal-text anim-delay-1" 
+            onclick="window.rhordwayApp.navigateToPage('migration-services')" 
+            style="cursor:pointer;"
+          >
+            <img 
+              src="./assets/images/singapore-bay.jpg" 
+              alt="Undergraduate & Postgraduate Student Visa Processing, Proof of Funds & SOP" 
+              loading="lazy" 
+            />
+            <div class="mw-card-subtle-scrim"></div>
+            <div class="mw-portrait-bottom">
+              <p class="mw-portrait-caption">
+                Student Visa, Proof of Funds<br />&amp; Statement of Purpose.
+              </p>
+              <span class="mw-white-circle-arrow" aria-hidden="true">↗</span>
             </div>
           </div>
 
-          <!-- Right Column: 3 Staggered Floating Cards (Exact Reference Style) -->
-          <div class="ref-hero-cards-cluster" aria-label="Featured Holiday Destinations">
-            <!-- Card 1: Large / Left (Doha Architectural Heritage) -->
-            <div class="ref-floating-card card-tall">
+          <!-- Right Landscape Card + Underneath Caption -->
+          <div 
+            class="mw-explore-card-landscape anim-reveal-text anim-delay-2" 
+            onclick="window.rhordwayApp.navigateToPage('migration-services')" 
+            style="cursor:pointer;"
+          >
+            <div class="mw-landscape-img-wrap">
               <img 
-                src="./assets/images/doha-museum.jpg" 
-                alt="Museum of Islamic Art illuminated at twilight" 
-                loading="eager"
+                src="./assets/images/doha-skyline.jpg" 
+                alt="Global Migration, Travel Visas, Passports, Flights & Travel Insurance" 
+                loading="lazy" 
               />
-              <div class="ref-card-glass-tag">Doha</div>
+              <span class="mw-top-right-pill">Migration · Visas · Passports</span>
             </div>
-
-            <!-- Card 2: Medium / Center (Zanzibar Turquoise Coast) -->
-            <div class="ref-floating-card card-mid">
-              <img 
-                src="./assets/images/zanzibar-beach.jpg" 
-                alt="Zanzibar white sand beach and dhow boat" 
-                loading="eager"
-              />
-              <div class="ref-card-glass-tag">Zanzibar</div>
-            </div>
-
-            <!-- Card 3: Compact / Right (Doha Formula 1 Grand Prix) -->
-            <div class="ref-floating-card card-compact">
-              <img 
-                src="./assets/images/doha-f1-grand-prix.jpg" 
-                alt="Formula 1 night race in Doha" 
-                loading="eager"
-              />
-              <div class="ref-card-glass-tag">Formula 1</div>
-            </div>
+            <p class="mw-landscape-under-text">
+              From UK, Canada, France, Germany &amp; Spain visas to passport renewals, flight booking, airport transfers, and travel insurance—every step is handled with precision.
+            </p>
           </div>
 
         </div>
       </div>
+
     </section>
   `;
 }

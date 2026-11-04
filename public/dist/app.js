@@ -3,45 +3,40 @@
 
   /* --- siteConfig.js --- */
 /**
- * RHORDWAY CAMPAIGN CONFIGURATION
- * 
- * Central configuration file for brand settings, contact options,
- * and official WhatsApp integration based on official brand collateral.
+ * RHORDWAY OFFICIAL COMPANY WEBSITE CONFIGURATION
+ *
+ * Central configuration file for brand settings, official contact lines,
+ * and WhatsApp consultation routing based on Rhordway brand assets.
  */
 
 const siteConfig = {
   brandName: 'Rhordway',
   brandWordmark: 'Rhordway™',
-  brandTagline: 'Curated Travel & Tourism',
-  
+  brandTagline: 'We Make Travel Processing Simple And Stress-Free.',
+  brandSubTagline: 'Explore the world, one breathtaking destination at a time.',
+
   /**
-   * Official Brand Contact Information from verified marketing assets:
+   * Official Brand Contact Information from verified Figma brand boards:
    */
-  whatsappNumber: '2348164206030', // Primary WhatsApp business line (+2348164206030)
-  alternatePhone: '+2349013397808',
+  whatsappNumber: '2348164206030', // Primary WhatsApp line (+234 816 420 6030)
+  primaryPhoneFormatted: '+234 816 420 6030',
+  alternatePhone: '+234 901 339 7830',
+  alternatePhoneClean: '2349013397830',
   contactEmail: 'Rhordway@gmail.com',
   instagram: '@Rhordway',
 
-  /**
-   * Brand Design System Palette:
-   * Sourced directly from Rhordway brand flyers:
-   * - Rhordway Azure Blue: #0084E6 / #0090F0
-   * - Rhordway Crimson Red: #E52E2E (Action CTA "Book A Slot Today!")
-   * - Sunburst Gold: #FFC72C
-   */
   colors: {
-    primaryBlue: '#0084E6',
-    primaryBlueHover: '#0070C5',
-    accentRed: '#E52E2E',
-    accentRedHover: '#C61E1E',
-    sunburstGold: '#FFC72C',
-    darkNavy: '#0B0F19',
-    surfaceCard: '#131A29',
+    primaryBlue: '#0080E8',
+    primaryBlueHover: '#0068C2',
+    jetBlack: '#0F1115',
+    pureWhite: '#FFFFFF',
+    softAlabaster: '#FAFAFA'
   },
 
   legal: {
     copyrightYear: 2026,
-    disclaimer: 'Rhordway facilitates travel arrangements and visa applications based on verified service partner terms. Final availability, payment schedules, and airline policies are confirmed prior to booking.'
+    disclaimer:
+      'Rhordway provides professional visa advisory, student admission processing, global migration guidance, passport assistance, flight ticketing, airport & hotel transfers, and travel insurance.'
   }
 };
 
@@ -50,191 +45,173 @@ const siteConfig = {
 const packagesData = {
   'doha-zanzibar': {
     id: 'doha-zanzibar',
+    edition: 'ISSUE 01 · DUAL ESCAPE',
+    category: 'flagship',
     title: 'Doha + Zanzibar',
     subtitle: 'Two Worlds, One Seamless Journey',
-    tagline: 'From the energy of Doha to the shores of Zanzibar',
+    tagline: 'From the modern skyline of Doha to the turquoise shores of Zanzibar',
     dates: 'December 12–19, 2026',
     startDate: '2026-12-12',
     endDate: '2026-12-19',
     durationNights: 7,
     durationLabel: '7 Nights',
     destinationBreakdown: '4 Nights in Doha · 3 Nights in Zanzibar',
+    transferBasis: 'All Tours & Airport Transfers Included',
     pricing: {
       standardFormatted: '₦4,350,000',
       standardNumeric: 4350000,
       occupancyTerms: 'per person sharing'
     },
-    heroImage: './assets/images/doha-skyline.jpg',
-    heroImageAlt: 'Doha modern skyline illuminated at twilight over the Arabian Gulf',
-    overviewDescription: 'Experience the contrast between the architectural grandeur of Doha and the tranquil turquoise waters of the Swahili coast. Seven nights balanced between Arabian hospitality and tropical island relaxation.',
-    itinerarySummary: [
-      {
-        location: 'Doha, Qatar',
-        duration: '4 Nights',
-        highlights: [
-          'Doha architectural city tour',
-          'National Museum of Qatar',
-          'Villaggio Mall with canal gondola ride',
-          'Desert safari with camel ride'
-        ]
-      },
-      {
-        location: 'Zanzibar, Tanzania',
-        duration: '3 Nights',
-        highlights: [
-          'All-inclusive resort coastal relaxation',
-          'Historic Stone Town guided tour',
-          'Mnemba Island sandbank excursion',
-          'Dolphin swimming and snorkelling',
-          'Natural aquarium swim with turtles',
-          'Kendwa Beach, Le Saint Tropez & kayaking'
-        ]
-      }
+    heroImage: './assets/images/zanzibar-beach.jpg',
+    secondaryImage: './assets/images/doha-skyline.jpg',
+    heroImageAlt: 'Zanzibar white sand beach and turquoise Indian Ocean',
+    overviewDescription: 'Experience the contrast between the architectural grandeur of Doha and the tranquil turquoise waters of the Swahili coast. Seven nights balanced between Arabian hospitality and all-inclusive tropical island relaxation.',
+    magazineHighlights: [
+      'Return Flights with Qatar Airways',
+      '5-Star Hotel in Doha (Breakfast) & All-Inclusive Zanzibar Resort',
+      'Qatar & Tanzania Visas + Zanzibar Insurance',
+      'Doha City Tour, National Museum & Villaggio Gondola',
+      'Desert Safari with Camel Ride in Doha',
+      'Mnemba Island Dolphins, Snorkeling & Turtles Aquarium',
+      'Stone Town Tour, Le Saint Tropez, Kendwa Beach & Kayaking',
+      'Return Airport Pick-up, Drop-off, Tour Guide & Entrance Fees'
     ],
     inclusions: [
-      {
-        id: 'dz-inc-1',
-        title: '5-Star Accommodation',
-        category: 'accommodation',
-        description: 'Five-star hotel accommodation in Doha and Zanzibar'
-      },
-      {
-        id: 'dz-inc-2',
-        title: 'Return Flights with Qatar Airways',
-        category: 'flight',
-        description: 'International flights operated by Qatar Airways'
-      },
-      {
-        id: 'dz-inc-3',
-        title: 'Daily Breakfast in Doha',
-        category: 'accommodation',
-        description: 'Daily morning breakfast throughout your Doha stay'
-      },
-      {
-        id: 'dz-inc-4',
-        title: 'All-Inclusive Resort in Zanzibar',
-        category: 'accommodation',
-        description: 'All-inclusive meals and refreshments at Zanzibar resort'
-      },
-      {
-        id: 'dz-inc-5',
-        title: 'Qatar Tourist Visa',
-        category: 'visa',
-        description: 'Qatar entry visa processing assistance'
-      },
-      {
-        id: 'dz-inc-6',
-        title: 'Tanzania Tourist Visa',
-        category: 'visa',
-        description: 'Tanzania visitor visa processing assistance'
-      },
-      {
-        id: 'dz-inc-7',
-        title: 'Zanzibar Travel Insurance',
-        category: 'insurance',
-        description: 'Mandatory Zanzibar travel coverage included'
-      },
-      {
-        id: 'dz-inc-8',
-        title: 'Professional Tour Guide',
-        category: 'activity',
-        description: 'Dedicated tour guide for curated excursions'
-      },
-      {
-        id: 'dz-inc-9',
-        title: 'Airport Pick-up & Drop-off',
-        category: 'transfer',
-        description: 'Seamless arrival and departure transfers in both destinations'
-      },
-      {
-        id: 'dz-inc-10',
-        title: 'All Scheduled Entrance Fees',
-        category: 'activity',
-        description: 'Entry fees included for all listed itinerary locations'
-      }
+      { id: 'dz-inc-1', title: '5-Star Accommodation (Doha & Zanzibar)', category: 'accommodation', description: 'Five-star hotel stay in Doha (with breakfast) and all-inclusive resort in Zanzibar' },
+      { id: 'dz-inc-2', title: 'Return Flights with Qatar Airways', category: 'flight', description: 'International return flights operated by Qatar Airways' },
+      { id: 'dz-inc-3', title: 'Qatar & Tanzania Visas + Insurance', category: 'visa', description: 'Qatar tourist visa, Tanzania visa, and mandatory Zanzibar travel insurance' },
+      { id: 'dz-inc-4', title: 'Doha Tours & Desert Safari', category: 'activity', description: 'Doha city tour, National Museum of Qatar, Villaggio Gondola ride, and Desert Safari with camel ride' },
+      { id: 'dz-inc-5', title: 'Zanzibar Marine & Island Excursions', category: 'activity', description: 'Mnemba Island dolphin swim & snorkeling, Stone Town tour, Natural Aquarium swim with turtles' },
+      { id: 'dz-inc-6', title: 'Kendwa Beach, Le Saint Tropez & Kayaking', category: 'activity', description: 'Beach leisure, kayaking, professional tour guide, and all entrance fees' },
+      { id: 'dz-inc-7', title: 'Airport Pick-up & Drop-off Transfers', category: 'transfer', description: 'Seamless arrival and departure airport transfers in both destinations' }
+    ]
+  },
+
+  'zanzibar-nairobi': {
+    id: 'zanzibar-nairobi',
+    edition: 'ISSUE 02 · ISLAND & SAFARI',
+    category: 'flagship',
+    title: 'Zanzibar + Nairobi',
+    subtitle: 'Swahili Turquoise Shores & Kenyan Wildlife Safari',
+    tagline: '5-Star JAZ Elite Aurora All-Inclusive & Private Nairobi Adventure',
+    dates: '2026 Curated Departures (6 Nights)',
+    startDate: '2026-11-15',
+    endDate: '2026-11-21',
+    durationNights: 6,
+    durationLabel: '6 Nights',
+    destinationBreakdown: '3 Nights in Zanzibar · 3 Nights in Nairobi',
+    transferBasis: 'All Tours, Transfers & Airport Transfers on Private (PVT) Basis',
+    pricing: {
+      standardFormatted: '₦3,850,000',
+      standardNumeric: 3850000,
+      occupancyTerms: 'per person sharing (PVT Basis)',
+      options: [
+        {
+          occupancy: 'Double Occupancy (per person sharing · PVT Basis)',
+          priceNumeric: 3850000,
+          priceFormatted: '₦3,850,000',
+          note: 'Includes 5★ JAZ Elite Aurora All-Inclusive & 3N Nairobi PVT Safari'
+        }
+      ]
+    },
+    heroImage: './assets/images/nairobi-safari.jpg',
+    secondaryImage: './assets/images/zanzibar-mnemba.jpg',
+    heroImageAlt: 'Rothschild giraffes in Nairobi National Park with city skyline at golden hour',
+    overviewDescription: 'Three all-inclusive nights at the 5-star JAZ Elite Aurora in Zanzibar paired with three adventure-filled nights in Nairobi—featuring private game drives, giraffe encounters, and Sironka Valley thrills.',
+    magazineHighlights: [
+      'Return Flight Tickets + Tanzania Visa & Zanzibar/Kenya Insurance',
+      '3N Zanzibar: 5-Star JAZ Elite Aurora Hotel (All-Inclusive)',
+      'Mnemba Island Dolphins & Snorkeling + Aquarium Turtles Swim',
+      'Stone Town Tour, Le Saint Tropez, Kendwa Beach & Kayaking',
+      '3N Nairobi Accommodation with Daily Breakfast',
+      'Nairobi City Tour, National Museum & Museum of Illusion',
+      'Nairobi National Park Game Drive, Sheldrick Elephant Orphanage & Giraffe Centre',
+      'Day Tour to Sironka Valley (Zip-Lining & Go-Kart or Sky Biking) · All PVT Basis'
     ],
-    activities: [
-      {
-        id: 'dz-act-1',
-        title: 'National Museum of Qatar',
-        location: 'Doha',
-        image: './assets/images/doha-museum.jpg',
-        alt: 'National Museum of Qatar modern desert rose architectural interlocking discs',
-        caption: 'Jean Nouvel’s iconic desert rose architecture reflecting over tranquil museum waters.',
-        tag: 'Culture & Design'
-      },
-      {
-        id: 'dz-act-2',
-        title: 'Mnemba Atoll Sandbank',
-        location: 'Zanzibar',
-        image: './assets/images/zanzibar-mnemba.jpg',
-        alt: 'Aerial view of turquoise waters surrounding Mnemba atoll sandbar in Zanzibar',
-        caption: 'Pristine white sandbar surrounded by electric turquoise waters and offshore dhows.',
-        tag: 'Island Exploration'
-      },
-      {
-        id: 'dz-act-3',
-        title: 'Doha Desert Safari & Camel Ride',
-        location: 'Doha',
-        image: './assets/images/doha-desert-safari.jpg',
-        alt: 'Rolling golden desert sand dunes at sunset meeting the inland sea',
-        caption: 'Dramatic sculpted dunes and sunset vistas where the desert meets the sea.',
-        tag: 'Desert Excursion'
-      },
-      {
-        id: 'dz-act-4',
-        title: 'Historic Stone Town Tour',
-        location: 'Zanzibar',
-        image: './assets/images/zanzibar-stone-town.jpg',
-        alt: 'Narrow stone alleyway in Stone Town Zanzibar with carved wooden door',
-        caption: 'UNESCO World Heritage alleys, coral stone architecture, and intricate carved doorways.',
-        tag: 'Heritage & Culture'
-      },
-      {
-        id: 'dz-act-5',
-        title: 'Villaggio Gondola Experience',
-        location: 'Doha',
-        image: './assets/images/doha-villaggio.jpg',
-        alt: 'Ornate gondola boat cruising indoor Venetian canal under painted sky',
-        caption: 'Venetian-inspired indoor canals with relaxing gondola waterway cruises.',
-        tag: 'Urban Leisure'
-      },
-      {
-        id: 'dz-act-6',
-        title: 'Natural Aquarium Sea Turtles',
-        location: 'Zanzibar',
-        image: './assets/images/zanzibar-turtles.jpg',
-        alt: 'Sea turtles gliding peacefully in clear sunlit turquoise water',
-        caption: 'Encounter rescued green sea turtles in their protected natural coastal tidal lagoon.',
-        tag: 'Marine Life'
-      },
-      {
-        id: 'dz-act-7',
-        title: 'Kendwa Beach & Clear Kayaking',
-        location: 'Zanzibar',
-        image: './assets/images/zanzibar-kayak.jpg',
-        alt: 'Kayaker in clear transparent kayak floating over turquoise coral water',
-        caption: 'Crystal-clear calm waters along Kendwa beach, ideal for coastal paddle excursions.',
-        tag: 'Coastal Recreation'
-      }
+    inclusions: [
+      { id: 'zn-inc-1', title: 'Return Flight Tickets', category: 'flight', description: 'International and regional return flight tickets included' },
+      { id: 'zn-inc-2', title: '3 Nights Zanzibar: 5★ JAZ Elite Aurora (All-Inclusive)', category: 'accommodation', description: 'Five-star all-inclusive accommodation at JAZ Elite Aurora in Zanzibar' },
+      { id: 'zn-inc-3', title: '3 Nights Nairobi Accommodation with Breakfast', category: 'accommodation', description: 'Three nights luxury hotel stay in Nairobi inclusive of daily breakfast' },
+      { id: 'zn-inc-4', title: 'Tanzania Visa, Zanzibar Insurance & Kenya Insurance', category: 'visa', description: 'Complete visa processing and mandatory travel insurance for both countries' },
+      { id: 'zn-inc-5', title: 'Zanzibar Activities & Entrance Fees', category: 'activity', description: 'Mnemba Island dolphin swim & snorkeling, Stone Town tour, Aquarium swim with turtles, Le Saint Tropez, Kendwa Beach, kayaking & tour guide' },
+      { id: 'zn-inc-6', title: 'Nairobi City Tour & Museums', category: 'activity', description: 'Guided Nairobi City Tour with visits to the National Museum and Museum of Illusion' },
+      { id: 'zn-inc-7', title: 'Nairobi National Park, Elephant Orphanage & Giraffe Centre', category: 'activity', description: 'Private game drive in Nairobi National Park, Sheldrick Elephant Orphanage & Giraffe Centre' },
+      { id: 'zn-inc-8', title: 'Sironka Valley Day Tour (Zip-Lining & Go-Kart / Sky Biking)', category: 'activity', description: 'Full day excursion to Sironka Valley inclusive of Zip-lining and Go-Kart or Sky Biking' },
+      { id: 'zn-inc-9', title: '100% Private (PVT) Tours & Airport Transfers', category: 'transfer', description: 'All tours, ground transfers, and airport pick-up/drop-off on exclusive Private (PVT) basis' }
+    ]
+  },
+
+  'doha-nairobi': {
+    id: 'doha-nairobi',
+    edition: 'ISSUE 03 · ARABIA & EAST AFRICA',
+    category: 'flagship',
+    title: 'Doha + Nairobi',
+    subtitle: 'Arabian Gulf Splendour & Kenyan Wildlife Odyssey',
+    tagline: 'Minimum of 2 People · All Tours & Transfers on Private (PVT) Basis',
+    dates: '2026 Curated Departures (7 Nights)',
+    startDate: '2026-11-20',
+    endDate: '2026-11-27',
+    durationNights: 7,
+    durationLabel: '7 Nights',
+    destinationBreakdown: '4 Nights in Doha · 3 Nights in Nairobi',
+    transferBasis: 'All Tours & Airport Transfers on Private (PVT) Basis · Min. 2 Guests',
+    pricing: {
+      standardFormatted: '₦3,600,000',
+      standardNumeric: 3600000,
+      occupancyTerms: 'per person sharing (Min. 2 people)',
+      options: [
+        {
+          occupancy: 'Double Occupancy (per person sharing · Min. 2 People)',
+          priceNumeric: 3600000,
+          priceFormatted: '₦3,600,000',
+          note: '4 Nights in Doha + 3 Nights in Nairobi on Private (PVT) Basis'
+        }
+      ]
+    },
+    heroImage: './assets/images/doha-museum.jpg',
+    secondaryImage: './assets/images/nairobi-safari.jpg',
+    heroImageAlt: 'National Museum of Qatar and Doha skyline',
+    overviewDescription: 'Four nights discovering the architectural wonders and desert dunes of Doha followed by three thrilling nights in Nairobi with private wildlife game drives, cultural museums, and Sironka Valley adventure.',
+    magazineHighlights: [
+      '4 Nights in Doha + 3 Nights in Nairobi with Daily Breakfast',
+      'Qatar Visa + Kenya Travel Insurance Included',
+      'Doha City Tour & National Museum of Qatar',
+      'Villaggio Mall with Indoor Canal Gondola Ride',
+      'Doha Desert Safari with Camel Ride',
+      'Nairobi City Tour, National Museum & Museum of Illusion',
+      'Nairobi National Park Game Drive, Sheldrick Elephant Orphanage & Giraffe Centre',
+      'Sironka Valley Day Tour (Zip-Lining & Go-Kart / Sky Biking) · All PVT Transfers'
+    ],
+    inclusions: [
+      { id: 'dn-inc-1', title: '4 Nights in Doha + 3 Nights in Nairobi (Daily Breakfast)', category: 'accommodation', description: 'Luxury hotel accommodations in Doha and Nairobi with daily morning breakfast' },
+      { id: 'dn-inc-2', title: 'Qatar Tourist Visa & Kenya Insurance', category: 'visa', description: 'Qatar entry visa processing and comprehensive Kenya travel insurance' },
+      { id: 'dn-inc-3', title: 'Doha City Tour, National Museum & Villaggio Gondola', category: 'activity', description: 'Guided Doha city tour, National Museum of Qatar entry, and Villaggio Mall gondola ride' },
+      { id: 'dn-inc-4', title: 'Doha Desert Safari with Camel Ride', category: 'activity', description: 'Dune safari adventure in Doha complete with traditional camel ride' },
+      { id: 'dn-inc-5', title: 'Nairobi City Tour, National Museum & Museum of Illusion', category: 'activity', description: 'Curated Nairobi city tour visiting the National Museum and Museum of Illusion' },
+      { id: 'dn-inc-6', title: 'Nairobi National Park, Sheldrick Elephants & Giraffe Centre', category: 'activity', description: 'Private safari game drive, Sheldrick Elephant Orphanage, and Giraffe Centre visit' },
+      { id: 'dn-inc-7', title: 'Sironka Valley Adventure (Zip-Lining & Go-Kart / Sky Biking)', category: 'activity', description: 'Day excursion to Sironka Valley inclusive of Zip-lining and Go-Kart or Sky Biking' },
+      { id: 'dn-inc-8', title: 'All Tours & Airport Transfers on Private (PVT) Basis', category: 'transfer', description: 'Return airport transfers in Doha and Nairobi plus all ground tours on Private (PVT) basis' }
     ]
   },
 
   'doha-grand-prix': {
     id: 'doha-grand-prix',
+    edition: 'ISSUE 04 · FORMULA 1 MOTORSPORT',
+    category: 'flagship',
     title: 'Doha Grand Prix Experience',
     subtitle: 'Motorsport Prestige & City Sophistication',
-    tagline: 'Experience Doha beyond the ordinary',
+    tagline: 'Experience Doha under the Lusail floodlights',
     dates: 'November 25 – December 1, 2026',
     startDate: '2026-11-25',
     endDate: '2026-12-01',
     durationNights: 6,
     durationLabel: '6 Nights',
     destinationBreakdown: '6 Nights in Doha · 3-Day Formula 1 Race Access',
+    transferBasis: 'Private Airport Transfers & Guided Excursions',
     pricing: {
       standardFormatted: '₦3,400,000',
       standardNumeric: 3400000,
-      occupancyTerms: 'from ₦3,400,000 per person on double occupancy',
+      occupancyTerms: 'from ₦3,400,000 per person (Double) / ₦4,150,000 (Single)',
       options: [
         {
           occupancy: 'Double Occupancy (per person sharing)',
@@ -251,63 +228,343 @@ const packagesData = {
       ]
     },
     heroImage: './assets/images/doha-f1-grand-prix.jpg',
-    heroImageAlt: 'Formula 1 racing cars accelerating under brilliant floodlights on a night race circuit',
+    secondaryImage: './assets/images/doha-desert-safari.jpg',
+    heroImageAlt: 'Formula 1 racing cars accelerating under floodlights in Doha',
     overviewDescription: 'Combine the high-octane spectacle of a three-day Formula 1 Grand Prix weekend with the refined luxury and architectural landmarks of Qatar’s capital.',
+    magazineHighlights: [
+      '6 Nights at a 5-Star Hotel in Central Doha with Daily Breakfast',
+      'Official 3-Day Formula 1 Grand Prix Race Weekend Experience',
+      'Return International Flights & Qatar Tourist Visa',
+      'Desert Safari with Inland Sea (Khor Al Adaid) 4x4 Excursion',
+      'Guided Doha City Tour & West Bay Corniche',
+      'National Museum of Qatar Entry & Exploration',
+      'Return Private Airport Transfers in Doha'
+    ],
     inclusions: [
-      {
-        id: 'gp-inc-1',
-        title: '6 Nights at a 5-Star Hotel',
-        category: 'accommodation',
-        description: 'Luxury five-star hotel stay in central Doha'
-      },
-      {
-        id: 'gp-inc-2',
-        title: '3-Day Formula 1 Race Experience',
-        category: 'activity',
-        description: 'Admission to the three-day Formula 1 Grand Prix weekend'
-      },
-      {
-        id: 'gp-inc-3',
-        title: 'Return Flights',
-        category: 'flight',
-        description: 'Return international flight arrangements'
-      },
-      {
-        id: 'gp-inc-4',
-        title: 'Daily Breakfast',
-        category: 'accommodation',
-        description: 'Complimentary morning breakfast throughout your 6-night stay'
-      },
-      {
-        id: 'gp-inc-5',
-        title: 'Qatar Tourist Visa',
-        category: 'visa',
-        description: 'Entry visa processing assistance for Qatar'
-      },
-      {
-        id: 'gp-inc-6',
-        title: 'Desert Safari with Inland Sea Excursion',
-        category: 'activity',
-        description: 'Off-road 4x4 desert adventure to Khor Al Adaid'
-      },
-      {
-        id: 'gp-inc-7',
-        title: 'Doha City Tour',
-        category: 'activity',
-        description: 'Guided tour covering West Bay, Corniche, and city highlights'
-      },
-      {
-        id: 'gp-inc-8',
-        title: 'National Museum of Qatar',
-        category: 'activity',
-        description: 'Exploration of Jean Nouvel’s desert rose masterpiece'
-      },
-      {
-        id: 'gp-inc-9',
-        title: 'Return Airport Transfers',
-        category: 'transfer',
-        description: 'Private airport arrival and departure transfers from Doha airport'
-      }
+      { id: 'gp-inc-1', title: '6 Nights at a 5-Star Hotel', category: 'accommodation', description: 'Luxury five-star hotel stay in central Doha with daily breakfast' },
+      { id: 'gp-inc-2', title: '3-Day Formula 1 Race Experience', category: 'activity', description: 'Admission to the three-day Formula 1 Grand Prix weekend' },
+      { id: 'gp-inc-3', title: 'Return International Flights & Qatar Visa', category: 'flight', description: 'Return flight arrangements and Qatar tourist visa processing' },
+      { id: 'gp-inc-4', title: 'Desert Safari with Inland Sea Excursion', category: 'activity', description: 'Off-road 4x4 desert adventure to Khor Al Adaid' },
+      { id: 'gp-inc-5', title: 'Doha City Tour & National Museum of Qatar', category: 'activity', description: 'Guided tour covering West Bay, Corniche, and National Museum of Qatar' },
+      { id: 'gp-inc-6', title: 'Return Airport Transfers', category: 'transfer', description: 'Private airport arrival and departure transfers from Doha airport' }
+    ]
+  },
+
+  /* ==========================================================================
+     GLOBAL LUXURY EDITIONS (CURATED MULTI-DESTINATION & SIGNATURE ESCAPES)
+     ========================================================================== */
+  'singapore-bali': {
+    id: 'singapore-bali',
+    edition: 'EDITION 05 · ASIA DUAL ESCAPE',
+    category: 'global',
+    title: 'Singapore + Bali',
+    subtitle: 'Futuristic Gardens & Tropical Cliffside Sanctuaries',
+    tagline: 'Marina Bay sophistication paired with Ubud & Uluwatu serenity',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 7,
+    durationLabel: '7 Nights',
+    destinationBreakdown: '3 Nights in Singapore · 4 Nights in Bali',
+    transferBasis: 'Private Airport Transfers & Curated Tours',
+    pricing: {
+      standardFormatted: '₦4,650,000',
+      standardNumeric: 4650000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/bali-ubud.jpg',
+    heroImageAlt: 'Luxury infinity pool in Ubud Bali overlooking emerald rice terraces and ocean',
+    overviewDescription: 'Experience Singapore’s iconic Marina Bay, Gardens by the Bay, and Sentosa Island before flying to Bali for five-star cliffside resorts, sacred temples, and private beach clubs.',
+    magazineHighlights: [
+      'Return International & Regional Flights Included',
+      '5-Star Hotels & Luxury Pool Villa in Singapore & Bali',
+      'Singapore Visa & Indonesia Arrival Formalities',
+      'Gardens by the Bay, Marina Bay SkyPark & Sentosa Tour',
+      'Ubud Rice Terraces, Kintamani & Uluwatu Sunset Experience',
+      'Private Airport Pick-up & Drop-off Transfers'
+    ],
+    inclusions: [
+      { id: 'sb-1', title: '5-Star Accommodation in Singapore & Bali', category: 'accommodation', description: 'Luxury city hotel in Singapore and 5-star resort/villa in Bali with daily breakfast' },
+      { id: 'sb-2', title: 'Return International & Inter-Asian Flights', category: 'flight', description: 'Complete flight routing between Nigeria, Singapore, and Bali' },
+      { id: 'sb-3', title: 'Singapore Visa & Entry Processing', category: 'visa', description: 'Visa assistance for Singapore and Bali entry requirements' },
+      { id: 'sb-4', title: 'Curated City & Island Excursions + Transfers', category: 'activity', description: 'Guided tours in Singapore and Bali with private airport transfers' }
+    ]
+  },
+
+  'bali-doha': {
+    id: 'bali-doha',
+    edition: 'EDITION 06 · ISLAND & ARABIA',
+    category: 'global',
+    title: 'Bali + Doha',
+    subtitle: 'Tropical Island Zen & Arabian Architectural Grandeur',
+    tagline: 'From Ubud jungle infinity pools to the shimmering Doha Corniche',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 7,
+    durationLabel: '7 Nights',
+    destinationBreakdown: '4 Nights in Bali · 3 Nights in Doha',
+    transferBasis: 'Private Airport Transfers & Guided Excursions',
+    pricing: {
+      standardFormatted: '₦4,450,000',
+      standardNumeric: 4450000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/doha-villaggio.jpg',
+    heroImageAlt: 'Venetian indoor canal and gondola in Doha',
+    overviewDescription: 'Unwind in Bali’s tropical rainforests and coastal beach clubs before enjoying a luxury stopover in Doha with desert safaris, museum tours, and Souq Waqif dining.',
+    magazineHighlights: [
+      'Return Flights with Qatar Airways',
+      '4 Nights 5-Star Bali Resort + 3 Nights 5-Star Doha Hotel',
+      'Qatar Visa & Bali Entry Assistance',
+      'Ubud, Nusa Dua Coastal Leisure & Temple Tours',
+      'Doha City Tour, National Museum & Desert Safari',
+      'Private Return Airport Transfers'
+    ],
+    inclusions: [
+      { id: 'bd-1', title: '5-Star Bali & Doha Accommodations', category: 'accommodation', description: 'Four nights in Bali and three nights in Doha with daily breakfast' },
+      { id: 'bd-2', title: 'Return Flights & Visa Processing', category: 'flight', description: 'International flights and Qatar/Indonesia visa support' },
+      { id: 'bd-3', title: 'Guided Excursions & Private Transfers', category: 'activity', description: 'Signature tours and airport transfers in both Bali and Doha' }
+    ]
+  },
+
+  'doha-singapore': {
+    id: 'doha-singapore',
+    edition: 'EDITION 07 · TWO ULTRAMODERN SKYLINES',
+    category: 'global',
+    title: 'Doha + Singapore',
+    subtitle: 'Architectural Icons of the Gulf & Southeast Asia',
+    tagline: 'West Bay & Lusail paired with Marina Bay & Gardens by the Bay',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 7,
+    durationLabel: '7 Nights',
+    destinationBreakdown: '3 Nights in Doha · 4 Nights in Singapore',
+    transferBasis: 'Private Airport Transfers & Guided City Tours',
+    pricing: {
+      standardFormatted: '₦4,500,000',
+      standardNumeric: 4500000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/singapore-bay.jpg',
+    heroImageAlt: 'Singapore Marina Bay Sands and Supertree Grove at twilight',
+    overviewDescription: 'A cosmopolitan dual-city escape uniting two of the world’s safest, most futuristic capitals—featuring world-class shopping, Michelin-starred dining, and iconic architecture.',
+    magazineHighlights: [
+      'Return Flights + Qatar & Singapore Visas Included',
+      '5-Star Luxury Hotels in Doha & Singapore with Breakfast',
+      'Doha City Tour, National Museum, Villaggio & Desert Safari',
+      'Singapore Marina Bay, Gardens by the Bay & Sentosa Island',
+      'Private Chauffeur Airport Transfers in Both Cities'
+    ],
+    inclusions: [
+      { id: 'ds-1', title: '5-Star City Hotels in Doha & Singapore', category: 'accommodation', description: 'Luxury accommodations with daily breakfast' },
+      { id: 'ds-2', title: 'Return Flights & Dual Visas', category: 'visa', description: 'International flights plus Qatar and Singapore tourist visas' },
+      { id: 'ds-3', title: 'City Tours, Desert Safari & Private Transfers', category: 'activity', description: 'Curated excursions and private airport pick-up/drop-off' }
+    ]
+  },
+
+  'egypt-doha': {
+    id: 'egypt-doha',
+    edition: 'EDITION 08 · ANTIQUITY & MODERNITY',
+    category: 'global',
+    title: 'Egypt + Doha',
+    subtitle: 'Pharaonic Wonders of Cairo & Modern Arabian Luxury',
+    tagline: 'The Great Pyramids of Giza & the glittering skyline of Qatar',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 7,
+    durationLabel: '7 Nights',
+    destinationBreakdown: '4 Nights in Egypt · 3 Nights in Doha',
+    transferBasis: 'Private Guided Tours & Airport Transfers',
+    pricing: {
+      standardFormatted: '₦3,750,000',
+      standardNumeric: 3750000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/egypt-pyramids.jpg',
+    heroImageAlt: 'Great Pyramids of Giza viewed across the blue Nile with felucca sailboat',
+    overviewDescription: 'Walk among the Great Pyramids of Giza, the Sphinx, and the Grand Egyptian Museum before flying to Doha for five-star Arabian hospitality, souqs, and desert dunes.',
+    magazineHighlights: [
+      'Return Flights + Egypt & Qatar Visas Included',
+      '5-Star Cairo Nile-View Hotel & 5-Star Doha Hotel',
+      'Pyramids of Giza, Sphinx & Grand Egyptian Museum Tour',
+      'Luxury Nile Dinner Cruise in Cairo',
+      'Doha City Tour, Villaggio Gondola & Desert Safari',
+      'All Private Airport Transfers & Egyptologist Guide'
+    ],
+    inclusions: [
+      { id: 'ed-1', title: '5-Star Hotels in Cairo & Doha', category: 'accommodation', description: 'Luxury accommodations with daily breakfast' },
+      { id: 'ed-2', title: 'Return Flights + Egypt & Qatar Visas', category: 'visa', description: 'Flights and complete visa assistance for Egypt and Qatar' },
+      { id: 'ed-3', title: 'Pyramids, Nile Cruise & Doha Excursions', category: 'activity', description: 'Guided tours, entrance fees, and private airport transfers' }
+    ]
+  },
+
+  'egypt': {
+    id: 'egypt',
+    edition: 'EDITION 09 · IMPERIAL NILE & CAIRO',
+    category: 'global',
+    title: 'Egypt Signature Escape',
+    subtitle: 'Timeless Wonders of Cairo, Giza & The Nile',
+    tagline: 'Five-star immersion into seven thousand years of history',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 6,
+    durationLabel: '6 Nights',
+    destinationBreakdown: '6 Nights in Cairo & Red Sea / Nile Luxury',
+    transferBasis: 'Private Chauffeur & Certified Egyptologist Guide',
+    pricing: {
+      standardFormatted: '₦3,100,000',
+      standardNumeric: 3100000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/egypt-pyramids.jpg',
+    heroImageAlt: 'Great Pyramids of Giza and the Nile River at sunset',
+    overviewDescription: 'Discover the Great Pyramids of Giza, the Sphinx, the Grand Egyptian Museum, historic Khan el-Khalili bazaar, and a private Nile felucca & dinner cruise in 5-star comfort.',
+    magazineHighlights: [
+      'Return International Flights & Egypt Tourist Visa',
+      '6 Nights 5-Star Luxury Accommodation with Daily Breakfast',
+      'Private Guided Tour of Giza Pyramids, Sphinx & Saqqara',
+      'Grand Egyptian Museum & Citadel of Saladin',
+      'VIP Nile Evening Dinner Cruise & Traditional Entertainment',
+      'Private Airport Pick-up & Drop-off Transfers'
+    ],
+    inclusions: [
+      { id: 'eg-1', title: '6 Nights 5-Star Hotel in Egypt', category: 'accommodation', description: 'Five-star hotel stay inclusive of daily breakfast' },
+      { id: 'eg-2', title: 'Return Flights & Egypt Visa', category: 'visa', description: 'International return flights and Egypt visa processing' },
+      { id: 'eg-3', title: 'Private Egyptologist Tours & Transfers', category: 'activity', description: 'All monument entrance fees, Nile dinner cruise, and private transfers' }
+    ]
+  },
+
+  'doha-seychelles': {
+    id: 'doha-seychelles',
+    edition: 'EDITION 10 · GULF & PRIVATE ISLAND',
+    category: 'global',
+    title: 'Doha + Seychelles',
+    subtitle: 'Arabian Sophistication & Indian Ocean Granite Atolls',
+    tagline: 'Qatar Airways luxury paired with Mahé & Praslin island paradise',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 7,
+    durationLabel: '7 Nights',
+    destinationBreakdown: '3 Nights in Doha · 4 Nights in Seychelles',
+    transferBasis: 'Private Island & Airport Transfers Included',
+    pricing: {
+      standardFormatted: '₦4,850,000',
+      standardNumeric: 4850000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/zanzibar-mnemba.jpg',
+    heroImageAlt: 'Turquoise coral lagoon and white sandbank in the Indian Ocean',
+    overviewDescription: 'Pair three vibrant nights in Doha with four idyllic nights in the Seychelles—home to powder-white beaches, sculpted granite boulders, and crystal-clear marine parks.',
+    magazineHighlights: [
+      'Return Flights with Qatar Airways',
+      '5-Star Doha Hotel + 5-Star Seychelles Beachfront Resort',
+      'Qatar Tourist Visa & Seychelles Travel Authorization',
+      'Doha City Tour, National Museum & Desert Safari',
+      'Mahé Island Tour, Sainte Anne Marine Park & Reef Snorkeling',
+      'Private Return Airport Transfers'
+    ],
+    inclusions: [
+      { id: 'dsey-1', title: '5-Star Doha & Seychelles Resorts', category: 'accommodation', description: 'Luxury stays in Doha and Seychelles with daily breakfast' },
+      { id: 'dsey-2', title: 'Return Qatar Airways Flights & Visas', category: 'flight', description: 'International flights and travel authorization processing' },
+      { id: 'dsey-3', title: 'Marine Park Cruise, Doha Safari & Transfers', category: 'activity', description: 'Guided excursions and private airport transfers in both destinations' }
+    ]
+  },
+
+  'south-africa': {
+    id: 'south-africa',
+    edition: 'EDITION 11 · CAPE & WINELANDS',
+    category: 'global',
+    title: 'South Africa Odyssey',
+    subtitle: 'Cape Town, Table Mountain, Franschhoek & Coastal Luxury',
+    tagline: 'Where dramatic mountain peaks meet two oceans',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 6,
+    durationLabel: '6 Nights',
+    destinationBreakdown: '6 Nights in Cape Town & Cape Winelands',
+    transferBasis: 'Private Chauffeur Tours & Airport Transfers',
+    pricing: {
+      standardFormatted: '₦3,650,000',
+      standardNumeric: 3650000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/south-africa-cape.jpg',
+    heroImageAlt: 'Aerial view of Cape Town Table Mountain and Clifton white sand beaches',
+    overviewDescription: 'Experience the best of South Africa—ascend Table Mountain by cableway, tour the Cape Peninsula & Boulders Beach penguins, savour Cape Winelands estates, and relax at V&A Waterfront.',
+    magazineHighlights: [
+      'Return International Flights & South Africa E-Visa Assistance',
+      '6 Nights 5-Star Hotel in Cape Town with Daily Breakfast',
+      'Table Mountain Aerial Cableway & Cape Town City Tour',
+      'Cape Point, Chapman’s Peak & Boulders Beach Penguins',
+      'Stellenbosch & Franschhoek Luxury Winelands Tram Experience',
+      'Private Airport Pick-up & Drop-off Transfers'
+    ],
+    inclusions: [
+      { id: 'sa-1', title: '6 Nights 5-Star Cape Town Accommodation', category: 'accommodation', description: 'Five-star hotel stay with daily breakfast' },
+      { id: 'sa-2', title: 'Return Flights & Visa Support', category: 'flight', description: 'Return flights and South African visa processing assistance' },
+      { id: 'sa-3', title: 'Table Mountain, Peninsula & Winelands Tours', category: 'activity', description: 'All curated excursions, entrance tickets, and private transfers' }
+    ]
+  },
+
+  'casablanca-marrakech': {
+    id: 'casablanca-marrakech',
+    edition: 'EDITION 12 · MOROCCAN ROYAL CITIES',
+    category: 'global',
+    title: 'Casablanca + Marrakech',
+    subtitle: 'Imperial Palaces, Majorelle Gardens & Atlas Foothills',
+    tagline: 'Andalusian architecture, luxury riads, and Agafay desert evenings',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 6,
+    durationLabel: '6 Nights',
+    destinationBreakdown: '2 Nights in Casablanca · 4 Nights in Marrakech',
+    transferBasis: 'Private Intercity Chauffeur & Guided Tours',
+    pricing: {
+      standardFormatted: '₦3,550,000',
+      standardNumeric: 3550000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/marrakech-riad.jpg',
+    heroImageAlt: 'Luxury Moroccan riad courtyard in Marrakech with turquoise pool and lanterns',
+    overviewDescription: 'From Casablanca’s monumental Hassan II Mosque over the Atlantic to Marrakech’s serene luxury riads, Jardin Majorelle, Bahia Palace, and starlit Agafay desert camps.',
+    magazineHighlights: [
+      'Return International Flights & Morocco Visa / E-Visa Included',
+      '5-Star Casablanca Hotel & Luxury Marrakech Resort/Riad',
+      'Hassan II Mosque & Casablanca Corniche Guided Tour',
+      'Jardin Majorelle, YSL Museum, Bahia Palace & Medina Souks',
+      'Agafay Luxury Desert Sunset Dinner, Quad & Camel Experience',
+      'Private Intercity Transfers & Airport Pick-up/Drop-off'
+    ],
+    inclusions: [
+      { id: 'cm-1', title: '5-Star Hotels in Casablanca & Marrakech', category: 'accommodation', description: 'Luxury stays with daily breakfast and Agafay dinner' },
+      { id: 'cm-2', title: 'Return Flights & Morocco Visa', category: 'visa', description: 'Return flights and Moroccan visa processing' },
+      { id: 'cm-3', title: 'Imperial Tours, Agafay Desert & Private Transfers', category: 'activity', description: 'Private guided excursions, monument entries, and chauffeur transfers' }
+    ]
+  },
+
+  'dubai': {
+    id: 'dubai',
+    edition: 'EDITION 13 · EMIRATES LUXURY',
+    category: 'global',
+    title: 'Dubai Signature Escape',
+    subtitle: 'Iconic Skylines, Private Yachting & Arabian Desert Reserve',
+    tagline: 'Five-star indulgence in the city of superlatives',
+    dates: '2026 Flexible Luxury Departures',
+    durationNights: 6,
+    durationLabel: '6 Nights',
+    destinationBreakdown: '6 Nights in Downtown Dubai / Dubai Marina',
+    transferBasis: 'Private Chauffeur Airport & Excursion Transfers',
+    pricing: {
+      standardFormatted: '₦3,350,000',
+      standardNumeric: 3350000,
+      occupancyTerms: 'per person sharing'
+    },
+    heroImage: './assets/images/dubai-marina.jpg',
+    heroImageAlt: 'Dubai Marina and Burj Khalifa at twilight with luxury yacht',
+    overviewDescription: 'Experience Dubai at its finest—Burj Khalifa Sky views, Museum of the Future, a sunset Marina yacht cruise, and a private desert conservation safari.',
+    magazineHighlights: [
+      'Return International Flights & UAE Tourist Visa Assistance',
+      '6 Nights 5-Star Hotel in Dubai with Daily Breakfast',
+      'Burj Khalifa At The Top & Museum of the Future Tickets',
+      ' Dubai Marina Sunset Luxury Yacht Cruise',
+      'Premium Desert Safari with Dune Drive & Gourmet Camp Dinner',
+      'Private Chauffeur Airport Pick-up & Drop-off'
+    ],
+    inclusions: [
+      { id: 'db-1', title: '6 Nights 5-Star Dubai Hotel', category: 'accommodation', description: 'Luxury hotel stay in Dubai with daily breakfast' },
+      { id: 'db-2', title: 'Return Flights & UAE Visa Support', category: 'flight', description: 'International return flights and UAE tourist visa assistance' },
+      { id: 'db-3', title: 'Burj Khalifa, Yacht Cruise & Desert Safari', category: 'activity', description: 'Curated signature experiences and private airport transfers' }
     ]
   }
 };
@@ -315,80 +572,70 @@ const packagesData = {
 const trustHighlights = [
   {
     title: 'Accommodation & Travel Arrangements',
-    description: 'Five-star hotel accommodations and verified return flights with reputable airlines, coordinated from start to finish.'
+    description: 'Five-star hotel accommodations (including JAZ Elite Aurora in Zanzibar) and verified return flights, coordinated from start to finish.'
   },
   {
-    title: 'Visa Assistance & Preparation',
-    description: 'Direct support and document guidance for Qatar tourist visas and Tanzania/Zanzibar visitor entry requirements.'
+    title: 'Visa & Insurance Assistance',
+    description: 'Direct support for Qatar, Tanzania, Kenya, Egypt, Singapore, Morocco, and South Africa visas plus mandatory travel insurance.'
   },
   {
-    title: 'Dedicated Airport Transfers',
-    description: 'Scheduled airport pick-up and drop-off in air-conditioned private vehicles upon your arrival and departure.'
+    title: 'Private (PVT) Airport & Ground Transfers',
+    description: 'Exclusive private airport pick-up, drop-off, and intercity transfers in air-conditioned luxury vehicles.'
   },
   {
     title: 'Curated Guided Experiences',
-    description: 'Planned excursions with verified guides and pre-arranged entrance fees so your time on the ground is seamless.'
+    description: 'Planned excursions with verified guides and pre-arranged entrance fees—from Mnemba Atoll to Nairobi National Park and Lusail F1.'
   }
 ];
 
 const bookingSteps = [
   {
     step: '01',
-    title: 'Choose Your Experience',
-    description: 'Select between the dual-destination Doha + Zanzibar holiday or the Doha Formula 1 Grand Prix experience.'
+    title: 'Choose Your Edition',
+    description: 'Select from our flagship dual-destination escapes (Doha + Zanzibar, Zanzibar + Nairobi, Doha + Nairobi, Doha F1) or our Global Collection.'
   },
   {
     step: '02',
-    title: 'Speak with Rhordway',
-    description: 'Connect directly with our travel advisory team on WhatsApp to confirm real-time room availability, travel dates, and exact booking terms.'
+    title: 'Enter Guest Details',
+    description: 'Fill in your travel party size and preferences to calculate your estimated reservation total and generate your PDF dossier.'
   },
   {
     step: '03',
-    title: 'Review & Confirm',
-    description: 'Review your complete itinerary summary and proceed through verified booking and payment instructions provided by Rhordway.'
+    title: 'Download PDF & Confirm on WhatsApp',
+    description: 'Your official PDF dossier downloads automatically while opening a direct WhatsApp chat with your Rhordway consultant (+234 816 420 6030).'
   }
 ];
 
 const faqList = [
   {
     id: 'faq-1',
-    question: 'What is included in the package price?',
-    answer: 'Each Rhordway package is comprehensive. For Doha + Zanzibar, the package covers 5-star accommodation, return Qatar Airways flights, daily breakfast in Doha, all-inclusive resort amenities in Zanzibar, tourist visas (Qatar & Tanzania), Zanzibar mandatory insurance, guided tours, airport transfers, and entrance fees. For the Doha Grand Prix, it covers 6 nights in a 5-star hotel, return flights, 3-day F1 race pass, daily breakfast, Qatar visa, desert safari to the inland sea, city tour, museum entry, and airport transfers.'
+    question: 'What is included in the new Zanzibar + Nairobi and Doha + Nairobi packages?',
+    answer: 'Zanzibar + Nairobi (6 Nights: 3N Zanzibar, 3N Nairobi) includes return flights, Tanzania visa, 5-star all-inclusive stay at JAZ Elite Aurora in Zanzibar, Zanzibar & Kenya insurance, Mnemba Island dolphin swim & snorkeling, Stone Town, Aquarium turtles, Le Saint Tropez, Kendwa Beach kayaking, plus 3 nights in Nairobi with breakfast, Nairobi City Tour (National Museum & Museum of Illusion), Nairobi National Park game drive, Sheldrick Elephant Orphanage, Giraffe Centre, and Sironka Valley day tour (Zip-lining & Go-Kart or Sky Biking)—all on a Private (PVT) basis. Doha + Nairobi (7 Nights: 4N Doha, 3N Nairobi, ₦3,600,000 per person sharing, min. 2 people) pairs the full Doha experience (Qatar visa, city tour, National Museum, Villaggio Gondola, Desert Safari) with the complete 3-night private Nairobi itinerary.'
   },
   {
     id: 'faq-2',
-    question: 'What does "per person sharing" mean?',
-    answer: 'Per person sharing means the advertised price applies to one individual travelling with a companion and sharing a double or twin occupancy hotel room. If travelling solo, a single occupancy rate applies.'
+    question: 'What does "All Tours & Transfers on PVT basis" mean?',
+    answer: 'PVT (Private) basis means your airport pick-ups, drop-offs, and scheduled sightseeing excursions are conducted exclusively for your travel party in a private vehicle rather than a large shared coach.'
   },
   {
     id: 'faq-3',
-    question: 'What is the difference between single and double occupancy?',
-    answer: 'For the Doha Grand Prix package, double occupancy (₦3,400,000 per person) applies when two guests share one hotel room. Single occupancy (₦4,150,000 per person) provides a private room exclusively for one guest throughout the six-night stay.'
+    question: 'What does "per person sharing" mean?',
+    answer: 'Per person sharing means the advertised rate applies to one individual travelling with a companion and sharing a double or twin occupancy 5-star hotel room. Minimum of 2 travellers applies to shared dual-destination packages.'
   },
   {
     id: 'faq-4',
-    question: 'Are international flights and airport transfers included?',
-    answer: 'Yes. Return flights are included in both packages (featuring Qatar Airways on the Doha + Zanzibar itinerary). Scheduled airport arrival and departure transfers between the international airports and your hotels are also provided.'
+    question: 'Can I book destinations from the Global Collection (Singapore + Bali, Egypt, Morocco, South Africa, Seychelles, Dubai)?',
+    answer: 'Yes! Simply click "Reserve This Escape" on any featured or global package card. It will automatically select that package in the Official Reservation Collation form below so you can generate your bespoke PDF dossier and send it directly to our travel desk on WhatsApp.'
   },
   {
     id: 'faq-5',
-    question: 'Are entry visas included?',
-    answer: 'Yes. Both packages include tourist visa processing assistance (Qatar visa for both packages, plus the Tanzania tourist visa and mandatory Zanzibar insurance for the dual-destination package). Please ensure your international passport has at least six months validity from the travel date.'
+    question: 'Are international flights, visas, and travel insurance included?',
+    answer: 'Yes. Our packages include return flight tickets, destination visa processing (Qatar, Tanzania, Egypt, Singapore, Morocco, etc.), and mandatory travel insurance (including Zanzibar and Kenya insurance where applicable).'
   },
   {
     id: 'faq-6',
-    question: 'How do I reserve a spot?',
-    answer: 'Because availability is strictly limited for both departure dates (November 25 and December 12, 2026), reservations are made by contacting the Rhordway team via WhatsApp. Our consultants will verify cabin and hotel availability and guide you through the reservation process.'
-  },
-  {
-    id: 'faq-7',
-    question: 'What are the payment and cancellation terms?',
-    answer: 'Payment schedules, instalment milestones, and cancellation guidelines will be confirmed directly by the Rhordway team during your enquiry, in alignment with airline ticket ticketing rules and luxury hotel partner terms.'
-  },
-  {
-    id: 'faq-8',
-    question: 'How do I receive the full day-by-day itinerary?',
-    answer: 'A comprehensive, hour-by-hour travel brief detailing flight schedules, transfer times, resort check-in, and activity meeting points will be delivered directly to you by your Rhordway travel consultant upon booking confirmation.'
+    question: 'How do I confirm my reservation?',
+    answer: 'Complete the 3-step Reservation Collation form on this page. Your official PDF Reservation Dossier will download immediately to your device and you will be connected directly with our consultant on WhatsApp (+234 816 420 6030) to finalize dates and payment.'
   }
 ];
 
@@ -754,28 +1001,71 @@ function openPrintableVoucher(data) {
 
 function renderSiteHeader() {
   return `
-    <header class="ref-header" id="siteHeader">
-      <div class="ref-header-container">
-        <a href="#" class="ref-brand-logo" aria-label="${siteConfig.brandName} Home">
-          <span class="ref-brand-name">Rhordway<span class="ref-brand-dot">.</span></span>
+    <header class="ref-header mw-white-header" id="siteHeader">
+      <div class="ref-header-container mw-header-inner">
+        <a 
+          href="#home" 
+          class="ref-brand-logo mw-brand-logo" 
+          aria-label="${siteConfig.brandName} Home"
+          onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home')"
+        >
+          <img 
+            src="./assets/images/rhordway-logo-dark.png" 
+            alt="${siteConfig.brandName}" 
+            class="rhordway-brand-logo-img"
+            width="150"
+            height="28"
+          />
         </a>
 
-        <nav class="ref-nav-links" aria-label="Main Navigation">
-          <a href="#" class="ref-nav-link active">Home</a>
-          <a href="#hot-deals" class="ref-nav-link">Packages</a>
-          <a href="#top-destinations" class="ref-nav-link">Destinations</a>
-          <a href="#responsibilities" class="ref-nav-link">Why Us</a>
-          <a href="#booking-collation" class="ref-nav-link ref-nav-highlight">Reservation</a>
+        <nav class="ref-nav-links mw-nav-links" aria-label="Main Navigation">
+          <a 
+            href="#home" 
+            class="ref-nav-link mw-nav-link active" 
+            data-page-nav="home"
+            onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home')"
+          >
+            Home
+          </a>
+          <a 
+            href="#about" 
+            class="ref-nav-link mw-nav-link" 
+            data-page-nav="about"
+            onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('about')"
+          >
+            About
+          </a>
+          <a 
+            href="#migration-services" 
+            class="ref-nav-link mw-nav-link" 
+            data-page-nav="migration-services"
+            onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('migration-services')"
+          >
+            Migration Services
+          </a>
+          <a 
+            href="#holidays" 
+            class="ref-nav-link mw-nav-link" 
+            data-page-nav="holidays"
+            onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('holidays')"
+          >
+            Holidays
+          </a>
         </nav>
 
-        <div class="ref-header-actions">
-          <a href="#booking-collation" class="ref-header-cta-btn">
-            Book Trip
+        <div class="ref-header-actions mw-header-actions">
+          <a 
+            href="#booking-collation" 
+            class="mw-black-pill-btn"
+            style="letter-spacing: 0.05em; font-size: 0.78rem; padding: 12px 24px;"
+            onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+          >
+            BOOK CONSULTATION
           </a>
 
           <button 
             type="button" 
-            class="menu-toggle-btn" 
+            class="menu-toggle-btn mw-menu-toggle" 
             id="menuToggleBtn" 
             aria-label="Toggle navigation menu" 
             aria-expanded="false" 
@@ -795,28 +1085,67 @@ function renderMobileNavigation() {
   return `
     <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
       <div style="display:flex; justify-content:space-between; align-items:center;">
-        <a href="#" class="ref-brand-logo" onclick="window.rhordwayApp.closeMobileMenu()">
-          <span class="ref-brand-name" style="color:var(--brand-dark);">Rhordway<span class="ref-brand-dot">.</span></span>
+        <a 
+          href="#home" 
+          class="ref-brand-logo mw-brand-logo" 
+          aria-label="${siteConfig.brandName} Home"
+          onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home'); window.rhordwayApp.closeMobileMenu()"
+        >
+          <img 
+            src="./assets/images/rhordway-logo-dark.png" 
+            alt="${siteConfig.brandName}" 
+            class="rhordway-brand-logo-img"
+            width="140"
+            height="26"
+          />
         </a>
         <button type="button" class="modal-close-btn" id="mobileNavCloseBtn" aria-label="Close menu">&times;</button>
       </div>
 
       <nav class="mobile-nav-links" aria-label="Mobile Navigation">
-        <a href="#" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Home</a>
-        <a href="#hot-deals" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Holiday Packages</a>
-        <a href="#top-destinations" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Destinations</a>
-        <a href="#responsibilities" class="mobile-nav-link" onclick="window.rhordwayApp.closeMobileMenu()">Why Rhordway</a>
-        <a href="#booking-collation" class="mobile-nav-link" style="color:var(--brand-primary); font-weight:700;" onclick="window.rhordwayApp.closeMobileMenu()">Official Reservation</a>
+        <a 
+          href="#home" 
+          class="mobile-nav-link active" 
+          data-page-nav="home"
+          onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home'); window.rhordwayApp.closeMobileMenu()"
+        >
+          Home
+        </a>
+        <a 
+          href="#about" 
+          class="mobile-nav-link" 
+          data-page-nav="about"
+          onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('about'); window.rhordwayApp.closeMobileMenu()"
+        >
+          About
+        </a>
+        <a 
+          href="#migration-services" 
+          class="mobile-nav-link" 
+          data-page-nav="migration-services"
+          onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('migration-services'); window.rhordwayApp.closeMobileMenu()"
+        >
+          Migration Services
+        </a>
+        <a 
+          href="#holidays" 
+          class="mobile-nav-link" 
+          data-page-nav="holidays"
+          onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('holidays'); window.rhordwayApp.closeMobileMenu()"
+        >
+          Holidays
+        </a>
       </nav>
 
       <div style="margin-top:auto; padding-top:24px;">
         <a 
           href="#booking-collation" 
-          class="ref-hero-discover-btn ref-btn-primary" 
-          style="display:flex; text-align:center; padding:15px; width:100%; justify-content:center;" 
-          onclick="window.rhordwayApp.closeMobileMenu();"
+          class="mw-action-group" 
+          style="width:100%; justify-content:center;" 
+          onclick="event.preventDefault(); window.rhordwayApp.closeMobileMenu(); window.rhordwayApp.scrollToConsultation();"
         >
-          Book Your Trip
+          <span class="mw-action-pill" style="flex:1; justify-content:center;">Book Consultation</span>
+          <span class="mw-action-circle" aria-hidden="true">↗</span>
         </a>
       </div>
     </div>
@@ -827,81 +1156,116 @@ function renderMobileNavigation() {
   /* --- CampaignHero.js --- */
 function renderCampaignHero() {
   return `
-    <section class="ref-hero-section" id="hero">
-      <div class="ref-hero-bg-wrap">
+    <section class="mw-hero-section" id="hero">
+      
+      <!-- 1. Full-Screen Cinematic Hero (Centered: headline top · image breathes in middle · CTA bottom) -->
+      <div class="mw-hero-frame mw-hero-centered">
         <img 
-          src="./assets/images/hero-reference-bridge.jpg" 
-          alt="Pont Alexandre III bridge illuminated at twilight with golden lamps" 
-          class="ref-hero-bg-img"
+          src="./assets/images/hero-rhordway-runway.jpg" 
+          alt="A traveller watching a plane take off at dawn — Rhordway makes travel processing simple and stress-free" 
+          class="mw-hero-img"
           fetchpriority="high"
         />
-        <div class="ref-hero-scrim"></div>
-      </div>
+        <div class="mw-hero-scrim"></div>
 
-      <div class="ref-hero-container">
-        <div class="ref-hero-grid">
-          
-          <!-- Left Column: Display Typography & CTA -->
-          <div class="ref-hero-content">
-            <span class="ref-hero-eyebrow anim-reveal-text">✦ CURATED ESCAPES · 2026</span>
+        <div class="mw-hero-inner mw-container mw-hero-centered-inner">
+          <!-- Top: Two-tone headline -->
+          <h1 class="mw-hero-title mw-hero-title-centered">
+            Travel processing, made simple.<br />
+            <span class="mw-hero-title-soft">The world, within reach.</span>
+          </h1>
 
-            <h1 class="ref-hero-title anim-reveal-text anim-delay-1">
-              Explore Extraordinary Worlds With Us
-            </h1>
-
-            <p class="ref-hero-subtitle anim-reveal-text anim-delay-2">
-              Handcrafted luxury journeys to Doha, Zanzibar, and the Formula 1 Grand Prix with 5-star comfort and personal concierge care.
+          <!-- Bottom: Blurb + single CTA + trust line -->
+          <div class="mw-hero-bottom-stack">
+            <p class="mw-hero-blurb mw-hero-blurb-centered">
+              Student visas, global migration, travel visas, passports and flights — handled end to end by one dedicated team.
+              <span class="mw-hero-blurb-soft">Every application is prepared with care, so you can focus on the journey.</span>
             </p>
 
-            <div class="ref-hero-btn-row anim-reveal-text anim-delay-3">
-              <a href="#hot-deals" class="ref-hero-discover-btn ref-btn-primary">
-                <span>Explore Packages</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-outline">
-                <span>Plan My Escape</span>
-              </a>
+            <a 
+              href="#booking-collation" 
+              class="mw-action-group"
+              onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+            >
+              <span class="mw-action-pill" style="background:#FFFFFF; color:#0F1115;">Book a Consultation</span>
+              <span class="mw-action-circle" style="background:#FFFFFF; color:#0F1115;" aria-hidden="true">↗</span>
+            </a>
+
+            <p class="mw-hero-trust">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Embassy-ready documentation · UK · Canada · Schengen · USA
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Editorial Split Intro Section Below Hero -->
+      <div class="mw-container">
+        <div class="mw-explore-split">
+          
+          <!-- Left Text & Black Pill CTA Column -->
+          <div class="mw-explore-left anim-reveal-text">
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              Welcome to Rhordway
+            </span>
+
+            <h2 class="mw-split-heading">
+              <strong>Explore the world, one breathtaking destination at a time</strong>
+              <span class="mw-text-grey">— backed by expert migration, student visa, travel visa, and passport processing.</span>
+            </h2>
+
+            <a 
+              href="#services" 
+              class="mw-action-group"
+            >
+              <span class="mw-action-pill">EXPLORE WHAT WE DO</span>
+              <span class="mw-action-circle" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <!-- Center Portrait Card: Student Visa & Study Abroad -->
+          <div 
+            class="mw-explore-card-portrait anim-reveal-text anim-delay-1" 
+            onclick="window.rhordwayApp.navigateToPage('migration-services')" 
+            style="cursor:pointer;"
+          >
+            <img 
+              src="./assets/images/singapore-bay.jpg" 
+              alt="Undergraduate & Postgraduate Student Visa Processing, Proof of Funds & SOP" 
+              loading="lazy" 
+            />
+            <div class="mw-card-subtle-scrim"></div>
+            <div class="mw-portrait-bottom">
+              <p class="mw-portrait-caption">
+                Student Visa, Proof of Funds<br />&amp; Statement of Purpose.
+              </p>
+              <span class="mw-white-circle-arrow" aria-hidden="true">↗</span>
             </div>
           </div>
 
-          <!-- Right Column: 3 Staggered Floating Cards (Exact Reference Style) -->
-          <div class="ref-hero-cards-cluster" aria-label="Featured Holiday Destinations">
-            <!-- Card 1: Large / Left (Doha Architectural Heritage) -->
-            <div class="ref-floating-card card-tall">
+          <!-- Right Landscape Card + Underneath Caption -->
+          <div 
+            class="mw-explore-card-landscape anim-reveal-text anim-delay-2" 
+            onclick="window.rhordwayApp.navigateToPage('migration-services')" 
+            style="cursor:pointer;"
+          >
+            <div class="mw-landscape-img-wrap">
               <img 
-                src="./assets/images/doha-museum.jpg" 
-                alt="Museum of Islamic Art illuminated at twilight" 
-                loading="eager"
+                src="./assets/images/doha-skyline.jpg" 
+                alt="Global Migration, Travel Visas, Passports, Flights & Travel Insurance" 
+                loading="lazy" 
               />
-              <div class="ref-card-glass-tag">Doha</div>
+              <span class="mw-top-right-pill">Migration · Visas · Passports</span>
             </div>
-
-            <!-- Card 2: Medium / Center (Zanzibar Turquoise Coast) -->
-            <div class="ref-floating-card card-mid">
-              <img 
-                src="./assets/images/zanzibar-beach.jpg" 
-                alt="Zanzibar white sand beach and dhow boat" 
-                loading="eager"
-              />
-              <div class="ref-card-glass-tag">Zanzibar</div>
-            </div>
-
-            <!-- Card 3: Compact / Right (Doha Formula 1 Grand Prix) -->
-            <div class="ref-floating-card card-compact">
-              <img 
-                src="./assets/images/doha-f1-grand-prix.jpg" 
-                alt="Formula 1 night race in Doha" 
-                loading="eager"
-              />
-              <div class="ref-card-glass-tag">Formula 1</div>
-            </div>
+            <p class="mw-landscape-under-text">
+              From UK, Canada, France, Germany &amp; Spain visas to passport renewals, flight booking, airport transfers, and travel insurance—every step is handled with precision.
+            </p>
           </div>
 
         </div>
       </div>
+
     </section>
   `;
 }
@@ -910,274 +1274,864 @@ function renderCampaignHero() {
   /* --- ExperienceSelector.js --- */
 
 
-function renderExperienceSelector() {
-  const pkgDZ = packagesData['doha-zanzibar'];
-  const pkgGP = packagesData['doha-grand-prix'];
+
+/**
+ * SHARED HELPER: 4-Panel Expandable Hugo Strip for Rhordway's Core Migration & Visa Services
+ * (Placed on the Home Page as requested!)
+ */
+function renderMigrationHugoStripSection() {
+  const servicePillars = [
+    {
+      id: 'pillar-student',
+      kicker: 'UK · CANADA · EUROPE · USA',
+      title: 'Student Visa & Study Abroad',
+      desc: 'Undergraduate & Postgraduate admissions, visa processing, Proof of Funds, Statement of Purpose (SOP), and expert course & institution selection.',
+      badgeTop: 'Edumigration Desk',
+      badgeMain: 'Admissions + Visa',
+      badgeSub: 'Proof of Funds & SOP Support',
+      foot: 'End-to-End Professional Support',
+      image: './assets/images/singapore-bay.jpg'
+    },
+    {
+      id: 'pillar-visa',
+      kicker: 'FRANCE · GERMANY · SPAIN · UK · CANADA · US',
+      title: 'Travel Visas & Global Migration',
+      desc: 'Tourist, business, family visit, and skilled migration visa processing with thorough embassy documentation and interview preparation.',
+      badgeTop: 'Embassy Advisory',
+      badgeMain: 'Global Visas',
+      badgeSub: 'Schengen · UK · US · Canada · UAE',
+      foot: 'Document Verification & Filing',
+      image: './assets/images/doha-skyline.jpg'
+    },
+    {
+      id: 'pillar-passport',
+      kicker: 'FAST-TRACK DOCUMENTATION',
+      title: 'Passports & Travel Insurance',
+      desc: 'Fresh Nigerian passport applications, renewals, data-capturing coordination, and embassy-compliant international medical & travel insurance.',
+      badgeTop: 'Travel Documents',
+      badgeMain: 'Passports',
+      badgeSub: 'Fresh Issue · Renewal · Insurance',
+      foot: 'Fast & Stress-Free Processing',
+      image: './assets/images/doha-museum.jpg'
+    },
+    {
+      id: 'pillar-flights',
+      kicker: 'GLOBAL AVIATION & GROUND MOBILITY',
+      title: 'Flight Booking, Hotel & Airport Transfers',
+      desc: 'International & domestic flight ticketing, verified hotel reservations, Hotel Transfers, and private Airport Transfers worldwide.',
+      badgeTop: 'Aviation & Stays',
+      badgeMain: 'Flights & PVT',
+      badgeSub: 'Airport Transfer & Hotel Transfer',
+      foot: '24/7 Arrival & Departure Support',
+      image: './assets/images/dubai-marina.jpg'
+    }
+  ];
 
   return `
-    <section class="ref-hot-deals-section" id="hot-deals">
-      <div class="ref-deals-wrapper">
-        
-        <!-- Section Header Bar -->
-        <div class="ref-deals-header">
-          <div class="ref-deals-title-box anim-reveal-text">
-            <h2 class="ref-section-heading">Featured Packages</h2>
-            <p class="ref-section-subheading">Handpicked luxury itineraries with all-inclusive 5-star experiences</p>
+    <section class="mw-packages-section" id="home-migration-strip" style="padding-top:24px; padding-bottom:56px;">
+      <div class="mw-container">
+        <div class="hugo-header-row anim-reveal-text">
+          <div class="hugo-header-left">
+            <span class="hugo-eyebrow">
+              <span class="mw-blue-dot"></span>
+              RHORDWAY MIGRATION &amp; VISA SERVICES
+            </span>
+            <h2 class="hugo-editorial-heading">
+              Expert Student Visas, Global Migration, Travel Visas, Passport Processing, Flights, Transfers &amp; Travel Insurance.
+            </h2>
           </div>
 
-          <div class="ref-nav-arrows-box" aria-label="Carousel navigation">
-            <button type="button" class="ref-arrow-circle" id="dealPrevBtn" aria-label="Previous deal">&larr;</button>
-            <button type="button" class="ref-arrow-circle" id="dealNextBtn" aria-label="Next deal">&rarr;</button>
+          <div class="hugo-header-controls">
+            <a 
+              href="#booking-collation" 
+              class="mw-action-group"
+              onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+            >
+              <span class="mw-action-pill">SPEAK WITH A SPECIALIST</span>
+              <span class="mw-action-circle" aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- 4 Hot Deals Cards (Reference Grid / Mobile Swipe Carousel) -->
-        <div class="ref-deals-grid" id="refDealsGrid">
+        <!-- Hugo 4-Panel Expandable Strip (Interactive on Hover & Click) -->
+        <div class="hugo-accordion-strip" id="hugoServiceStrip">
+          ${servicePillars.map((p, idx) => `
+            <article 
+              class="hugo-strip-card ${idx === 1 ? 'active' : ''}" 
+              data-pkg-id="${p.id}"
+              onclick="window.rhordwayApp.activateMagazinePanel('${p.id}')"
+              onmouseenter="if(window.innerWidth >= 960) window.rhordwayApp.activateMagazinePanel('${p.id}')"
+            >
+              <img src="${p.image}" alt="${p.title}" class="hugo-strip-img" loading="lazy" />
+              <div class="hugo-strip-scrim"></div>
+              <div class="hugo-strip-content">
+                <div class="hugo-strip-left">
+                  <span class="hugo-strip-mini-ico" aria-hidden="true">✦</span>
+                  <span class="hugo-strip-kicker">${p.kicker}</span>
+                  <h3 class="hugo-strip-title">${p.title}</h3>
+                  <p class="hugo-strip-desc">${p.desc}</p>
+                </div>
+                <div class="hugo-glass-widget">
+                  <span class="hugo-widget-top">${p.badgeTop}</span>
+                  <div class="hugo-widget-arc">
+                    <span class="hugo-widget-big">${p.badgeMain}</span>
+                    <span class="hugo-widget-sub">${p.badgeSub}</span>
+                  </div>
+                  <p class="hugo-widget-foot">${p.foot}</p>
+                </div>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/**
+ * 1. HOME PAGE CONTENT:
+ *    - A) Rhordway Migration & Visa Services 4-Panel Strip (moved to Home!)
+ *    - B) "What We Do" Sticky Left Intro + Sticky-Stacking Right Services (01 - 06)
+ *    - C) Core Processing Divisions Spotlight (TEXTS LEFT · IMAGE RIGHT as requested!)
+ */
+function renderExperienceSelector() {
+  return `
+    <!-- ====================================================================
+         SECTION A: RHORDWAY MIGRATION & VISA SERVICES (4-PANEL HUGO STRIP IN HOME)
+         ==================================================================== -->
+    ${renderMigrationHugoStripSection()}
+
+    <!-- ====================================================================
+         SECTION B: "WHAT WE DO" — STICKY LEFT INTRO + STICKY-STACKING RIGHT SERVICES
+         ==================================================================== -->
+    <section class="mw-services-section" id="services">
+      <div class="mw-container">
+        <div class="mw-services-grid">
           
-          <!-- Deal 1: Doha + Zanzibar -->
-          <article class="ref-deal-card anim-reveal-text anim-delay-1">
-            <div class="ref-deal-img-box">
+          <!-- Left Sticky Editorial Column -->
+          <div class="mw-services-left">
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              What We Do
+            </span>
+            <h2 class="mw-services-heading">
+              We Make Travel Processing Simple &amp; Stress-Free<span style="color:#0080E8;">.</span>
+            </h2>
+            <p class="mw-services-lead">
+              From Student Visas, Global Migration, Travel Visas, and Passport Processing to Flight Booking, Travel Insurance, and Airport &amp; Hotel Transfers—every document and detail is handled end to end.
+            </p>
+            <div style="margin-top:28px;">
+              <a 
+                href="#booking-collation" 
+                class="mw-action-group"
+                onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+              >
+                <span class="mw-action-pill">BOOK A SLOT TODAY</span>
+                <span class="mw-action-circle" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Numbered Services List (Sticky-Stacking as You Scroll to End of What We Do) -->
+          <ul class="mw-services-list">
+            <li class="mw-service-item" style="--item-idx: 0;">
+              <div class="mw-service-text">
+                <div class="mw-service-title-row">
+                  <span class="mw-service-num">01</span>
+                  <h3 class="mw-service-name">Student Visa &amp; Study Abroad (Edumigration)</h3>
+                </div>
+                <p class="mw-service-desc">
+                  Complete Undergraduate &amp; Postgraduate admission and student visa processing for the UK, Canada, France, Germany, Spain, USA, and Europe—including <strong>Proof of Funds</strong>, <strong>Statement of Purpose (SOP)</strong>, and expert guidance on choosing the right course and institution.
+                </p>
+              </div>
+              <div class="mw-service-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+            </li>
+
+            <li class="mw-service-item" style="--item-idx: 1;">
+              <div class="mw-service-text">
+                <div class="mw-service-title-row">
+                  <span class="mw-service-num">02</span>
+                  <h3 class="mw-service-name">Travel Visa &amp; Visit Visa Processing</h3>
+                </div>
+                <p class="mw-service-desc">
+                  High-precision tourist, business, family visit, and conference visa processing for France, Germany, Spain (Schengen), UK, USA, Canada, Qatar, UAE, Tanzania, Kenya, Egypt, and South Africa. We prepare your embassy file and appointment from start to finish.
+                </p>
+              </div>
+              <div class="mw-service-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+            </li>
+
+            <li class="mw-service-item" style="--item-idx: 2;">
+              <div class="mw-service-text">
+                <div class="mw-service-title-row">
+                  <span class="mw-service-num">03</span>
+                  <h3 class="mw-service-name">Global Migration &amp; Relocation Pathways</h3>
+                </div>
+                <p class="mw-service-desc">
+                  Structured migration advisory for skilled professionals, families, and graduates seeking permanent residency, work visas, or long-term relocation pathways in Canada, the UK, and Europe—backed by dedicated professional support.
+                </p>
+              </div>
+              <div class="mw-service-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+            </li>
+
+            <li class="mw-service-item" style="--item-idx: 3;">
+              <div class="mw-service-text">
+                <div class="mw-service-title-row">
+                  <span class="mw-service-num">04</span>
+                  <h3 class="mw-service-name">Passport Processing &amp; Renewal Assistance</h3>
+                </div>
+                <p class="mw-service-desc">
+                  Fast, organized Nigerian passport application, renewal, biometric data-capturing coordination, and travel document support so your passport is ready well ahead of your embassy submission.
+                </p>
+              </div>
+              <div class="mw-service-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 18h8"/></svg>
+              </div>
+            </li>
+
+            <li class="mw-service-item" style="--item-idx: 4;">
+              <div class="mw-service-text">
+                <div class="mw-service-title-row">
+                  <span class="mw-service-num">05</span>
+                  <h3 class="mw-service-name">Flight Booking &amp; International Ticketing</h3>
+                </div>
+                <p class="mw-service-desc">
+                  Competitive domestic and international flight booking across leading global airlines in Economy, Business, and First Class—including verified flight reservations for visa applications and student departures.
+                </p>
+              </div>
+              <div class="mw-service-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+              </div>
+            </li>
+
+            <li class="mw-service-item" style="--item-idx: 5;">
+              <div class="mw-service-text">
+                <div class="mw-service-title-row">
+                  <span class="mw-service-num">06</span>
+                  <h3 class="mw-service-name">Airport Transfer, Hotel Transfer &amp; Travel Insurance</h3>
+                </div>
+                <p class="mw-service-desc">
+                  Seamless private <strong>Airport Transfer</strong> pick-up and drop-off, verified international hotel reservations &amp; <strong>Hotel Transfer</strong> coordination, plus embassy-approved <strong>Travel Insurance</strong> coverage for every destination.
+                </p>
+              </div>
+              <div class="mw-service-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION C: CORE DIVISIONS SPOTLIGHT (TEXTS LEFT · IMAGE RIGHT)
+         ==================================================================== -->
+    <section class="mw-study-corp-section" id="study-corporate">
+      <div class="mw-container">
+        <div class="mw-tours-header anim-reveal-text" style="margin-top:0; margin-bottom:40px;">
+          <div>
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              Featured Divisions
+            </span>
+            <h2 class="mw-huge-heading">
+              Student Visas, Migration<br />&amp; Global Visas
+            </h2>
+          </div>
+
+          <a 
+            href="#migration-services" 
+            class="mw-action-group"
+            onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('migration-services')"
+          >
+            <span class="mw-action-pill">VIEW ALL VISA CORRIDORS</span>
+            <span class="mw-action-circle" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="mw-split-feature-stack">
+          
+          <!-- Row 1: TEXTS LEFT · IMAGE RIGHT (Student Visa & Study Abroad Processing) -->
+          <article class="mw-split-feature-row anim-reveal-text">
+            <div class="mw-split-feature-text">
+              <span class="mw-soft-pill" style="margin-bottom:14px;">
+                <span class="mw-blue-dot"></span>
+                Apply For Student Visa · UK, Canada &amp; Europe
+              </span>
+              <h3 class="mw-division-title" style="font-size:clamp(1.55rem, 2.6vw, 2.15rem); margin-bottom:12px;">
+                Student Visa &amp; Study Abroad Processing.
+              </h3>
+              <p class="mw-division-desc" style="max-width:520px;">
+                We guide students from university selection and admission letters all the way to visa approval—with complete documentation and financial advisory support.
+              </p>
+              <div class="mw-division-pills">
+                <span>✓ Undergraduate &amp; Visa Processing</span>
+                <span>✓ Proof of Funds Assistance</span>
+                <span>✓ Statement of Purpose (SOP)</span>
+                <span>✓ Course &amp; Institution Guidance</span>
+                <span>✓ Professional End-to-End Support</span>
+              </div>
+              <button 
+                type="button" 
+                class="mw-action-group"
+                onclick="window.rhordwayApp.selectServiceAndScroll('Student Visa & Study Abroad')"
+              >
+                <span class="mw-action-pill">APPLY FOR STUDENT VISA</span>
+                <span class="mw-action-circle" aria-hidden="true">↗</span>
+              </button>
+            </div>
+
+            <div class="mw-split-feature-media">
               <img 
-                src="./assets/images/zanzibar-beach.jpg" 
-                alt="Zanzibar tropical beach and turquoise ocean" 
+                src="./assets/images/singapore-bay.jpg" 
+                alt="Apply for Student Visa — Undergraduate, Postgraduate, Proof of Funds and Statement of Purpose" 
                 loading="lazy" 
               />
-              <div class="ref-deal-gradient-scrim"></div>
-              <span class="ref-deal-badge">Dual Escape</span>
-
-              <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Doha + Zanzibar</h3>
-                
-                <ul class="ref-deal-amenities-list">
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                      <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                    <span>7 Days (Dec 12–19)</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    </svg>
-                    <span>5-Star Luxury Hotels</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                    </svg>
-                    <span>All-Inclusive Meals</span>
-                  </li>
-                </ul>
-
-                <div class="ref-deal-price-bar">
-                  <span class="ref-deal-price-val">₦4,350,000</span>
-                  <span class="ref-deal-price-note">per person sharing</span>
-                </div>
-
-                <button 
-                  type="button" 
-                  class="ref-deal-btn"
-                  onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
-                >
-                  <span>Explore Package</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </div>
             </div>
           </article>
 
-          <!-- Deal 2: Doha Grand Prix -->
-          <article class="ref-deal-card anim-reveal-text anim-delay-2">
-            <div class="ref-deal-img-box">
-              <img 
-                src="./assets/images/doha-f1-grand-prix.jpg" 
-                alt="Formula 1 night race cars in Doha" 
-                loading="lazy" 
-              />
-              <div class="ref-deal-gradient-scrim"></div>
-              <span class="ref-deal-badge">Formula 1 GP</span>
-
-              <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Doha Grand Prix</h3>
-                
-                <ul class="ref-deal-amenities-list">
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                      <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                    <span>6 Days (Nov 25 – Dec 1)</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                    </svg>
-                    <span>3-Day F1 Race Access</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                    </svg>
-                    <span>5-Star Hotel & Safari</span>
-                  </li>
-                </ul>
-
-                <div class="ref-deal-price-bar">
-                  <span class="ref-deal-price-val">From ₦3,400,000</span>
-                  <span class="ref-deal-price-note">Double / ₦4,150,000 Single</span>
-                </div>
-
-                <button 
-                  type="button" 
-                  class="ref-deal-btn"
-                  onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
-                >
-                  <span>Explore Package</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
+          <!-- Row 2: TEXTS LEFT · IMAGE RIGHT (Travel Visas, Migration & Passports) -->
+          <article class="mw-split-feature-row anim-reveal-text anim-delay-1">
+            <div class="mw-split-feature-text">
+              <span class="mw-soft-pill" style="margin-bottom:14px;">
+                <span class="mw-blue-dot"></span>
+                Migration · Visas · Passports · Flights
+              </span>
+              <h3 class="mw-division-title" style="font-size:clamp(1.55rem, 2.6vw, 2.15rem); margin-bottom:12px;">
+                Travel Visas, Migration &amp; Passports.
+              </h3>
+              <p class="mw-division-desc" style="max-width:520px;">
+                Applying for a visa to France, Germany, Spain, the UK, Canada, USA, or the Middle East? We handle your visa filing, passport renewal, flight booking, travel insurance, and airport/hotel transfers.
+              </p>
+              <div class="mw-division-pills">
+                <span>✓ Visa Processing (UK, Schengen, US, Canada)</span>
+                <span>✓ Global Migration Advisory</span>
+                <span>✓ Passport Processing &amp; Renewal</span>
+                <span>✓ Flight Booking &amp; Travel Insurance</span>
+                <span>✓ Airport &amp; Hotel Transfers</span>
               </div>
+              <button 
+                type="button" 
+                class="mw-action-group"
+                onclick="window.rhordwayApp.selectServiceAndScroll('Travel & Visit Visa Processing')"
+              >
+                <span class="mw-action-pill">APPLY FOR YOUR VISA</span>
+                <span class="mw-action-circle" aria-hidden="true">↗</span>
+              </button>
             </div>
-          </article>
 
-          <!-- Deal 3: Zanzibar Coral Atoll -->
-          <article class="ref-deal-card anim-reveal-text anim-delay-3">
-            <div class="ref-deal-img-box">
+            <div class="mw-split-feature-media">
               <img 
-                src="./assets/images/zanzibar-mnemba.jpg" 
-                alt="Zanzibar Mnemba Atoll turquoise reef" 
+                src="./assets/images/doha-skyline.jpg" 
+                alt="Travel Visa, Global Migration, Passports, Flights, Airport Transfer & Travel Insurance" 
                 loading="lazy" 
               />
-              <div class="ref-deal-gradient-scrim"></div>
-              <span class="ref-deal-badge">Island Escape</span>
-
-              <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Mnemba Island Reefs</h3>
-                
-                <ul class="ref-deal-amenities-list">
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                    </svg>
-                    <span>7 Days Coastal Tour</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    </svg>
-                    <span>Private Villa Resort</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                    </svg>
-                    <span>Snorkel & Dhow Cruise</span>
-                  </li>
-                </ul>
-
-                <div class="ref-deal-price-bar">
-                  <span class="ref-deal-price-val">₦4,350,000</span>
-                  <span class="ref-deal-price-note">All-Inclusive Dual Tour</span>
-                </div>
-
-                <button 
-                  type="button" 
-                  class="ref-deal-btn"
-                  onclick="window.rhordwayApp.populateAndScrollCollation('doha-zanzibar')"
-                >
-                  <span>Explore Package</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Deal 4: Doha Desert Safari & Skyline -->
-          <article class="ref-deal-card anim-reveal-text anim-delay-4">
-            <div class="ref-deal-img-box">
-              <img 
-                src="./assets/images/doha-desert-safari.jpg" 
-                alt="Doha Desert Dunes Safari to the Inland Sea" 
-                loading="lazy" 
-              />
-              <div class="ref-deal-gradient-scrim"></div>
-              <span class="ref-deal-badge">Desert & Safari</span>
-
-              <div class="ref-deal-overlay-content">
-                <h3 class="ref-deal-card-title">Doha Safari & Culture</h3>
-                
-                <ul class="ref-deal-amenities-list">
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                    </svg>
-                    <span>6 Days Adventure</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                    <span>Desert Dune Bashing</span>
-                  </li>
-                  <li class="ref-amenity-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                    </svg>
-                    <span>Museum & VIP Souq</span>
-                  </li>
-                </ul>
-
-                <div class="ref-deal-price-bar">
-                  <span class="ref-deal-price-val">From ₦3,400,000</span>
-                  <span class="ref-deal-price-note">VIP Safari & F1 Access</span>
-                </div>
-
-                <button 
-                  type="button" 
-                  class="ref-deal-btn"
-                  onclick="window.rhordwayApp.populateAndScrollCollation('doha-grand-prix')"
-                >
-                  <span>Explore Package</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </div>
             </div>
           </article>
 
         </div>
+      </div>
+    </section>
+  `;
+}
 
-        <!-- Mobile Carousel Pagination Dots -->
-        <div class="ref-deals-dots" id="dealsDots" aria-hidden="true">
-          <span class="ref-deal-dot active" data-index="0"></span>
-          <span class="ref-deal-dot" data-index="1"></span>
-          <span class="ref-deal-dot" data-index="2"></span>
-          <span class="ref-deal-dot" data-index="3"></span>
+/**
+ * 2. DEDICATED ABOUT PAGE (#about) — Distinct Brand Story, Mission & Direct Specialist Desk
+ */
+function renderAboutPage() {
+  return `
+    <section class="mw-packages-section" style="padding-top:32px; padding-bottom:64px;">
+      <div class="mw-container">
+        
+        <!-- Texts Left · Image Right About Hero -->
+        <div class="mw-split-feature-row anim-reveal-text" style="margin-bottom:56px;">
+          <div class="mw-split-feature-text">
+            <span class="mw-soft-pill" style="margin-bottom:14px;">
+              <span class="mw-blue-dot"></span>
+              About Rhordway™
+            </span>
+            <h1 class="mw-huge-heading" style="margin-bottom:18px;">
+              We Make Travel Processing Simple &amp; Stress-Free<span style="color:#0080E8;">.</span>
+            </h1>
+            <p class="mw-division-desc" style="max-width:520px; font-size:0.98rem;">
+              Explore the world, one breathtaking destination at a time. Rhordway is a premier Nigerian travel, student visa, global migration, and passport processing agency built to eliminate the stress and uncertainty of international documentation.
+            </p>
+            <div class="mw-division-pills">
+              <span>✓ 98% Documentation Accuracy</span>
+              <span>✓ Dedicated Visa &amp; SOP Advisors</span>
+              <span>✓ Verified Global Aviation &amp; Hotel Partners</span>
+            </div>
+            <a 
+              href="#booking-collation" 
+              class="mw-action-group"
+              onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+            >
+              <span class="mw-action-pill">TALK TO OUR TEAM</span>
+              <span class="mw-action-circle" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="mw-split-feature-media">
+            <img 
+              src="./assets/images/doha-museum.jpg" 
+              alt="About Rhordway — Global Migration, Student Visas & Travel Processing" 
+            />
+          </div>
         </div>
+
+        <!-- 3 Strategic Pillars -->
+        <div class="mw-process-grid" style="grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+          <div class="mw-process-card">
+            <span class="mw-service-num">01 · OUR MISSION</span>
+            <h3 style="font-size:1.25rem; font-weight:700; color:#0F1115;">Removing Documentation Friction</h3>
+            <p style="font-size:0.9rem; color:#71717A; line-height:1.65;">
+              Most visa refusals happen because of poorly structured Proof of Funds, weak Statements of Purpose, or incomplete embassy files. Our specialists audit and prepare every document before submission.
+            </p>
+          </div>
+
+          <div class="mw-process-card">
+            <span class="mw-service-num">02 · OUR COVERAGE</span>
+            <h3 style="font-size:1.25rem; font-weight:700; color:#0F1115;">End-to-End Global Mobility</h3>
+            <p style="font-size:0.9rem; color:#71717A; line-height:1.65;">
+              We don't stop at visa approval. We coordinate your Nigerian passport renewal, international flight ticketing, embassy-approved travel insurance, hotel reservations, and private airport transfers.
+            </p>
+          </div>
+
+          <div class="mw-process-card">
+            <span class="mw-service-num">03 · DIRECT ACCESS</span>
+            <h3 style="font-size:1.25rem; font-weight:700; color:#0F1115;">Speak Directly With Specialists</h3>
+            <p style="font-size:0.9rem; color:#71717A; line-height:1.65; margin-bottom:8px;">
+              Reach our consultation desk directly via phone, WhatsApp, or email:
+            </p>
+            <div style="display:flex; flex-direction:column; gap:4px; font-size:0.86rem; font-weight:700; color:#0F1115;">
+              <span>📞 ${siteConfig.primaryPhoneFormatted} · ${siteConfig.alternatePhone}</span>
+              <span>✉️ ${siteConfig.contactEmail} · 📱 ${siteConfig.instagram}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  `;
+}
+
+/**
+ * 3. DEDICATED MIGRATION SERVICES PAGE (#migration-services)
+ *    - Distinct from Home! Features:
+ *      A) Texts-Left Image-Right Migration & Study Advisory Header
+ *      B) 4-Step Application & Visa Processing Blueprint
+ *      C) 6 Global Visa & Study Corridors (UK, Canada, France/Germany/Spain, USA, Qatar/UAE, Africa)
+ */
+function renderMigrationServicesPage() {
+  const visaCorridors = [
+    {
+      id: 'uk-corridor',
+      country: 'United Kingdom',
+      tag: '#UK Visa & Study',
+      badge: 'Student · Visit · Skilled',
+      subtitle: 'Undergraduate & Postgraduate Admissions, CAS, Proof of Funds, SOP & Standard Visitor Visas.',
+      image: './assets/images/doha-skyline.jpg',
+      service: 'Student Visa & Study Abroad'
+    },
+    {
+      id: 'canada-corridor',
+      country: 'Canada',
+      tag: '#Canada Study & PR',
+      badge: 'Study Permit · PR · Visit',
+      subtitle: 'University/College Placement, Study Permits, Proof of Funds, SOP & Express Entry Migration.',
+      image: './assets/images/singapore-bay.jpg',
+      service: 'Global Migration & Relocation'
+    },
+    {
+      id: 'schengen-corridor',
+      country: 'France · Germany · Spain',
+      tag: '#Schengen Visa',
+      badge: '29 European Countries',
+      subtitle: 'Schengen Tourist, Business & Study Visas with Embassy-Compliant Travel Insurance & Hotel Booking.',
+      image: './assets/images/doha-museum.jpg',
+      service: 'Travel & Visit Visa Processing'
+    },
+    {
+      id: 'usa-corridor',
+      country: 'United States',
+      tag: '#USA F-1 & B1/B2',
+      badge: 'Student · Business · Tourist',
+      subtitle: 'F-1 Student Admissions, I-20 Guidance, DS-160 Filing & Consular Interview Preparation.',
+      image: './assets/images/dubai-marina.jpg',
+      service: 'Student Visa & Study Abroad'
+    },
+    {
+      id: 'middle-east-corridor',
+      country: 'Qatar & UAE (Dubai)',
+      tag: '#Gulf Visas & Flights',
+      badge: 'E-Visa · Flights · Transfers',
+      subtitle: 'Fast-track Qatar & UAE Visas, Return Flights, Verified Hotels & Private Airport Transfers.',
+      image: './assets/images/dubai-marina.jpg',
+      service: 'Travel & Visit Visa Processing'
+    },
+    {
+      id: 'africa-corridor',
+      country: 'East & South Africa',
+      tag: '#Tanzania · Kenya · SA',
+      badge: 'Visas · Flights · Insurance',
+      subtitle: 'Tanzania, Kenya, Egypt & South Africa Visas, Travel Insurance & Private Airport Transfers.',
+      image: './assets/images/nairobi-safari.jpg',
+      service: 'Travel & Visit Visa Processing'
+    }
+  ];
+
+  const processSteps = [
+    {
+      step: 'STEP 01',
+      title: 'Eligibility & Course / Visa Audit',
+      desc: 'We evaluate your academic or travel profile, recommend the right university/course or visa category, and map out your exact timeline.'
+    },
+    {
+      step: 'STEP 02',
+      title: 'Proof of Funds & SOP Structuring',
+      desc: 'Our specialists guide your Proof of Funds documentation, write/review your Statement of Purpose (SOP), and verify every supporting record.'
+    },
+    {
+      step: 'STEP 03',
+      title: 'Application Filing & Travel Insurance',
+      desc: 'We submit your admission/visa application, issue embassy-compliant Travel Insurance, coordinate Passport renewals, and book biometric appointments.'
+    },
+    {
+      step: 'STEP 04',
+      title: 'Visa Approval, Flights & Transfers',
+      desc: 'Once approved, we handle your international Flight Booking, verified Hotel Booking/Transfer, and private Airport Transfer on arrival.'
+    }
+  ];
+
+  return `
+    <!-- 1. Texts-Left Image-Right Migration Services Header -->
+    <section class="mw-packages-section" style="padding-top:32px; padding-bottom:56px;">
+      <div class="mw-container">
+        <div class="mw-split-feature-row anim-reveal-text">
+          <div class="mw-split-feature-text">
+            <span class="mw-soft-pill" style="margin-bottom:14px;">
+              <span class="mw-blue-dot"></span>
+              Migration, Visas &amp; Admissions Hub
+            </span>
+            <h1 class="mw-huge-heading" style="margin-bottom:16px;">
+              Global Visa, Study Abroad &amp; Migration Pathways<span style="color:#0080E8;">.</span>
+            </h1>
+            <p class="mw-division-desc" style="max-width:520px;">
+              Whether you are applying for an Undergraduate or Postgraduate Student Visa, relocating through skilled migration, filing a Schengen/UK/US travel visa, or renewing your Nigerian passport—our specialists manage your entire file.
+            </p>
+            <div class="mw-division-pills">
+              <span>✓ Student Visa &amp; Admissions</span>
+              <span>✓ Proof of Funds &amp; SOP</span>
+              <span>✓ UK · Schengen · Canada · US Visas</span>
+              <span>✓ Passports, Flights &amp; Insurance</span>
+            </div>
+            <button 
+              type="button" 
+              class="mw-action-group"
+              onclick="window.rhordwayApp.scrollToConsultation()"
+            >
+              <span class="mw-action-pill">CHECK MY ELIGIBILITY</span>
+              <span class="mw-action-circle" aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <div class="mw-split-feature-media">
+            <img 
+              src="./assets/images/singapore-bay.jpg" 
+              alt="Rhordway Student Visa, Proof of Funds, Statement of Purpose & Global Migration" 
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. How Our 4-Step Processing Works -->
+    <section class="mw-study-corp-section" style="padding:64px 0;">
+      <div class="mw-container">
+        <div class="mw-tours-header anim-reveal-text" style="margin-top:0; margin-bottom:36px;">
+          <div>
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              How It Works
+            </span>
+            <h2 class="mw-huge-heading">
+              Your 4-step processing<br />blueprint
+            </h2>
+          </div>
+          <p class="mw-header-side-desc">
+            Every student visa, migration pathway, and travel visa application follows a structured 4-stage quality review.
+          </p>
+        </div>
+
+        <div class="mw-process-grid">
+          ${processSteps.map((s) => `
+            <div class="mw-process-card anim-reveal-text">
+              <span class="mw-service-num">${s.step}</span>
+              <h3 style="font-size:1.15rem; font-weight:700; color:#0F1115; margin:0;">${s.title}</h3>
+              <p style="font-size:0.88rem; color:#71717A; line-height:1.6; margin:0;">${s.desc}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Global Visa & Study Corridors Grid (Exclusive to Migration Services Page) -->
+    <section class="mw-packages-section" id="visa-corridors" style="padding-top:64px;">
+      <div class="mw-container">
+        <div class="mw-tours-header anim-reveal-text" style="margin-top:0;">
+          <div>
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              Where We Process
+            </span>
+            <h2 class="mw-huge-heading">
+              Global visa, study &amp;<br />migration corridors
+            </h2>
+          </div>
+
+          <a 
+            href="#booking-collation" 
+            class="mw-action-group"
+            onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+          >
+            <span class="mw-action-pill">START MY APPLICATION</span>
+            <span class="mw-action-circle" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="farer-magazine-grid">
+          ${visaCorridors.map((item, idx) => `
+            <article 
+              class="farer-mag-card anim-reveal-text anim-delay-${(idx % 3) + 1}" 
+              onclick="window.rhordwayApp.selectServiceAndScroll('${item.service}', '${item.country}')"
+            >
+              <div class="farer-img-frame">
+                <img 
+                  src="${item.image}" 
+                  alt="${item.country} — ${item.subtitle}" 
+                  loading="lazy" 
+                />
+                <div class="farer-subtle-gradient"></div>
+
+                <button 
+                  type="button" 
+                  class="farer-corner-arrow" 
+                  aria-label="Book Consultation for ${item.country}"
+                  onclick="event.stopPropagation(); window.rhordwayApp.selectServiceAndScroll('${item.service}', '${item.country}')"
+                >
+                  ↗
+                </button>
+
+                <div class="farer-tag-cutout">
+                  <span class="farer-tag-pill">
+                    <span class="mw-blue-dot"></span>
+                    ${item.tag}
+                  </span>
+                </div>
+              </div>
+
+              <div class="farer-card-caption">
+                <div class="farer-caption-top">
+                  <h4 class="farer-caption-title">${item.country}</h4>
+                  <span class="farer-caption-nights">${item.badge}</span>
+                </div>
+                <p class="farer-caption-sub">${item.subtitle}</p>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/**
+ * 4. DEDICATED HOLIDAYS PAGE (#holidays) — Vacation Escapes & Destination Showcase
+ */
+function renderHolidaysPage() {
+  const flagshipIds = [
+    'zanzibar-nairobi',
+    'doha-nairobi',
+    'doha-zanzibar',
+    'doha-grand-prix'
+  ];
+
+  const globalIds = [
+    'singapore-bali',
+    'bali-doha',
+    'doha-singapore',
+    'egypt-doha',
+    'egypt',
+    'doha-seychelles',
+    'south-africa',
+    'casablanca-marrakech',
+    'dubai'
+  ];
+
+  const renderHugoStripPanel = (id, idx) => {
+    const pkg = packagesData[id];
+    if (!pkg) return '';
+    const isActive = idx === 0;
+
+    return `
+      <article 
+        class="hugo-strip-card ${isActive ? 'active' : ''}" 
+        id="hugo-panel-${pkg.id}"
+        data-pkg-id="${pkg.id}"
+        onclick="window.rhordwayApp.activateMagazinePanel('${pkg.id}')"
+        onmouseenter="if(window.innerWidth >= 960) window.rhordwayApp.activateMagazinePanel('${pkg.id}')"
+      >
+        <img 
+          src="${pkg.heroImage}" 
+          alt="${pkg.heroImageAlt}" 
+          class="hugo-strip-img"
+          loading="lazy" 
+        />
+        <div class="hugo-strip-scrim"></div>
+
+        <div class="hugo-strip-content">
+          <div class="hugo-strip-left">
+            <span class="hugo-strip-mini-ico" aria-hidden="true">✦</span>
+            <span class="hugo-strip-kicker">${pkg.destinationBreakdown}</span>
+            <h3 class="hugo-strip-title">${pkg.title}</h3>
+            <p class="hugo-strip-desc">${pkg.overviewDescription}</p>
+          </div>
+
+          <div class="hugo-glass-widget">
+            <span class="hugo-widget-top">${pkg.durationLabel} · Private Basis</span>
+            <div class="hugo-widget-arc">
+              <span class="hugo-widget-big">${pkg.durationLabel}</span>
+              <span class="hugo-widget-sub">Flights · Visas · 5★ Hotels</span>
+            </div>
+            <p class="hugo-widget-foot">${pkg.transferBasis}</p>
+          </div>
+        </div>
+      </article>
+    `;
+  };
+
+  const renderGlobalFarerCard = (id, idx) => {
+    const pkg = packagesData[id];
+    if (!pkg) return '';
+    const delayClass = `anim-delay-${(idx % 3) + 1}`;
+
+    return `
+      <article 
+        class="farer-mag-card anim-reveal-text ${delayClass}" 
+        onclick="window.rhordwayApp.selectServiceAndScroll('Vacation & Holiday Enquiry', '${pkg.title}')"
+      >
+        <div class="farer-img-frame">
+          <img 
+            src="${pkg.heroImage}" 
+            alt="${pkg.heroImageAlt}" 
+            loading="lazy" 
+          />
+          <div class="farer-subtle-gradient"></div>
+
+          <button 
+            type="button" 
+            class="farer-corner-arrow" 
+            aria-label="Enquire about ${pkg.title}"
+            onclick="event.stopPropagation(); window.rhordwayApp.selectServiceAndScroll('Vacation & Holiday Enquiry', '${pkg.title}')"
+          >
+            ↗
+          </button>
+
+          <div class="farer-tag-cutout">
+            <span class="farer-tag-pill">
+              <span class="mw-blue-dot"></span>
+              #${pkg.title}
+            </span>
+          </div>
+        </div>
+
+        <div class="farer-card-caption">
+          <div class="farer-caption-top">
+            <h4 class="farer-caption-title">${pkg.title}</h4>
+            <span class="farer-caption-nights">${pkg.durationLabel} · PVT</span>
+          </div>
+          <p class="farer-caption-sub">${pkg.destinationBreakdown} — ${pkg.subtitle}</p>
+        </div>
+      </article>
+    `;
+  };
+
+  return `
+    <section class="mw-packages-section" id="hot-deals" style="padding-top:32px;">
+      <div class="mw-container">
+        
+        <div class="hugo-header-row anim-reveal-text">
+          <div class="hugo-header-left">
+            <span class="hugo-eyebrow">
+              <span class="mw-blue-dot"></span>
+              RHORDWAY VACATION &amp; HOLIDAY ESCAPES
+            </span>
+            <h1 class="hugo-editorial-heading">
+              Explore the world, one breathtaking destination at a time—with return flights, visas, 5-star stays, and private airport transfers.
+            </h1>
+          </div>
+
+          <div class="hugo-header-controls">
+            <div class="hugo-nav-arrows" aria-label="Switch featured destination">
+              <button 
+                type="button" 
+                class="hugo-arrow-btn" 
+                id="hugoPrevBtn" 
+                aria-label="Previous destination"
+                onclick="window.rhordwayApp.stepMagazinePanel(-1)"
+              >
+                ←
+              </button>
+              <button 
+                type="button" 
+                class="hugo-arrow-btn" 
+                id="hugoNextBtn" 
+                aria-label="Next destination"
+                onclick="window.rhordwayApp.stepMagazinePanel(1)"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hugo-Style Interactive Expandable Magazine Strip -->
+        <div class="hugo-accordion-strip" id="hugoAccordionStrip">
+          ${flagshipIds.map((id, idx) => renderHugoStripPanel(id, idx)).join('')}
+        </div>
+
+        <div class="mw-tours-header anim-reveal-text">
+          <div>
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              Global Holiday Collection
+            </span>
+            <h2 class="mw-huge-heading">
+              Curated global<br />vacation destinations
+            </h2>
+          </div>
+
+          <a 
+            href="#booking-collation" 
+            class="mw-action-group"
+            onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+          >
+            <span class="mw-action-pill">PLAN MY GETAWAY</span>
+            <span class="mw-action-circle" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Farer-Style Large-Image Magazine Grid (9 Global Destinations) -->
+        <div class="farer-magazine-grid" id="refDealsGrid">
+          ${globalIds.map((id, idx) => renderGlobalFarerCard(id, idx)).join('')}
+        </div>
+
       </div>
     </section>
   `;
@@ -1187,16 +2141,26 @@ function renderExperienceSelector() {
   /* --- DestinationFeature.js --- */
 function renderDestinationFeature() {
   return `
-    <section class="ref-top-destinations-section" id="top-destinations">
-      <div class="ref-container">
+    <section class="ref-top-destinations-section mw-destinations-section" id="top-destinations">
+      <div class="mw-container">
         
-        <!-- Section Header -->
-        <div class="ref-destinations-header text-center anim-reveal-text">
-          <h2 class="ref-section-heading">Top Destinations</h2>
-          <p class="ref-section-subheading">Experience iconic landmarks, cultural treasures, and pristine coastal retreats</p>
+        <!-- Section Header (Marwa Editorial Style) -->
+        <div class="mw-tours-header anim-reveal-text" style="margin-top:0;">
+          <div>
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              Top Destinations
+            </span>
+            <h2 class="mw-huge-heading">
+              Iconic landmarks &<br />coastal sanctuaries
+            </h2>
+          </div>
+          <p class="mw-header-side-desc">
+            Every Rhordway itinerary blends 5-star resort comfort, private cultural access, and unforgettable natural wonders.
+          </p>
         </div>
 
-        <!-- 4-Column Bento / Mosaic Grid (Exact Reference Composition with Mobile Swipe-In) -->
+        <!-- 4-Column Bento / Mosaic Grid (With Mobile Swipe-In) -->
         <div class="ref-bento-grid" id="destinationCollageGrid">
           
           <!-- Column 1: Tall Editorial Portrait Card (Zanzibar Stone Town) -->
@@ -1210,15 +2174,15 @@ function renderDestinationFeature() {
               <div class="ref-mosaic-scrim"></div>
               <div class="ref-mosaic-content">
                 <span class="ref-mosaic-country">ZANZIBAR</span>
-                <h3 class="ref-mosaic-landmark">Stone Town Heritage</h3>
+                <h3 class="ref-mosaic-landmark">Stone Town & JAZ Elite Aurora</h3>
                 <p class="ref-mosaic-desc">
-                  Ancient UNESCO-listed labyrinthine alleys, brass-studded carved doors, fragrant clove bazaars, and pristine shores along the turquoise Indian Ocean.
+                  Ancient UNESCO-listed alleys, Mnemba Island dolphin reefs, Kendwa Beach, and 5-star all-inclusive coastal luxury.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Column 2: 2 Stacked Cards (Doha Museum + Zanzibar Lagoons) -->
+          <!-- Column 2: 2 Stacked Cards (Doha Museum + Nairobi Safari) -->
           <div class="ref-bento-col col-2 collage-swipe-col" data-swipe="right">
             <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="right">
               <img 
@@ -1228,21 +2192,21 @@ function renderDestinationFeature() {
               />
               <div class="ref-mosaic-scrim"></div>
               <div class="ref-mosaic-content">
-                <span class="ref-mosaic-country">DOHA</span>
-                <h3 class="ref-mosaic-landmark">Museum of Islamic Art</h3>
+                <span class="ref-mosaic-country">DOHA · QATAR</span>
+                <h3 class="ref-mosaic-landmark">National Museum & Villaggio</h3>
               </div>
             </div>
 
             <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="left">
               <img 
-                src="./assets/images/zanzibar-kayak.jpg" 
-                alt="Crystal clear sea kayaking in Zanzibar" 
+                src="./assets/images/nairobi-safari.jpg" 
+                alt="Rothschild giraffes and safari in Nairobi Kenya" 
                 loading="lazy" 
               />
               <div class="ref-mosaic-scrim"></div>
               <div class="ref-mosaic-content">
-                <span class="ref-mosaic-country">ZANZIBAR</span>
-                <h3 class="ref-mosaic-landmark">Kendwa Coral Lagoons</h3>
+                <span class="ref-mosaic-country">NAIROBI · KENYA</span>
+                <h3 class="ref-mosaic-landmark">Safari & Giraffe Sanctuary</h3>
               </div>
             </div>
           </div>
@@ -1263,18 +2227,18 @@ function renderDestinationFeature() {
             </div>
           </div>
 
-          <!-- Column 4: 2 Stacked Cards (Formula 1 Lusail + Sea Turtle Sanctuary) -->
+          <!-- Column 4: 2 Stacked Cards (Bali Ubud + Sea Turtle Sanctuary) -->
           <div class="ref-bento-col col-4 collage-swipe-col" data-swipe="right">
             <div class="ref-mosaic-card card-half collage-card-swipe" data-swipe-mobile="left">
               <img 
-                src="./assets/images/doha-f1-grand-prix.jpg" 
-                alt="Lusail International Circuit Formula 1 night racing" 
+                src="./assets/images/bali-ubud.jpg" 
+                alt="Luxury infinity pool overlooking Ubud jungle terraces in Bali" 
                 loading="lazy" 
               />
               <div class="ref-mosaic-scrim"></div>
               <div class="ref-mosaic-content">
-                <span class="ref-mosaic-country">QATAR</span>
-                <h3 class="ref-mosaic-landmark">Lusail F1 Circuit</h3>
+                <span class="ref-mosaic-country">BALI & SINGAPORE</span>
+                <h3 class="ref-mosaic-landmark">Ubud Rainforest & Marina Bay</h3>
               </div>
             </div>
 
@@ -1441,310 +2405,159 @@ function renderGrandPrixFeature() {
   /* --- InformationCollation.js --- */
 
 
-
 function renderInformationCollation() {
-  const pkgDZ = packagesData['doha-zanzibar'];
-  const pkgGP = packagesData['doha-grand-prix'];
-
   return `
-    <section class="section-padding collation-section" id="booking-collation">
-      <div class="container collation-container">
-        
-        <header class="section-header text-center" style="margin-bottom:var(--space-8);">
-          <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;">
-            <span class="collation-eyebrow-pill">
-              <span class="pulse-dot" aria-hidden="true"></span>
-              Official Reservation Collation
+    <section class="mw-consultation-section" id="booking-collation">
+      <div class="mw-container">
+        <div class="mw-consultation-shell">
+          
+          <!-- Left Editorial Info Column -->
+          <div class="mw-consultation-left">
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              Rhordway Consultation Desk
             </span>
+            <h2 class="mw-services-heading" style="margin-bottom:14px;">
+              Book a Consultation With Our Specialists<span style="color:#0080E8;">.</span>
+            </h2>
+            <p class="mw-services-lead" style="max-width:440px; margin-bottom:28px;">
+              Whether you are applying for a Student Visa (Undergraduate or Postgraduate, Proof of Funds &amp; Statement of Purpose), filing a Travel or Migration Visa, processing a Passport, or booking Flights, Transfers &amp; Travel Insurance—our team is ready to assist you.
+            </p>
+
+            <div class="mw-consult-contact-cards">
+              <div class="mw-consult-contact-row">
+                <span class="mw-consult-dot"></span>
+                <div>
+                  <span class="mw-consult-label">Official Phone &amp; WhatsApp Lines</span>
+                  <strong class="mw-consult-val">
+                    <a href="tel:+2348164206030">${siteConfig.primaryPhoneFormatted}</a> · 
+                    <a href="tel:+2349013397830">${siteConfig.alternatePhone}</a>
+                  </strong>
+                </div>
+              </div>
+
+              <div class="mw-consult-contact-row">
+                <span class="mw-consult-dot"></span>
+                <div>
+                  <span class="mw-consult-label">Official Email &amp; Social Handle</span>
+                  <strong class="mw-consult-val">
+                    <a href="mailto:${siteConfig.contactEmail}">${siteConfig.contactEmail}</a> · ${siteConfig.instagram}
+                  </strong>
+                </div>
+              </div>
+            </div>
           </div>
-          <h2 class="section-title anim-reveal-text">Plan Your Escape & Receive Your Official Dossier</h2>
-          <p class="section-subtitle anim-reveal-text anim-delay-1">
-            Select your package, enter your guest details, and generate an official PDF travel dossier for instant WhatsApp confirmation.
-          </p>
-        </header>
 
-        <div class="luxury-collation-card">
-          <form id="collationForm" onsubmit="window.rhordwayApp.handleCollationSubmit(event)">
-            
-            <!-- ===============================================================
-                 STEP 01: SELECT PACKAGE & OCCUPANCY
-                 =============================================================== -->
-            <div class="collation-step-block">
-              <div class="collation-step-num">01</div>
-              <div class="collation-step-content">
-                <h3 class="collation-step-title">Select Holiday Package & Departure Date</h3>
-                <p class="collation-step-desc">Pick your preferred 2026 holiday escape to dynamically update inclusions and rates.</p>
-
-                <div class="package-pick-grid">
-                  <!-- Option 1: Doha + Zanzibar -->
-                  <label class="package-pick-card active" id="label-pick-dz">
-                    <input 
-                      type="radio" 
-                      name="selectedPackage" 
-                      value="doha-zanzibar" 
-                      checked 
-                      onchange="window.rhordwayApp.updateCollationPackage('doha-zanzibar')"
-                      class="sr-only"
-                    />
-                    <div class="pick-card-thumb">
-                      <img src="./assets/images/zanzibar-beach.jpg" alt="Zanzibar Beach" loading="lazy" />
-                      <span class="pick-card-tag">Dual Escape</span>
-                    </div>
-                    <div class="pick-card-body">
-                      <div class="pick-card-top-row">
-                        <span class="pick-badge">${pkgDZ.dates} · ${pkgDZ.durationLabel}</span>
-                        <div class="pick-radio-indicator" aria-hidden="true">
-                          <svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                        </div>
-                      </div>
-                      <h4 class="pick-card-title">${pkgDZ.title}</h4>
-                      <p class="pick-card-desc">Qatar Airways flights, 5-Star Doha hotel & all-inclusive Zanzibar coastal resort.</p>
-                      <div class="pick-card-price-row">
-                        <span class="pick-rate-value">${pkgDZ.pricing.standardFormatted}</span>
-                        <span class="pick-rate-sub">per person sharing</span>
-                      </div>
-                    </div>
-                  </label>
-
-                  <!-- Option 2: Doha Grand Prix -->
-                  <label class="package-pick-card" id="label-pick-gp">
-                    <input 
-                      type="radio" 
-                      name="selectedPackage" 
-                      value="doha-grand-prix" 
-                      onchange="window.rhordwayApp.updateCollationPackage('doha-grand-prix')"
-                      class="sr-only"
-                    />
-                    <div class="pick-card-thumb">
-                      <img src="./assets/images/doha-f1-grand-prix.jpg" alt="Doha Formula 1 Grand Prix" loading="lazy" />
-                      <span class="pick-card-tag">Formula 1 GP</span>
-                    </div>
-                    <div class="pick-card-body">
-                      <div class="pick-card-top-row">
-                        <span class="pick-badge">${pkgGP.dates} · ${pkgGP.durationLabel}</span>
-                        <div class="pick-radio-indicator" aria-hidden="true">
-                          <svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                        </div>
-                      </div>
-                      <h4 class="pick-card-title">${pkgGP.title}</h4>
-                      <p class="pick-card-desc">3-Day Formula 1 race weekend, 5-star Doha accommodation & desert dune safari.</p>
-                      <div class="pick-card-price-row">
-                        <span class="pick-rate-value">From ₦3,400,000</span>
-                        <span class="pick-rate-sub">per person</span>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-
-                <!-- Occupancy Tier Selection -->
-                <div class="occupancy-pick-wrapper" id="collationOccupancyContainer">
-                  <label class="input-field-label" for="collationOccupancySelect">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          <!-- Right Clean White & Black Consultation Form -->
+          <div class="mw-consultation-card">
+            <form id="collationForm" onsubmit="window.rhordwayApp.handleCollationSubmit(event)">
+              
+              <div class="mw-form-field" style="margin-bottom:18px;">
+                <label for="collationServiceType" class="mw-form-label">Service Required *</label>
+                <div class="select-field-box">
+                  <select id="collationServiceType" name="serviceType" class="form-select-styled">
+                    <option value="Student Visa & Study Abroad" selected>Student Visa &amp; Study Abroad (Admissions, Proof of Funds &amp; SOP)</option>
+                    <option value="Travel & Visit Visa Processing">Travel &amp; Visit Visa Processing (UK, Schengen, Canada, US, UAE)</option>
+                    <option value="Global Migration & Relocation">Global Migration &amp; Relocation Pathways</option>
+                    <option value="Passport Processing & Renewal">Passport Processing &amp; Renewal Assistance</option>
+                    <option value="Flight Booking, Hotel & Airport Transfer">Flight Booking, Hotel Transfer &amp; Airport Transfer</option>
+                    <option value="Travel Insurance">Comprehensive Travel Insurance</option>
+                    <option value="Vacation & Holiday Enquiry">Vacation &amp; Holiday Enquiry</option>
+                  </select>
+                  <span class="select-chevron-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
-                    Accommodation & Occupancy Tier
-                  </label>
-                  <div class="select-field-box">
-                    <select 
-                      id="collationOccupancySelect" 
-                      class="form-select-styled" 
-                      onchange="window.rhordwayApp.updateCollationCalculation()"
-                    >
-                      <option value="Double Occupancy (per person sharing)" data-rate="4350000" selected>
-                        Double Occupancy (per person sharing) — ₦4,350,000 / person
-                      </option>
-                    </select>
-                    <div class="select-chevron-icon" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </div>
-                  </div>
+                  </span>
                 </div>
               </div>
-            </div>
 
-            <!-- ===============================================================
-                 STEP 02: GUEST & CONTACT DETAILS
-                 =============================================================== -->
-            <div class="collation-step-block">
-              <div class="collation-step-num">02</div>
-              <div class="collation-step-content">
-                <h3 class="collation-step-title">Guest & Contact Information</h3>
-                <p class="collation-step-desc">Used exclusively for generating your reservation PDF and travel briefing.</p>
-                
-                <div class="form-grid-2">
-                  <!-- Name -->
-                  <div class="form-group-luxury">
-                    <label for="guestFullName" class="input-field-label">Lead Traveller Full Name *</label>
-                    <div class="input-icon-wrapper">
-                      <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                      </svg>
-                      <input 
-                        type="text" 
-                        id="guestFullName" 
-                        class="form-input-luxury" 
-                        placeholder="e.g. Amara Johnson" 
-                        required 
-                      />
-                    </div>
-                  </div>
-
-                  <!-- WhatsApp -->
-                  <div class="form-group-luxury">
-                    <label for="guestPhone" class="input-field-label">WhatsApp / Phone Number *</label>
-                    <div class="input-icon-wrapper">
-                      <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                      </svg>
-                      <input 
-                        type="tel" 
-                        id="guestPhone" 
-                        class="form-input-luxury" 
-                        placeholder="e.g. +234 816 420 6030" 
-                        required 
-                      />
-                    </div>
-                  </div>
+              <div class="form-grid-2">
+                <div class="mw-form-field">
+                  <label for="guestFullName" class="mw-form-label">Full Name *</label>
+                  <input 
+                    type="text" 
+                    id="guestFullName" 
+                    class="form-input-luxury" 
+                    style="padding-left:16px;"
+                    placeholder="e.g. Amara Johnson" 
+                    required 
+                  />
                 </div>
 
-                <div class="form-grid-2" style="margin-top:var(--space-4);">
-                  <!-- Email -->
-                  <div class="form-group-luxury">
-                    <label for="guestEmail" class="input-field-label">Email Address *</label>
-                    <div class="input-icon-wrapper">
-                      <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                      </svg>
-                      <input 
-                        type="email" 
-                        id="guestEmail" 
-                        class="form-input-luxury" 
-                        placeholder="e.g. amara@example.com" 
-                        required 
-                      />
-                    </div>
-                  </div>
-
-                  <!-- Departure City -->
-                  <div class="form-group-luxury">
-                    <label for="departureCity" class="input-field-label">Departure City (Nigeria/International)</label>
-                    <div class="input-icon-wrapper">
-                      <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                      </svg>
-                      <input 
-                        type="text" 
-                        id="departureCity" 
-                        class="form-input-luxury" 
-                        placeholder="e.g. Lagos, Abuja, London" 
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-grid-2" style="margin-top:var(--space-4);">
-                  <!-- Travellers -->
-                  <div class="form-group-luxury">
-                    <label for="guestCount" class="input-field-label">Number of Travellers</label>
-                    <div class="select-field-box">
-                      <select 
-                        id="guestCount" 
-                        class="form-select-styled" 
-                        onchange="window.rhordwayApp.updateCollationCalculation()"
-                      >
-                        <option value="1">1 Person</option>
-                        <option value="2" selected>2 Persons</option>
-                        <option value="3">3 Persons</option>
-                        <option value="4">4 Persons</option>
-                        <option value="5">5+ Persons (Group Booking)</option>
-                      </select>
-                      <div class="select-chevron-icon" aria-hidden="true">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Special Requests -->
-                  <div class="form-group-luxury">
-                    <label for="specialRequests" class="input-field-label">Special Requests / Preferences (Optional)</label>
-                    <div class="input-icon-wrapper">
-                      <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                      </svg>
-                      <input 
-                        type="text" 
-                        id="specialRequests" 
-                        class="form-input-luxury" 
-                        placeholder="e.g. Honeymoon suite, vegetarian, twin beds" 
-                      />
-                    </div>
-                  </div>
+                <div class="mw-form-field">
+                  <label for="guestPhone" class="mw-form-label">Phone / WhatsApp Number *</label>
+                  <input 
+                    type="tel" 
+                    id="guestPhone" 
+                    class="form-input-luxury" 
+                    style="padding-left:16px;"
+                    placeholder="e.g. +234 816 420 6030" 
+                    required 
+                  />
                 </div>
               </div>
-            </div>
 
-            <!-- ===============================================================
-                 STEP 03: REVIEW & WHATSAPP DISPATCH
-                 =============================================================== -->
-            <div class="collation-step-block">
-              <div class="collation-step-num">03</div>
-              <div class="collation-step-content">
-                <h3 class="collation-step-title">Review & Dispatch Reservation Dossier</h3>
-                <p class="collation-step-desc">Your official travel summary PDF will generate and download immediately upon sending.</p>
-
-                <div class="dossier-receipt-card">
-                  <div class="receipt-header-row">
-                    <div>
-                      <span class="receipt-label">ESTIMATED RESERVATION TOTAL</span>
-                      <div id="collationTotalAmount" class="receipt-total-amount">
-                        ₦8,700,000
-                      </div>
-                    </div>
-                    <div class="receipt-breakdown-box">
-                      <span id="collationCalculationNote" class="receipt-note-badge">2 Persons × ₦4,350,000</span>
-                      <span class="receipt-sub-note">Verified Partner Rates · No Hidden Booking Fees</span>
-                    </div>
-                  </div>
+              <div class="form-grid-2" style="margin-top:16px;">
+                <div class="mw-form-field">
+                  <label for="guestEmail" class="mw-form-label">Email Address *</label>
+                  <input 
+                    type="email" 
+                    id="guestEmail" 
+                    class="form-input-luxury" 
+                    style="padding-left:16px;"
+                    placeholder="e.g. amara@example.com" 
+                    required 
+                  />
                 </div>
 
-                <div style="margin-top:var(--space-6); display:flex; flex-direction:column; gap:var(--space-3);">
-                  <button type="submit" class="btn-dossier-submit">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                      <polyline points="14 2 14 8 20 8"></polyline>
-                      <line x1="16" y1="13" x2="8" y2="13"></line>
-                      <line x1="16" y1="17" x2="8" y2="17"></line>
-                    </svg>
-                    Generate Official PDF & Send to WhatsApp Consultant
-                  </button>
-                </div>
-
-                <!-- Success notification box -->
-                <div id="collationSuccessAlert" class="collation-success-alert" style="display:none;">
-                  <div style="font-size:1.05rem; font-weight:800; color:var(--brand-primary); margin-bottom:6px;">
-                    ✅ Official Reservation Dossier Generated Successfully!
-                  </div>
-                  <p style="font-size:0.875rem; color:var(--text-body); line-height:1.6;">
-                    Your official reservation PDF has been saved to your downloads. Redirecting you to WhatsApp to connect directly with your dedicated Rhordway consultant at <strong>+234 816 420 6030</strong>.
-                  </p>
+                <div class="mw-form-field">
+                  <label for="departureCity" class="mw-form-label">Target Destination Country *</label>
+                  <input 
+                    type="text" 
+                    id="departureCity" 
+                    class="form-input-luxury" 
+                    style="padding-left:16px;"
+                    placeholder="e.g. UK, Canada, France, Germany, Spain" 
+                    required
+                  />
                 </div>
               </div>
-            </div>
 
-          </form>
+              <div class="mw-form-field" style="margin-top:16px;">
+                <label for="specialRequests" class="mw-form-label">How Can We Help You? (Optional)</label>
+                <input 
+                  type="text" 
+                  id="specialRequests" 
+                  class="form-input-luxury" 
+                  style="padding-left:16px;"
+                  placeholder="e.g. Need Undergraduate Student Visa, Proof of Funds & Statement of Purpose" 
+                />
+              </div>
+
+              <div style="margin-top:24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+                <button type="submit" class="mw-action-group" style="border:none; background:none; padding:0;">
+                  <span class="mw-action-pill" style="padding:15px 32px; font-size:0.92rem;">SEND MY REQUEST</span>
+                  <span class="mw-action-circle" style="width:48px; height:48px;" aria-hidden="true">↗</span>
+                </button>
+
+                <span style="font-size:0.78rem; color:#71717A;">
+                  Connects directly with a Rhordway specialist
+                </span>
+              </div>
+
+              <div id="collationSuccessAlert" class="collation-success-alert" style="display:none; margin-top:18px;">
+                <div style="font-size:0.95rem; font-weight:800; color:#0F1115; margin-bottom:4px;">
+                  ✓ Consultation Request Ready!
+                </div>
+                <p style="font-size:0.84rem; color:#52525B; line-height:1.5;">
+                  Connecting you directly with a Rhordway specialist on WhatsApp (<strong>${siteConfig.primaryPhoneFormatted}</strong>).
+                </p>
+              </div>
+
+            </form>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1752,72 +2565,161 @@ function renderInformationCollation() {
 }
 
 
-
   /* --- TrustSection.js --- */
 function renderTrustSection() {
   return `
-    <section class="ref-responsibilities-section" id="responsibilities">
-      <div class="ref-container">
+    <section class="mw-magazine-section" id="responsibilities">
+      <div class="mw-container">
         
-        <div class="ref-responsibilities-banner">
-          <img 
-            src="./assets/images/responsibilities-banner.jpg" 
-            alt="Golden sand dunes meeting turquoise ocean at sunset" 
-            class="ref-responsibilities-bg"
-            loading="lazy"
-          />
-          <div class="ref-responsibilities-scrim"></div>
+        <!-- Editorial Masthead Header -->
+        <div class="mw-magazine-masthead anim-reveal-text">
+          <div class="mw-magazine-eyebrow-row">
+            <span class="mw-soft-pill">
+              <span class="mw-blue-dot"></span>
+              The Rhordway Dossier · Editorial Spread
+            </span>
+            <span class="mw-magazine-edition-label">VOL. 2026 // ISSUE 04</span>
+          </div>
 
-          <div class="ref-responsibilities-content">
-            <h2 class="ref-responsibilities-title anim-reveal-text">Why Travel With Rhordway</h2>
+          <h2 class="mw-magazine-headline">
+            Why Nigeria’s Most Discerning Travelers &amp; Students Choose Rhordway<span style="color:#0080E8;">.</span>
+          </h2>
 
-            <div class="ref-glass-cards-grid">
-              
-              <!-- Card 1 -->
-              <div class="ref-glass-card anim-reveal-text anim-delay-1">
-                <div class="ref-glass-check-badge" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <h3 class="ref-glass-card-title">24/7 Concierge</h3>
-                <p class="ref-glass-card-desc">Dedicated WhatsApp Travel Desk</p>
-              </div>
+          <p class="mw-magazine-lead">
+            Most visa refusals happen because of poorly structured Proof of Funds, weak Statements of Purpose, or incomplete embassy files. We treat global travel, university admissions, and migration as an exacting science—delivering unmatched accuracy, speed, and discretion.
+          </p>
+        </div>
 
-              <!-- Card 2 -->
-              <div class="ref-glass-card anim-reveal-text anim-delay-2">
-                <div class="ref-glass-check-badge" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <h3 class="ref-glass-card-title">Flexible Terms</h3>
-                <p class="ref-glass-card-desc">Transparent 2026 Reservation Policy</p>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="ref-glass-card anim-reveal-text anim-delay-3">
-                <div class="ref-glass-check-badge" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <h3 class="ref-glass-card-title">Seamless Transit</h3>
-                <p class="ref-glass-card-desc">Qatar Airways Flights & Chauffeurs</p>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="ref-glass-card anim-reveal-text anim-delay-4">
-                <div class="ref-glass-check-badge" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <h3 class="ref-glass-card-title">Instant Dossier</h3>
-                <p class="ref-glass-card-desc">Client-Side PDF WhatsApp Dispatch</p>
-              </div>
-
+        <!-- Magazine Spread Grid (Left: Lead Cover Story · Right: 3 Stacked Editorial Articles) -->
+        <div class="mw-magazine-spread anim-reveal-text anim-delay-1">
+          
+          <!-- Left: Lead Feature Column (No. 01 Student Visa & POF Authority) -->
+          <article class="mw-magazine-feature-card">
+            <div class="mw-magazine-card-meta">
+              <span class="mw-magazine-tag-pill">SPECIAL REPORT · ADMISSIONS &amp; POF DESK</span>
+              <span class="mw-magazine-folio">NO. 01</span>
             </div>
+
+            <div class="mw-magazine-feature-img-wrap">
+              <img 
+                src="./assets/images/responsibilities-banner.jpg" 
+                alt="Rhordway Student Visa, Admissions and Proof of Funds Advisory" 
+                class="mw-magazine-feature-img"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="mw-magazine-feature-body">
+              <span class="mw-magazine-category">UNDERGRADUATE &amp; POSTGRADUATE</span>
+              <h3 class="mw-magazine-feature-title">
+                Student Visa Experts &amp; Sovereign Proof of Funds
+              </h3>
+              <p class="mw-magazine-feature-desc">
+                From securing direct university admissions across top institutions in the UK, Canada, France, Germany, Spain, and the US to auditing bank accounts for liquid Proof of Funds compliance. Our education desk writes and reviews authentic, refusal-proof Statements of Purpose (SOPs) tailored to consular expectations.
+              </p>
+
+              <div class="mw-magazine-pills">
+                <span>✓ University Placement &amp; CAS</span>
+                <span>✓ Proof of Funds Advisory</span>
+                <span>✓ Bespoke Statement of Purpose</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Right: Stacked Editorial Articles (02, 03, 04) -->
+          <div class="mw-magazine-side-stack">
+            
+            <!-- Article No. 02 -->
+            <article class="mw-magazine-article-item">
+              <div class="mw-magazine-article-header">
+                <span class="mw-magazine-num">02</span>
+                <div>
+                  <span class="mw-magazine-tag">GLOBAL MOBILITY</span>
+                  <h3 class="mw-magazine-article-title">Global Visas &amp; Strategic Migration</h3>
+                </div>
+              </div>
+              <p class="mw-magazine-article-desc">
+                Embassy-compliant filing for Schengen countries (France, Germany, Spain), the UK, Canada, and the United States. We audit every financial affidavit, employment record, and ties-to-home evidence with 98% first-time accuracy.
+              </p>
+              <div class="mw-magazine-article-meta">
+                <span>UK · Canada · Schengen · USA</span>
+                <span class="mw-blue-dot"></span>
+                <span>98% Accuracy</span>
+              </div>
+            </article>
+
+            <!-- Article No. 03 -->
+            <article class="mw-magazine-article-item">
+              <div class="mw-magazine-article-header">
+                <span class="mw-magazine-num">03</span>
+                <div>
+                  <span class="mw-magazine-tag">DOCUMENTATION &amp; LOGISTICS</span>
+                  <h3 class="mw-magazine-article-title">Fast-Track Passports &amp; Priority Flights</h3>
+                </div>
+              </div>
+              <p class="mw-magazine-article-desc">
+                Urgent Nigerian passport renewals and fresh booklet coordination expedited without bureaucratic stalling. Coupled with priority international flight bookings on global carriers and verified, embassy-compliant travel insurance.
+              </p>
+              <div class="mw-magazine-article-meta">
+                <span>Fast-Track Renewals</span>
+                <span class="mw-blue-dot"></span>
+                <span>Embassy-Approved Insurance</span>
+              </div>
+            </article>
+
+            <!-- Article No. 04 -->
+            <article class="mw-magazine-article-item">
+              <div class="mw-magazine-article-header">
+                <span class="mw-magazine-num">04</span>
+                <div>
+                  <span class="mw-magazine-tag">WHITE-GLOVE CONCIERGE</span>
+                  <h3 class="mw-magazine-article-title">Airport Transfers &amp; 5-Star Accommodations</h3>
+                </div>
+              </div>
+              <p class="mw-magazine-article-desc">
+                Your journey extends seamlessly past airport customs. We arrange private meet-and-greet airport pickups, chauffeur drop-offs, and hand-selected luxury hotel reservations across all global destinations.
+              </p>
+              <div class="mw-magazine-article-meta">
+                <span>VIP Airport Meet &amp; Greet</span>
+                <span class="mw-blue-dot"></span>
+                <span>5-Star Handpicked Stays</span>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+        <!-- Editorial Bottom Verification Ribbon & CTA -->
+        <div class="mw-magazine-footer-ribbon anim-reveal-text anim-delay-2">
+          <div class="mw-magazine-metrics-grid">
+            <div class="mw-magazine-metric">
+              <span class="mw-mag-stat">98%</span>
+              <span class="mw-mag-stat-lbl">Documentation Accuracy</span>
+            </div>
+            <div class="mw-magazine-metric">
+              <span class="mw-mag-stat">14+</span>
+              <span class="mw-mag-stat-lbl">Destination Countries</span>
+            </div>
+            <div class="mw-magazine-metric">
+              <span class="mw-mag-stat">100%</span>
+              <span class="mw-mag-stat-lbl">Verified Embassy Filings</span>
+            </div>
+            <div class="mw-magazine-metric">
+              <span class="mw-mag-stat">24/7</span>
+              <span class="mw-mag-stat-lbl">Direct Travel Specialist Desk</span>
+            </div>
+          </div>
+
+          <div class="mw-magazine-cta-row">
+            <button 
+              type="button" 
+              class="mw-action-group"
+              onclick="window.rhordwayApp.scrollToConsultation()"
+            >
+              <span class="mw-action-pill">BOOK YOUR CONSULTATION</span>
+              <span class="mw-action-circle" aria-hidden="true">↗</span>
+            </button>
           </div>
         </div>
 
@@ -1827,27 +2729,61 @@ function renderTrustSection() {
 }
 
 function renderUnleashWanderlust() {
-  return ''; // Replaced by reference layout sections
+  return '';
 }
 
 
   /* --- FAQAccordion.js --- */
-
-
 function renderFAQAccordion() {
+  const companyFaqs = [
+    {
+      id: 'faq-student-visa',
+      question: 'What does Rhordway’s Student Visa & Study Abroad service include?',
+      answer:
+        'We provide end-to-end Undergraduate and Postgraduate admission and student visa processing for the UK, Canada, France, Germany, Spain, Ireland, and the USA. Our support covers course and institution selection, Statement of Purpose (SOP) writing and review, Proof of Funds advisory, admission letter/CAS processing, and full student visa filing.'
+    },
+    {
+      id: 'faq-travel-migration',
+      question: 'Which countries do you cover for Travel Visas and Global Migration?',
+      answer:
+        'We process tourist, business, family visit, and migration visas for France, Germany, Spain (and all 29 Schengen countries), the United Kingdom, Canada, the United States, Qatar, UAE (Dubai), Tanzania, Kenya, Egypt, and South Africa—complete with document verification and appointment booking.'
+    },
+    {
+      id: 'faq-passport',
+      question: 'Can Rhordway assist with fresh Nigerian passport applications and renewals?',
+      answer:
+        'Yes. We assist individuals, students, and families with fresh Nigerian passport applications, renewals, biometric capturing coordination, and travel document preparation so your passport is ready without delays.'
+    },
+    {
+      id: 'faq-flights-transfers',
+      question: 'Do you handle Flight Booking, Travel Insurance, and Airport/Hotel Transfers?',
+      answer:
+        'Absolutely. We book domestic and international flights across global airlines, issue embassy-compliant Travel Insurance policies, reserve verified hotels, and arrange private Airport Transfers and Hotel Transfers worldwide.'
+    },
+    {
+      id: 'faq-consultation',
+      question: 'How do I book a consultation with a Rhordway specialist?',
+      answer:
+        'Simply click any "Book Consultation" button on our website, select the service you need (Student Visa, Travel Visa, Migration, Passport, Flights, or Holidays), fill in your contact details, and submit. You will be connected directly with our specialist team on WhatsApp (+234 816 420 6030 / +234 901 339 7830).'
+    }
+  ];
+
   return `
-    <section class="section-padding" id="faqs" style="background-color:var(--surface-primary); border-top:1px solid var(--border-subtle);">
-      <div class="container">
+    <section class="section-padding" id="faqs" style="background-color:#FFFFFF; border-top:1px solid #F1F1F3;">
+      <div class="mw-container">
         <header class="section-header text-center">
-          <p class="eyebrow">Clear Information</p>
+          <span class="mw-soft-pill" style="margin-bottom:14px;">
+            <span class="mw-blue-dot"></span>
+            Clear Information
+          </span>
           <h2 class="section-title">Frequently Asked Questions</h2>
           <p class="section-subtitle">
-            Essential facts regarding inclusions, visas, flight arrangements, and booking steps.
+            Essential answers regarding Student Visas, Proof of Funds, Statement of Purpose, Global Migration, Passports, Flights, and Travel Insurance.
           </p>
         </header>
 
         <div class="faq-container" role="region" aria-label="Frequently Asked Questions Accordion">
-          ${faqList.map((faq) => `
+          ${companyFaqs.map((faq) => `
             <div class="faq-item" id="faq-item-${faq.id}">
               <button 
                 type="button" 
@@ -1881,7 +2817,7 @@ function renderFAQAccordion() {
 
 
 function renderFinalCTA() {
-  return ''; // Replaced by reference layout flow
+  return '';
 }
 
 function renderSiteFooter() {
@@ -1892,11 +2828,22 @@ function renderSiteFooter() {
         <div class="ref-footer-main-row">
           <!-- Col 1: Brand & Socials -->
           <div class="ref-footer-brand-col">
-            <a href="#" class="ref-footer-logo" aria-label="Rhordway Home">
-              <span class="ref-brand-name">Rhordway<span class="ref-brand-dot">.</span></span>
+            <a 
+              href="#home" 
+              class="ref-footer-logo" 
+              aria-label="${siteConfig.brandName} Home"
+              onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home')"
+            >
+              <img 
+                src="./assets/images/rhordway-logo-dark.png" 
+                alt="${siteConfig.brandName}" 
+                class="rhordway-footer-logo-img"
+                width="155"
+                height="29"
+              />
             </a>
             <p class="ref-footer-tagline">
-              Escape the ordinary with curated holiday escapes.
+              We Make Travel Processing Simple And Stress-Free. Explore the world, one breathtaking destination at a time.
             </p>
 
             <div class="ref-social-icons-row" aria-label="Social media channels">
@@ -1920,13 +2867,6 @@ function renderSiteFooter() {
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                 </svg>
               </a>
-              <!-- YouTube -->
-              <a href="https://youtube.com/@Rhordway" target="_blank" rel="noopener" class="ref-social-icon icon-yt" aria-label="YouTube">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"></polygon>
-                </svg>
-              </a>
               <!-- WhatsApp -->
               <a href="https://wa.me/2348164206030" target="_blank" rel="noopener" class="ref-social-icon icon-wa" aria-label="WhatsApp">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1936,27 +2876,37 @@ function renderSiteFooter() {
             </div>
           </div>
 
-          <!-- Col 2: Quick Links -->
+          <!-- Col 2: Company Pages -->
           <div class="ref-footer-links-col">
-            <h4 class="ref-footer-col-title">Quick Links</h4>
+            <h4 class="ref-footer-col-title">Company &amp; Services</h4>
             <ul class="ref-footer-nav-list">
-              <li><a href="#hot-deals">Packages Tour</a></li>
-              <li><a href="#top-destinations">Top Destinations</a></li>
-              <li><a href="#responsibilities">Family Holiday</a></li>
-              <li><a href="#booking-collation">Reservation Collation</a></li>
+              <li><a href="#home" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home')">Home</a></li>
+              <li><a href="#about" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('about')">About Rhordway</a></li>
+              <li><a href="#migration-services" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('migration-services')">Migration &amp; Visa Services</a></li>
+              <li><a href="#holidays" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('holidays')">Holidays &amp; Escapes</a></li>
+              <li><a href="#booking-collation" onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()">Book Consultation</a></li>
             </ul>
           </div>
 
           <!-- Col 3: Contact Us -->
           <div class="ref-footer-contact-col">
             <h4 class="ref-footer-col-title">Contact Us</h4>
-            <p class="ref-footer-contact-line">
-              Landline: <a href="tel:+2348164206030">+234 816 420 6030</a>
+            <p class="ref-footer-contact-line" style="margin-bottom:6px;">
+              Phone / WhatsApp: <a href="tel:+2348164206030">${siteConfig.primaryPhoneFormatted}</a>
             </p>
-            <div style="margin-top:14px;">
-              <span class="ref-footer-contact-line" style="display:block; margin-bottom:8px;">Newsletter Registration:</span>
-              <a href="#booking-collation" class="ref-newsletter-btn">
-                Register now
+            <p class="ref-footer-contact-line" style="margin-bottom:6px;">
+              Alternate Line: <a href="tel:+2349013397830">${siteConfig.alternatePhone}</a>
+            </p>
+            <p class="ref-footer-contact-line" style="margin-bottom:14px;">
+              Email: <a href="mailto:${siteConfig.contactEmail}">${siteConfig.contactEmail}</a>
+            </p>
+            <div>
+              <a 
+                href="#booking-collation" 
+                class="mw-black-pill-btn"
+                onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+              >
+                BOOK CONSULTATION ↗
               </a>
             </div>
           </div>
@@ -1964,7 +2914,7 @@ function renderSiteFooter() {
         </div>
 
         <div class="ref-footer-copyright">
-          Copyright: &copy; 2026 Rhordway Travels. All rights reserved
+          Copyright &copy; 2026 Rhordway™ (${siteConfig.instagram}). All rights reserved.
         </div>
 
       </div>
@@ -2070,23 +3020,57 @@ function renderEnquiryModal() {
 
 
 
-
-
-
 class RhordwayApplication {
   constructor() {
+    this.currentPage = 'home';
     this.currentEnquiryParams = {};
-    this.selectedGrandPrixOccupancy = null;
-    this.selectedGrandPrixPrice = null;
-    this.selectedCollationPackageId = 'doha-zanzibar';
+    this.flagshipOrder = ['zanzibar-nairobi', 'doha-nairobi', 'doha-zanzibar', 'doha-grand-prix'];
+    this.activeMagazinePkgId = 'zanzibar-nairobi';
   }
 
   init() {
+    const hash = (window.location.hash || '').replace('#', '');
+    if (['home', 'about', 'migration-services', 'holidays'].includes(hash)) {
+      this.currentPage = hash;
+    }
+
     this.renderApp();
     this.bindGlobalEvents();
-    this.updateCollationPackage('doha-zanzibar');
+    this.updateActiveNavState();
     this.initScrollAnimations();
-    this.initDealsCarousel();
+  }
+
+  renderPageBody() {
+    if (this.currentPage === 'about') {
+      return `
+        ${renderAboutPage()}
+        ${renderTrustSection()}
+        ${renderInformationCollation()}
+      `;
+    }
+
+    if (this.currentPage === 'migration-services') {
+      return `
+        ${renderMigrationServicesPage()}
+        ${renderFAQAccordion()}
+        ${renderInformationCollation()}
+      `;
+    }
+
+    if (this.currentPage === 'holidays') {
+      return `
+        ${renderHolidaysPage()}
+        ${renderDestinationFeature()}
+        ${renderInformationCollation()}
+      `;
+    }
+
+    // Default: Home Page (Executive Overview: Hero + Migration Strip + Sticky What We Do + Texts-Left/Image-Right Divisions + Consultation)
+    return `
+      ${renderCampaignHero()}
+      ${renderExperienceSelector()}
+      ${renderInformationCollation()}
+    `;
   }
 
   renderApp() {
@@ -2098,30 +3082,77 @@ class RhordwayApplication {
         ${renderSiteHeader()}
         ${renderMobileNavigation()}
         <main id="main-content">
-          ${renderCampaignHero()}
-          ${renderExperienceSelector()}
-          ${renderDestinationFeature()}
-          ${renderTrustSection()}
-          ${renderInformationCollation()}
-          ${renderFAQAccordion()}
+          ${this.renderPageBody()}
         </main>
         ${renderSiteFooter()}
       </div>
       ${renderEnquiryModal()}
 
-      <!-- Mobile Sticky Enquiry Bar -->
-      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-top:1px solid rgba(0,0,0,0.06); box-shadow:0 -6px 24px rgba(15,23,42,0.08); padding:10px 18px max(10px, env(safe-area-inset-bottom)); display:none; justify-content:space-between; align-items:center;">
+      <!-- Mobile Sticky Consultation Bar -->
+      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.96); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-top:1px solid rgba(0,0,0,0.08); box-shadow:0 -6px 24px rgba(0,0,0,0.06); padding:10px 18px max(10px, env(safe-area-inset-bottom)); display:none; justify-content:space-between; align-items:center;">
         <div>
-          <span style="font-size:0.68rem; color:var(--brand-primary); text-transform:uppercase; letter-spacing:0.06em; display:block; font-weight:800;">Rhordway 2026</span>
-          <span style="font-size:0.875rem; color:var(--brand-dark); font-weight:800; letter-spacing:-0.01em;">From ₦3,400,000 / sharing</span>
+          <span style="font-size:0.65rem; color:#6B7280; text-transform:uppercase; letter-spacing:0.08em; display:block; font-weight:700;">Rhordway™</span>
+          <span style="font-size:0.875rem; color:#0F1115; font-weight:800; letter-spacing:-0.01em;">Migration &amp; Visa Experts</span>
         </div>
-        <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-primary" style="padding:10px 22px; font-size:0.85rem; border-radius:50px; min-height:42px;">
-          Book Now
+        <a 
+          href="#booking-collation" 
+          class="mw-black-pill-btn" 
+          style="padding:10px 20px; font-size:0.82rem;"
+          onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+        >
+          BOOK CONSULTATION ↗
         </a>
       </div>
     `;
 
     this.initScrollObservers();
+  }
+
+  navigateToPage(pageName, scrollTargetId = null) {
+    const validPages = ['home', 'about', 'migration-services', 'holidays'];
+    const targetPage = validPages.includes(pageName) ? pageName : 'home';
+    this.currentPage = targetPage;
+
+    if (typeof window.history?.pushState === 'function') {
+      window.history.pushState({ page: targetPage }, '', `#${targetPage}`);
+    }
+
+    const mainEl = document.getElementById('main-content');
+    if (mainEl) {
+      mainEl.innerHTML = this.renderPageBody();
+    } else {
+      this.renderApp();
+    }
+
+    this.updateActiveNavState();
+    this.initScrollAnimations();
+
+    if (scrollTargetId) {
+      setTimeout(() => {
+        document.getElementById(scrollTargetId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 60);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  updateActiveNavState() {
+    document.querySelectorAll('[data-page-nav]').forEach((el) => {
+      const page = el.getAttribute('data-page-nav');
+      el.classList.toggle('active', page === this.currentPage);
+    });
+  }
+
+  scrollToConsultation() {
+    const section = document.getElementById('booking-collation');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('guestFullName')?.focus();
+      }, 400);
+    } else {
+      this.navigateToPage('home', 'booking-collation');
+    }
   }
 
   bindGlobalEvents() {
@@ -2134,6 +3165,19 @@ class RhordwayApplication {
       closeBtn.addEventListener('click', () => this.closeMobileMenu());
     }
 
+    window.addEventListener('popstate', () => {
+      const hash = (window.location.hash || '').replace('#', '');
+      if (['home', 'about', 'migration-services', 'holidays'].includes(hash)) {
+        this.currentPage = hash;
+        const mainEl = document.getElementById('main-content');
+        if (mainEl) {
+          mainEl.innerHTML = this.renderPageBody();
+          this.updateActiveNavState();
+          this.initScrollAnimations();
+        }
+      }
+    });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         this.closeMobileMenu();
@@ -2145,7 +3189,6 @@ class RhordwayApplication {
   initScrollObservers() {
     const header = document.getElementById('siteHeader');
     const mobileBar = document.getElementById('mobileStickyBar');
-    const hero = document.getElementById('hero');
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
@@ -2158,8 +3201,8 @@ class RhordwayApplication {
         }
       }
 
-      if (mobileBar && hero) {
-        if (window.innerWidth < 768 && scrollY > 400) {
+      if (mobileBar) {
+        if (window.innerWidth < 768 && scrollY > 360) {
           mobileBar.style.display = 'flex';
         } else {
           mobileBar.style.display = 'none';
@@ -2168,9 +3211,8 @@ class RhordwayApplication {
     }, { passive: true });
   }
 
-  /* ---------------- Scroll Animations (Bidirectional: Scrolling Down & Up) ---------------- */
   initScrollAnimations() {
-    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card, .ref-deal-card');
+    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card, .farer-mag-card');
     if (!animTargets.length) return;
 
     if (typeof IntersectionObserver !== 'undefined') {
@@ -2178,17 +3220,11 @@ class RhordwayApplication {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-inview');
-          } else {
-            // Remove class so it re-triggers smoothly when scrolling up from footer
-            const rect = entry.boundingClientRect;
-            if (rect.top > window.innerHeight || rect.bottom < 0) {
-              entry.target.classList.remove('is-inview');
-            }
           }
         });
       }, {
-        threshold: 0.08,
-        rootMargin: '10px 0px -10px 0px'
+        threshold: 0.06,
+        rootMargin: '20px 0px -10px 0px'
       });
 
       animTargets.forEach((target) => observer.observe(target));
@@ -2197,73 +3233,25 @@ class RhordwayApplication {
     }
   }
 
-  /* ---------------- Hot Deals Mobile Carousel Controls & Touch Swiping ---------------- */
-  initDealsCarousel() {
-    const grid = document.getElementById('refDealsGrid');
-    const prevBtn = document.getElementById('dealPrevBtn');
-    const nextBtn = document.getElementById('dealNextBtn');
-    const dots = document.querySelectorAll('.ref-deal-dot');
-    if (!grid) return;
-
-    const getScrollStep = () => {
-      const firstCard = grid.querySelector('.ref-deal-card');
-      return firstCard ? firstCard.offsetWidth + 14 : 300;
-    };
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-      });
-    }
-
-    // Synchronize active dot indicator on scroll
-    grid.addEventListener('scroll', () => {
-      if (!dots.length) return;
-      const scrollPos = grid.scrollLeft;
-      const step = getScrollStep();
-      const activeIdx = Math.min(dots.length - 1, Math.max(0, Math.round(scrollPos / step)));
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === activeIdx);
-      });
-    }, { passive: true });
-
-    // Click dot to jump directly
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
-        const step = getScrollStep();
-        grid.scrollTo({ left: idx * step, behavior: 'smooth' });
-      });
+  /* ---------------- Hugo Magazine Accordion Strip Controls ---------------- */
+  activateMagazinePanel(pkgId) {
+    this.activeMagazinePkgId = pkgId;
+    document.querySelectorAll('.hugo-strip-card').forEach((card) => {
+      card.classList.toggle('active', card.getAttribute('data-pkg-id') === pkgId);
     });
+  }
 
-    // Mobile touch swipe gestures
-    let touchStartX = 0;
-    let touchEndX = 0;
+  stepMagazinePanel(direction) {
+    const idx = this.flagshipOrder.indexOf(this.activeMagazinePkgId);
+    const nextIdx = (idx + direction + this.flagshipOrder.length) % this.flagshipOrder.length;
+    const nextPkgId = this.flagshipOrder[nextIdx];
+    this.activateMagazinePanel(nextPkgId);
 
-    grid.addEventListener('touchstart', (e) => {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchStartX = e.changedTouches[0].screenX;
-      }
-    }, { passive: true });
-
-    grid.addEventListener('touchend', (e) => {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 40) {
-          if (diff > 0) {
-            grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-          } else {
-            grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-          }
-        }
-      }
-    }, { passive: true });
+    const activeCard = document.getElementById(`hugo-panel-${nextPkgId}`);
+    const strip = document.getElementById('hugoAccordionStrip');
+    if (activeCard && strip && window.innerWidth < 960) {
+      strip.scrollTo({ left: activeCard.offsetLeft - 16, behavior: 'smooth' });
+    }
   }
 
   /* ---------------- Mobile Menu Controls ---------------- */
@@ -2315,216 +3303,69 @@ class RhordwayApplication {
     }
   }
 
-  /* ---------------- Grand Prix Occupancy Selector ---------------- */
-  selectOccupancy(option, priceFormatted) {
-    this.selectedGrandPrixOccupancy = option === 'double' ? 'Double Occupancy (per person sharing)' : 'Single Occupancy';
-    this.selectedGrandPrixPrice = priceFormatted;
-
-    const btnDouble = document.getElementById('occupancy-btn-double');
-    const btnSingle = document.getElementById('occupancy-btn-single');
-
-    btnDouble?.classList.toggle('active', option === 'double');
-    btnDouble?.setAttribute('aria-checked', option === 'double' ? 'true' : 'false');
-
-    btnSingle?.classList.toggle('active', option === 'single');
-    btnSingle?.setAttribute('aria-checked', option === 'single' ? 'true' : 'false');
-
-    const feedback = document.getElementById('occupancySelectionFeedback');
-    const priceDisplay = document.getElementById('selectedPriceDisplay');
-    if (feedback && priceDisplay) {
-      feedback.style.borderColor = 'var(--brand-primary)';
-      feedback.style.background = 'rgba(0, 132, 230, 0.08)';
-      feedback.children[0].textContent = `Selected: ${this.selectedGrandPrixOccupancy}`;
-      priceDisplay.textContent = priceFormatted;
-    }
-  }
-
-  /* ---------------- Information Collation & Reservation ---------------- */
-  updateCollationPackage(pkgId) {
-    this.selectedCollationPackageId = pkgId;
-    const labelDZ = document.getElementById('label-pick-dz');
-    const labelGP = document.getElementById('label-pick-gp');
-    const occupancySelect = document.getElementById('collationOccupancySelect');
-
-    labelDZ?.classList.toggle('active', pkgId === 'doha-zanzibar');
-    labelGP?.classList.toggle('active', pkgId === 'doha-grand-prix');
-
-    if (occupancySelect) {
-      if (pkgId === 'doha-zanzibar') {
-        occupancySelect.innerHTML = `
-          <option value="Double Occupancy (per person sharing)" data-rate="4350000" selected>
-            Double Occupancy (per person sharing) — ₦4,350,000 / person
-          </option>
-        `;
-      } else {
-        occupancySelect.innerHTML = `
-          <option value="Double Occupancy (per person sharing)" data-rate="3400000" selected>
-            Double Occupancy (per person sharing) — ₦3,400,000 / person
-          </option>
-          <option value="Single Occupancy" data-rate="4150000">
-            Single Occupancy — ₦4,150,000 / person
-          </option>
-        `;
-      }
+  /* ---------------- Consultation Form Selection & Submission ---------------- */
+  selectServiceAndScroll(serviceLabel, destinationLabel = '') {
+    const serviceSelect = document.getElementById('collationServiceType');
+    if (serviceSelect && serviceLabel) {
+      serviceSelect.value = serviceLabel;
     }
 
-    this.updateCollationCalculation();
-  }
-
-  updateCollationCalculation() {
-    const occupancySelect = document.getElementById('collationOccupancySelect');
-    const guestSelect = document.getElementById('guestCount');
-    const totalDisplay = document.getElementById('collationTotalAmount');
-    const noteDisplay = document.getElementById('collationCalculationNote');
-
-    if (!occupancySelect || !guestSelect || !totalDisplay) return;
-
-    const selectedOption = occupancySelect.options[occupancySelect.selectedIndex];
-    const unitRate = parseInt(selectedOption?.getAttribute('data-rate') || '4350000', 10);
-    const guestCount = parseInt(guestSelect.value || '2', 10);
-
-    const total = unitRate * guestCount;
-    const formattedTotal = '₦' + total.toLocaleString('en-NG');
-    const formattedUnit = '₦' + unitRate.toLocaleString('en-NG');
-
-    totalDisplay.textContent = formattedTotal;
-    if (noteDisplay) {
-      noteDisplay.textContent = `${guestCount} Person(s) × ${formattedUnit}`;
+    const destInput = document.getElementById('departureCity');
+    if (destInput && destinationLabel) {
+      destInput.value = destinationLabel;
     }
+
+    this.scrollToConsultation();
   }
 
   populateAndScrollCollation(pkgId) {
-    const radio = document.querySelector(`input[name="selectedPackage"][value="${pkgId}"]`);
-    if (radio) {
-      radio.checked = true;
-    }
-    this.updateCollationPackage(pkgId);
-
-    const section = document.getElementById('booking-collation');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    setTimeout(() => {
-      document.getElementById('guestFullName')?.focus();
-    }, 400);
+    const pkg = packagesData[pkgId];
+    this.selectServiceAndScroll('Vacation & Holiday Enquiry', pkg ? pkg.title : '');
   }
 
   handleCollationSubmit(event) {
     event.preventDefault();
 
+    const serviceSelect = document.getElementById('collationServiceType');
     const fullNameInput = document.getElementById('guestFullName');
     const phoneInput = document.getElementById('guestPhone');
     const emailInput = document.getElementById('guestEmail');
-    const departureCityInput = document.getElementById('departureCity');
-    const guestCountSelect = document.getElementById('guestCount');
-    const occupancySelect = document.getElementById('collationOccupancySelect');
+    const destinationInput = document.getElementById('departureCity');
     const specialRequestsInput = document.getElementById('specialRequests');
     const successAlert = document.getElementById('collationSuccessAlert');
 
-    const pkg = packagesData[this.selectedCollationPackageId];
-    const selectedOption = occupancySelect?.options[occupancySelect.selectedIndex];
-    const unitRate = parseInt(selectedOption?.getAttribute('data-rate') || '4350000', 10);
-    const guestCount = parseInt(guestCountSelect?.value || '2', 10);
-    const total = unitRate * guestCount;
-    const formattedTotal = '₦' + total.toLocaleString('en-NG');
-    const formattedUnit = '₦' + unitRate.toLocaleString('en-NG');
+    const serviceNeeded = serviceSelect?.value || 'Student Visa & Study Abroad';
+    const fullName = fullNameInput?.value || 'Valued Client';
+    const phone = phoneInput?.value || '';
+    const email = emailInput?.value || '';
+    const destination = destinationInput?.value || 'Global';
+    const notes = specialRequestsInput?.value || '';
 
-    const bookingRef = generateBookingReference();
+    const waMessage =
+      `*RHORDWAY OFFICIAL CONSULTATION REQUEST*\n\n` +
+      `• *Service Required:* ${serviceNeeded}\n` +
+      `• *Target Destination:* ${destination}\n` +
+      `• *Client Name:* ${fullName}\n` +
+      `• *Phone / WhatsApp:* ${phone}\n` +
+      `• *Email:* ${email}\n` +
+      (notes ? `• *Additional Details:* ${notes}\n` : '') +
+      `\nHello Rhordway Team, I would like to book a consultation regarding the service above.`;
 
-    const dossierData = {
-      bookingRef,
-      packageName: pkg.title,
-      travelDates: pkg.dates,
-      duration: pkg.durationLabel,
-      occupancy: selectedOption?.value || 'Double Occupancy (per person sharing)',
-      priceFormatted: formattedUnit + ' per person',
-      travellerCount: guestCount,
-      totalEstimated: formattedTotal,
-      leadName: fullNameInput?.value || 'Valued Guest',
-      email: emailInput?.value || 'Awaiting email',
-      phone: phoneInput?.value || 'Awaiting phone',
-      departureCity: departureCityInput?.value || 'Nigeria',
-      specialRequests: specialRequestsInput?.value || '',
-      inclusions: pkg.inclusions
-    };
-
-    // 1. Generate and automatically download the official PDF
-    generateReservationPDF(dossierData);
-
-    // 2. Build structured WhatsApp dossier message
-    const waMessage = 
-      `*RHORDWAY TRAVEL RESERVATION DOSSIER*\n` +
-      `*Booking Reference:* ${bookingRef}\n\n` +
-      `*Selected Package:* ${pkg.title}\n` +
-      `*Travel Dates:* ${pkg.dates} (${pkg.durationLabel})\n` +
-      `*Occupancy:* ${dossierData.occupancy}\n` +
-      `*Travellers:* ${guestCount} Person(s)\n` +
-      `*Estimated Package Total:* ${formattedTotal}\n\n` +
-      `*LEAD GUEST DETAILS:*\n` +
-      `• *Name:* ${dossierData.leadName}\n` +
-      `• *Phone/WhatsApp:* ${dossierData.phone}\n` +
-      `• *Email:* ${dossierData.email}\n` +
-      `• *Departure City:* ${dossierData.departureCity}\n` +
-      (dossierData.specialRequests ? `• *Special Notes:* ${dossierData.specialRequests}\n` : '') +
-      `\n📄 *Official Reservation PDF has been generated and saved.* I am sending this alongside the attached PDF for room confirmation and payment scheduling.`;
-
-    // 3. Show confirmation feedback
     if (successAlert) {
       successAlert.style.display = 'block';
     }
 
-    // 4. Open verified WhatsApp consultant line (+2348164206030)
     const targetNumber = siteConfig.whatsappNumber || '2348164206030';
     const waUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(waMessage)}`;
 
     setTimeout(() => {
       window.open(waUrl, '_blank', 'noopener,noreferrer');
-    }, 1200);
+    }, 600);
   }
 
   /* ---------------- WhatsApp Modal Controls ---------------- */
   openEnquiryModal(packageType) {
-    const modal = document.getElementById('enquiryModalOverlay');
-    const preview = document.getElementById('enquiryMessagePreview');
-    const title = document.getElementById('enquiryModalTitle');
-    const eyebrow = document.getElementById('enquiryModalEyebrow');
-    if (!modal || !preview) return;
-
-    if (packageType === 'doha-zanzibar') {
-      this.currentEnquiryParams = {
-        packageId: 'doha-zanzibar',
-        packageName: 'Doha + Zanzibar',
-        travelDates: 'December 12–19, 2026',
-        price: '₦4,350,000 per person sharing'
-      };
-      if (title) title.textContent = 'Doha + Zanzibar Enquiry';
-      if (eyebrow) eyebrow.textContent = 'Package Reservation Details';
-    } else if (packageType === 'doha-grand-prix') {
-      const occupancy = this.selectedGrandPrixOccupancy || 'Double Occupancy (per person sharing)';
-      const price = this.selectedGrandPrixPrice || '₦3,400,000 per person';
-      this.currentEnquiryParams = {
-        packageId: 'doha-grand-prix',
-        packageName: 'Doha Grand Prix Experience',
-        travelDates: 'November 25 – December 1, 2026',
-        occupancy,
-        price
-      };
-      if (title) title.textContent = 'Doha Grand Prix Enquiry';
-      if (eyebrow) eyebrow.textContent = 'Motorsport Package Reservation';
-    } else {
-      this.currentEnquiryParams = {
-        packageId: 'general',
-        packageName: 'Rhordway Luxury Holiday Packages'
-      };
-      if (title) title.textContent = 'Speak with a Travel Consultant';
-      if (eyebrow) eyebrow.textContent = 'Rhordway Enquiry Desk';
-    }
-
-    const message = buildWhatsAppMessage(this.currentEnquiryParams);
-    preview.textContent = message;
-
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    this.scrollToConsultation();
   }
 
   closeEnquiryModal() {
@@ -2537,30 +3378,18 @@ class RhordwayApplication {
   copyEnquiryMessage() {
     const preview = document.getElementById('enquiryMessagePreview');
     if (!preview || !preview.textContent) return;
-
-    navigator.clipboard.writeText(preview.textContent).then(() => {
-      alert('Enquiry message copied to clipboard!');
-    }).catch(() => {
-      prompt('Copy your enquiry message below:', preview.textContent);
-    });
+    navigator.clipboard.writeText(preview.textContent);
   }
 
   sendWhatsAppDirect() {
     const preview = document.getElementById('enquiryMessagePreview');
-    const testInput = document.getElementById('testPhoneInput');
     const message = preview?.textContent || buildWhatsAppMessage(this.currentEnquiryParams);
-
-    const configuredNumber = (siteConfig.whatsappNumber || '').replace(/[^0-9]/g, '');
-    const userNumber = (testInput?.value || '').replace(/[^0-9]/g, '');
-
-    const targetNumber = userNumber || configuredNumber || '2348164206030';
-
+    const targetNumber = siteConfig.whatsappNumber || '2348164206030';
     const waUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   }
 }
 
-// Instantiate and expose globally
 const app = new RhordwayApplication();
 window.rhordwayApp = app;
 

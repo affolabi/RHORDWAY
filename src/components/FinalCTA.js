@@ -1,7 +1,7 @@
 import { siteConfig } from '../config/siteConfig.js';
 
 export function renderFinalCTA() {
-  return ''; // Replaced by reference layout flow
+  return '';
 }
 
 export function renderSiteFooter() {
@@ -12,11 +12,22 @@ export function renderSiteFooter() {
         <div class="ref-footer-main-row">
           <!-- Col 1: Brand & Socials -->
           <div class="ref-footer-brand-col">
-            <a href="#" class="ref-footer-logo" aria-label="Rhordway Home">
-              <span class="ref-brand-name">Rhordway<span class="ref-brand-dot">.</span></span>
+            <a 
+              href="#home" 
+              class="ref-footer-logo" 
+              aria-label="${siteConfig.brandName} Home"
+              onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home')"
+            >
+              <img 
+                src="./assets/images/rhordway-logo-dark.png" 
+                alt="${siteConfig.brandName}" 
+                class="rhordway-footer-logo-img"
+                width="155"
+                height="29"
+              />
             </a>
             <p class="ref-footer-tagline">
-              Escape the ordinary with curated holiday escapes.
+              We Make Travel Processing Simple And Stress-Free. Explore the world, one breathtaking destination at a time.
             </p>
 
             <div class="ref-social-icons-row" aria-label="Social media channels">
@@ -40,13 +51,6 @@ export function renderSiteFooter() {
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                 </svg>
               </a>
-              <!-- YouTube -->
-              <a href="https://youtube.com/@Rhordway" target="_blank" rel="noopener" class="ref-social-icon icon-yt" aria-label="YouTube">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"></polygon>
-                </svg>
-              </a>
               <!-- WhatsApp -->
               <a href="https://wa.me/2348164206030" target="_blank" rel="noopener" class="ref-social-icon icon-wa" aria-label="WhatsApp">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -56,27 +60,37 @@ export function renderSiteFooter() {
             </div>
           </div>
 
-          <!-- Col 2: Quick Links -->
+          <!-- Col 2: Company Pages -->
           <div class="ref-footer-links-col">
-            <h4 class="ref-footer-col-title">Quick Links</h4>
+            <h4 class="ref-footer-col-title">Company &amp; Services</h4>
             <ul class="ref-footer-nav-list">
-              <li><a href="#hot-deals">Packages Tour</a></li>
-              <li><a href="#top-destinations">Top Destinations</a></li>
-              <li><a href="#responsibilities">Family Holiday</a></li>
-              <li><a href="#booking-collation">Reservation Collation</a></li>
+              <li><a href="#home" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('home')">Home</a></li>
+              <li><a href="#about" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('about')">About Rhordway</a></li>
+              <li><a href="#migration-services" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('migration-services')">Migration &amp; Visa Services</a></li>
+              <li><a href="#holidays" onclick="event.preventDefault(); window.rhordwayApp.navigateToPage('holidays')">Holidays &amp; Escapes</a></li>
+              <li><a href="#booking-collation" onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()">Book Consultation</a></li>
             </ul>
           </div>
 
           <!-- Col 3: Contact Us -->
           <div class="ref-footer-contact-col">
             <h4 class="ref-footer-col-title">Contact Us</h4>
-            <p class="ref-footer-contact-line">
-              Landline: <a href="tel:+2348164206030">+234 816 420 6030</a>
+            <p class="ref-footer-contact-line" style="margin-bottom:6px;">
+              Phone / WhatsApp: <a href="tel:+2348164206030">${siteConfig.primaryPhoneFormatted}</a>
             </p>
-            <div style="margin-top:14px;">
-              <span class="ref-footer-contact-line" style="display:block; margin-bottom:8px;">Newsletter Registration:</span>
-              <a href="#booking-collation" class="ref-newsletter-btn">
-                Register now
+            <p class="ref-footer-contact-line" style="margin-bottom:6px;">
+              Alternate Line: <a href="tel:+2349013397830">${siteConfig.alternatePhone}</a>
+            </p>
+            <p class="ref-footer-contact-line" style="margin-bottom:14px;">
+              Email: <a href="mailto:${siteConfig.contactEmail}">${siteConfig.contactEmail}</a>
+            </p>
+            <div>
+              <a 
+                href="#booking-collation" 
+                class="mw-black-pill-btn"
+                onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+              >
+                BOOK CONSULTATION ↗
               </a>
             </div>
           </div>
@@ -84,7 +98,7 @@ export function renderSiteFooter() {
         </div>
 
         <div class="ref-footer-copyright">
-          Copyright: &copy; 2026 Rhordway Travels. All rights reserved
+          Copyright &copy; 2026 Rhordway™ (${siteConfig.instagram}). All rights reserved.
         </div>
 
       </div>

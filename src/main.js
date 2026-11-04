@@ -1,33 +1,72 @@
 import { siteConfig } from './config/siteConfig.js';
 import { packagesData } from './config/packagesData.js';
 import { buildWhatsAppMessage } from './utils/whatsapp.js';
-import { generateBookingReference, generateReservationPDF } from './utils/pdfGenerator.js';
 import { renderSiteHeader, renderMobileNavigation } from './components/SiteHeader.js';
 import { renderCampaignHero } from './components/CampaignHero.js';
-import { renderExperienceSelector } from './components/ExperienceSelector.js';
+import {
+  renderExperienceSelector,
+  renderAboutPage,
+  renderMigrationServicesPage,
+  renderHolidaysPage
+} from './components/ExperienceSelector.js';
 import { renderDestinationFeature } from './components/DestinationFeature.js';
-import { renderActivityGallery } from './components/ActivityGallery.js';
-import { renderGrandPrixFeature } from './components/PriceOptionSelector.js';
 import { renderInformationCollation } from './components/InformationCollation.js';
-import { renderTrustSection, renderUnleashWanderlust } from './components/TrustSection.js';
+import { renderTrustSection } from './components/TrustSection.js';
 import { renderFAQAccordion } from './components/FAQAccordion.js';
-import { renderFinalCTA, renderSiteFooter } from './components/FinalCTA.js';
+import { renderSiteFooter } from './components/FinalCTA.js';
 import { renderEnquiryModal } from './components/EnquiryModal.js';
 
 class RhordwayApplication {
   constructor() {
+    this.currentPage = 'home';
     this.currentEnquiryParams = {};
-    this.selectedGrandPrixOccupancy = null;
-    this.selectedGrandPrixPrice = null;
-    this.selectedCollationPackageId = 'doha-zanzibar';
+    this.flagshipOrder = ['zanzibar-nairobi', 'doha-nairobi', 'doha-zanzibar', 'doha-grand-prix'];
+    this.activeMagazinePkgId = 'zanzibar-nairobi';
   }
 
   init() {
+    const hash = (window.location.hash || '').replace('#', '');
+    if (['home', 'about', 'migration-services', 'holidays'].includes(hash)) {
+      this.currentPage = hash;
+    }
+
     this.renderApp();
     this.bindGlobalEvents();
-    this.updateCollationPackage('doha-zanzibar');
+    this.updateActiveNavState();
     this.initScrollAnimations();
-    this.initDealsCarousel();
+  }
+
+  renderPageBody() {
+    if (this.currentPage === 'about') {
+      return `
+        ${renderAboutPage()}
+        ${renderTrustSection()}
+        ${renderInformationCollation()}
+      `;
+    }
+
+    if (this.currentPage === 'migration-services') {
+      return `
+        ${renderMigrationServicesPage()}
+        ${renderFAQAccordion()}
+        ${renderInformationCollation()}
+      `;
+    }
+
+    if (this.currentPage === 'holidays') {
+      return `
+        ${renderHolidaysPage()}
+        ${renderDestinationFeature()}
+        ${renderInformationCollation()}
+      `;
+    }
+
+    // Default: Home Page (Executive Overview: Hero + Migration Strip + Sticky What We Do + Texts-Left/Image-Right Divisions + Consultation)
+    return `
+      ${renderCampaignHero()}
+      ${renderExperienceSelector()}
+      ${renderInformationCollation()}
+    `;
   }
 
   renderApp() {
@@ -39,30 +78,77 @@ class RhordwayApplication {
         ${renderSiteHeader()}
         ${renderMobileNavigation()}
         <main id="main-content">
-          ${renderCampaignHero()}
-          ${renderExperienceSelector()}
-          ${renderDestinationFeature()}
-          ${renderTrustSection()}
-          ${renderInformationCollation()}
-          ${renderFAQAccordion()}
+          ${this.renderPageBody()}
         </main>
         ${renderSiteFooter()}
       </div>
       ${renderEnquiryModal()}
 
-      <!-- Mobile Sticky Enquiry Bar -->
-      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-top:1px solid rgba(0,0,0,0.06); box-shadow:0 -6px 24px rgba(15,23,42,0.08); padding:10px 18px max(10px, env(safe-area-inset-bottom)); display:none; justify-content:space-between; align-items:center;">
+      <!-- Mobile Sticky Consultation Bar -->
+      <div class="mobile-sticky-bar" id="mobileStickyBar" style="position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(255,255,255,0.96); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-top:1px solid rgba(0,0,0,0.08); box-shadow:0 -6px 24px rgba(0,0,0,0.06); padding:10px 18px max(10px, env(safe-area-inset-bottom)); display:none; justify-content:space-between; align-items:center;">
         <div>
-          <span style="font-size:0.68rem; color:var(--brand-primary); text-transform:uppercase; letter-spacing:0.06em; display:block; font-weight:800;">Rhordway 2026</span>
-          <span style="font-size:0.875rem; color:var(--brand-dark); font-weight:800; letter-spacing:-0.01em;">From ₦3,400,000 / sharing</span>
+          <span style="font-size:0.65rem; color:#6B7280; text-transform:uppercase; letter-spacing:0.08em; display:block; font-weight:700;">Rhordway™</span>
+          <span style="font-size:0.875rem; color:#0F1115; font-weight:800; letter-spacing:-0.01em;">Migration &amp; Visa Experts</span>
         </div>
-        <a href="#booking-collation" class="ref-hero-discover-btn ref-btn-primary" style="padding:10px 22px; font-size:0.85rem; border-radius:50px; min-height:42px;">
-          Book Now
+        <a 
+          href="#booking-collation" 
+          class="mw-black-pill-btn" 
+          style="padding:10px 20px; font-size:0.82rem;"
+          onclick="event.preventDefault(); window.rhordwayApp.scrollToConsultation()"
+        >
+          BOOK CONSULTATION ↗
         </a>
       </div>
     `;
 
     this.initScrollObservers();
+  }
+
+  navigateToPage(pageName, scrollTargetId = null) {
+    const validPages = ['home', 'about', 'migration-services', 'holidays'];
+    const targetPage = validPages.includes(pageName) ? pageName : 'home';
+    this.currentPage = targetPage;
+
+    if (typeof window.history?.pushState === 'function') {
+      window.history.pushState({ page: targetPage }, '', `#${targetPage}`);
+    }
+
+    const mainEl = document.getElementById('main-content');
+    if (mainEl) {
+      mainEl.innerHTML = this.renderPageBody();
+    } else {
+      this.renderApp();
+    }
+
+    this.updateActiveNavState();
+    this.initScrollAnimations();
+
+    if (scrollTargetId) {
+      setTimeout(() => {
+        document.getElementById(scrollTargetId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 60);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  updateActiveNavState() {
+    document.querySelectorAll('[data-page-nav]').forEach((el) => {
+      const page = el.getAttribute('data-page-nav');
+      el.classList.toggle('active', page === this.currentPage);
+    });
+  }
+
+  scrollToConsultation() {
+    const section = document.getElementById('booking-collation');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('guestFullName')?.focus();
+      }, 400);
+    } else {
+      this.navigateToPage('home', 'booking-collation');
+    }
   }
 
   bindGlobalEvents() {
@@ -75,6 +161,19 @@ class RhordwayApplication {
       closeBtn.addEventListener('click', () => this.closeMobileMenu());
     }
 
+    window.addEventListener('popstate', () => {
+      const hash = (window.location.hash || '').replace('#', '');
+      if (['home', 'about', 'migration-services', 'holidays'].includes(hash)) {
+        this.currentPage = hash;
+        const mainEl = document.getElementById('main-content');
+        if (mainEl) {
+          mainEl.innerHTML = this.renderPageBody();
+          this.updateActiveNavState();
+          this.initScrollAnimations();
+        }
+      }
+    });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         this.closeMobileMenu();
@@ -86,7 +185,6 @@ class RhordwayApplication {
   initScrollObservers() {
     const header = document.getElementById('siteHeader');
     const mobileBar = document.getElementById('mobileStickyBar');
-    const hero = document.getElementById('hero');
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
@@ -99,8 +197,8 @@ class RhordwayApplication {
         }
       }
 
-      if (mobileBar && hero) {
-        if (window.innerWidth < 768 && scrollY > 400) {
+      if (mobileBar) {
+        if (window.innerWidth < 768 && scrollY > 360) {
           mobileBar.style.display = 'flex';
         } else {
           mobileBar.style.display = 'none';
@@ -109,9 +207,8 @@ class RhordwayApplication {
     }, { passive: true });
   }
 
-  /* ---------------- Scroll Animations (Bidirectional: Scrolling Down & Up) ---------------- */
   initScrollAnimations() {
-    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card, .ref-deal-card');
+    const animTargets = document.querySelectorAll('.collage-swipe-col, .collage-card-swipe, .anim-reveal-text, .ref-glass-card, .farer-mag-card');
     if (!animTargets.length) return;
 
     if (typeof IntersectionObserver !== 'undefined') {
@@ -119,17 +216,11 @@ class RhordwayApplication {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-inview');
-          } else {
-            // Remove class so it re-triggers smoothly when scrolling up from footer
-            const rect = entry.boundingClientRect;
-            if (rect.top > window.innerHeight || rect.bottom < 0) {
-              entry.target.classList.remove('is-inview');
-            }
           }
         });
       }, {
-        threshold: 0.08,
-        rootMargin: '10px 0px -10px 0px'
+        threshold: 0.06,
+        rootMargin: '20px 0px -10px 0px'
       });
 
       animTargets.forEach((target) => observer.observe(target));
@@ -138,73 +229,25 @@ class RhordwayApplication {
     }
   }
 
-  /* ---------------- Hot Deals Mobile Carousel Controls & Touch Swiping ---------------- */
-  initDealsCarousel() {
-    const grid = document.getElementById('refDealsGrid');
-    const prevBtn = document.getElementById('dealPrevBtn');
-    const nextBtn = document.getElementById('dealNextBtn');
-    const dots = document.querySelectorAll('.ref-deal-dot');
-    if (!grid) return;
-
-    const getScrollStep = () => {
-      const firstCard = grid.querySelector('.ref-deal-card');
-      return firstCard ? firstCard.offsetWidth + 14 : 300;
-    };
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-      });
-    }
-
-    // Synchronize active dot indicator on scroll
-    grid.addEventListener('scroll', () => {
-      if (!dots.length) return;
-      const scrollPos = grid.scrollLeft;
-      const step = getScrollStep();
-      const activeIdx = Math.min(dots.length - 1, Math.max(0, Math.round(scrollPos / step)));
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === activeIdx);
-      });
-    }, { passive: true });
-
-    // Click dot to jump directly
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
-        const step = getScrollStep();
-        grid.scrollTo({ left: idx * step, behavior: 'smooth' });
-      });
+  /* ---------------- Hugo Magazine Accordion Strip Controls ---------------- */
+  activateMagazinePanel(pkgId) {
+    this.activeMagazinePkgId = pkgId;
+    document.querySelectorAll('.hugo-strip-card').forEach((card) => {
+      card.classList.toggle('active', card.getAttribute('data-pkg-id') === pkgId);
     });
+  }
 
-    // Mobile touch swipe gestures
-    let touchStartX = 0;
-    let touchEndX = 0;
+  stepMagazinePanel(direction) {
+    const idx = this.flagshipOrder.indexOf(this.activeMagazinePkgId);
+    const nextIdx = (idx + direction + this.flagshipOrder.length) % this.flagshipOrder.length;
+    const nextPkgId = this.flagshipOrder[nextIdx];
+    this.activateMagazinePanel(nextPkgId);
 
-    grid.addEventListener('touchstart', (e) => {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchStartX = e.changedTouches[0].screenX;
-      }
-    }, { passive: true });
-
-    grid.addEventListener('touchend', (e) => {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 40) {
-          if (diff > 0) {
-            grid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-          } else {
-            grid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-          }
-        }
-      }
-    }, { passive: true });
+    const activeCard = document.getElementById(`hugo-panel-${nextPkgId}`);
+    const strip = document.getElementById('hugoAccordionStrip');
+    if (activeCard && strip && window.innerWidth < 960) {
+      strip.scrollTo({ left: activeCard.offsetLeft - 16, behavior: 'smooth' });
+    }
   }
 
   /* ---------------- Mobile Menu Controls ---------------- */
@@ -256,216 +299,69 @@ class RhordwayApplication {
     }
   }
 
-  /* ---------------- Grand Prix Occupancy Selector ---------------- */
-  selectOccupancy(option, priceFormatted) {
-    this.selectedGrandPrixOccupancy = option === 'double' ? 'Double Occupancy (per person sharing)' : 'Single Occupancy';
-    this.selectedGrandPrixPrice = priceFormatted;
-
-    const btnDouble = document.getElementById('occupancy-btn-double');
-    const btnSingle = document.getElementById('occupancy-btn-single');
-
-    btnDouble?.classList.toggle('active', option === 'double');
-    btnDouble?.setAttribute('aria-checked', option === 'double' ? 'true' : 'false');
-
-    btnSingle?.classList.toggle('active', option === 'single');
-    btnSingle?.setAttribute('aria-checked', option === 'single' ? 'true' : 'false');
-
-    const feedback = document.getElementById('occupancySelectionFeedback');
-    const priceDisplay = document.getElementById('selectedPriceDisplay');
-    if (feedback && priceDisplay) {
-      feedback.style.borderColor = 'var(--brand-primary)';
-      feedback.style.background = 'rgba(0, 132, 230, 0.08)';
-      feedback.children[0].textContent = `Selected: ${this.selectedGrandPrixOccupancy}`;
-      priceDisplay.textContent = priceFormatted;
-    }
-  }
-
-  /* ---------------- Information Collation & Reservation ---------------- */
-  updateCollationPackage(pkgId) {
-    this.selectedCollationPackageId = pkgId;
-    const labelDZ = document.getElementById('label-pick-dz');
-    const labelGP = document.getElementById('label-pick-gp');
-    const occupancySelect = document.getElementById('collationOccupancySelect');
-
-    labelDZ?.classList.toggle('active', pkgId === 'doha-zanzibar');
-    labelGP?.classList.toggle('active', pkgId === 'doha-grand-prix');
-
-    if (occupancySelect) {
-      if (pkgId === 'doha-zanzibar') {
-        occupancySelect.innerHTML = `
-          <option value="Double Occupancy (per person sharing)" data-rate="4350000" selected>
-            Double Occupancy (per person sharing) — ₦4,350,000 / person
-          </option>
-        `;
-      } else {
-        occupancySelect.innerHTML = `
-          <option value="Double Occupancy (per person sharing)" data-rate="3400000" selected>
-            Double Occupancy (per person sharing) — ₦3,400,000 / person
-          </option>
-          <option value="Single Occupancy" data-rate="4150000">
-            Single Occupancy — ₦4,150,000 / person
-          </option>
-        `;
-      }
+  /* ---------------- Consultation Form Selection & Submission ---------------- */
+  selectServiceAndScroll(serviceLabel, destinationLabel = '') {
+    const serviceSelect = document.getElementById('collationServiceType');
+    if (serviceSelect && serviceLabel) {
+      serviceSelect.value = serviceLabel;
     }
 
-    this.updateCollationCalculation();
-  }
-
-  updateCollationCalculation() {
-    const occupancySelect = document.getElementById('collationOccupancySelect');
-    const guestSelect = document.getElementById('guestCount');
-    const totalDisplay = document.getElementById('collationTotalAmount');
-    const noteDisplay = document.getElementById('collationCalculationNote');
-
-    if (!occupancySelect || !guestSelect || !totalDisplay) return;
-
-    const selectedOption = occupancySelect.options[occupancySelect.selectedIndex];
-    const unitRate = parseInt(selectedOption?.getAttribute('data-rate') || '4350000', 10);
-    const guestCount = parseInt(guestSelect.value || '2', 10);
-
-    const total = unitRate * guestCount;
-    const formattedTotal = '₦' + total.toLocaleString('en-NG');
-    const formattedUnit = '₦' + unitRate.toLocaleString('en-NG');
-
-    totalDisplay.textContent = formattedTotal;
-    if (noteDisplay) {
-      noteDisplay.textContent = `${guestCount} Person(s) × ${formattedUnit}`;
+    const destInput = document.getElementById('departureCity');
+    if (destInput && destinationLabel) {
+      destInput.value = destinationLabel;
     }
+
+    this.scrollToConsultation();
   }
 
   populateAndScrollCollation(pkgId) {
-    const radio = document.querySelector(`input[name="selectedPackage"][value="${pkgId}"]`);
-    if (radio) {
-      radio.checked = true;
-    }
-    this.updateCollationPackage(pkgId);
-
-    const section = document.getElementById('booking-collation');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    setTimeout(() => {
-      document.getElementById('guestFullName')?.focus();
-    }, 400);
+    const pkg = packagesData[pkgId];
+    this.selectServiceAndScroll('Vacation & Holiday Enquiry', pkg ? pkg.title : '');
   }
 
   handleCollationSubmit(event) {
     event.preventDefault();
 
+    const serviceSelect = document.getElementById('collationServiceType');
     const fullNameInput = document.getElementById('guestFullName');
     const phoneInput = document.getElementById('guestPhone');
     const emailInput = document.getElementById('guestEmail');
-    const departureCityInput = document.getElementById('departureCity');
-    const guestCountSelect = document.getElementById('guestCount');
-    const occupancySelect = document.getElementById('collationOccupancySelect');
+    const destinationInput = document.getElementById('departureCity');
     const specialRequestsInput = document.getElementById('specialRequests');
     const successAlert = document.getElementById('collationSuccessAlert');
 
-    const pkg = packagesData[this.selectedCollationPackageId];
-    const selectedOption = occupancySelect?.options[occupancySelect.selectedIndex];
-    const unitRate = parseInt(selectedOption?.getAttribute('data-rate') || '4350000', 10);
-    const guestCount = parseInt(guestCountSelect?.value || '2', 10);
-    const total = unitRate * guestCount;
-    const formattedTotal = '₦' + total.toLocaleString('en-NG');
-    const formattedUnit = '₦' + unitRate.toLocaleString('en-NG');
+    const serviceNeeded = serviceSelect?.value || 'Student Visa & Study Abroad';
+    const fullName = fullNameInput?.value || 'Valued Client';
+    const phone = phoneInput?.value || '';
+    const email = emailInput?.value || '';
+    const destination = destinationInput?.value || 'Global';
+    const notes = specialRequestsInput?.value || '';
 
-    const bookingRef = generateBookingReference();
+    const waMessage =
+      `*RHORDWAY OFFICIAL CONSULTATION REQUEST*\n\n` +
+      `• *Service Required:* ${serviceNeeded}\n` +
+      `• *Target Destination:* ${destination}\n` +
+      `• *Client Name:* ${fullName}\n` +
+      `• *Phone / WhatsApp:* ${phone}\n` +
+      `• *Email:* ${email}\n` +
+      (notes ? `• *Additional Details:* ${notes}\n` : '') +
+      `\nHello Rhordway Team, I would like to book a consultation regarding the service above.`;
 
-    const dossierData = {
-      bookingRef,
-      packageName: pkg.title,
-      travelDates: pkg.dates,
-      duration: pkg.durationLabel,
-      occupancy: selectedOption?.value || 'Double Occupancy (per person sharing)',
-      priceFormatted: formattedUnit + ' per person',
-      travellerCount: guestCount,
-      totalEstimated: formattedTotal,
-      leadName: fullNameInput?.value || 'Valued Guest',
-      email: emailInput?.value || 'Awaiting email',
-      phone: phoneInput?.value || 'Awaiting phone',
-      departureCity: departureCityInput?.value || 'Nigeria',
-      specialRequests: specialRequestsInput?.value || '',
-      inclusions: pkg.inclusions
-    };
-
-    // 1. Generate and automatically download the official PDF
-    generateReservationPDF(dossierData);
-
-    // 2. Build structured WhatsApp dossier message
-    const waMessage = 
-      `*RHORDWAY TRAVEL RESERVATION DOSSIER*\n` +
-      `*Booking Reference:* ${bookingRef}\n\n` +
-      `*Selected Package:* ${pkg.title}\n` +
-      `*Travel Dates:* ${pkg.dates} (${pkg.durationLabel})\n` +
-      `*Occupancy:* ${dossierData.occupancy}\n` +
-      `*Travellers:* ${guestCount} Person(s)\n` +
-      `*Estimated Package Total:* ${formattedTotal}\n\n` +
-      `*LEAD GUEST DETAILS:*\n` +
-      `• *Name:* ${dossierData.leadName}\n` +
-      `• *Phone/WhatsApp:* ${dossierData.phone}\n` +
-      `• *Email:* ${dossierData.email}\n` +
-      `• *Departure City:* ${dossierData.departureCity}\n` +
-      (dossierData.specialRequests ? `• *Special Notes:* ${dossierData.specialRequests}\n` : '') +
-      `\n📄 *Official Reservation PDF has been generated and saved.* I am sending this alongside the attached PDF for room confirmation and payment scheduling.`;
-
-    // 3. Show confirmation feedback
     if (successAlert) {
       successAlert.style.display = 'block';
     }
 
-    // 4. Open verified WhatsApp consultant line (+2348164206030)
     const targetNumber = siteConfig.whatsappNumber || '2348164206030';
     const waUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(waMessage)}`;
 
     setTimeout(() => {
       window.open(waUrl, '_blank', 'noopener,noreferrer');
-    }, 1200);
+    }, 600);
   }
 
   /* ---------------- WhatsApp Modal Controls ---------------- */
   openEnquiryModal(packageType) {
-    const modal = document.getElementById('enquiryModalOverlay');
-    const preview = document.getElementById('enquiryMessagePreview');
-    const title = document.getElementById('enquiryModalTitle');
-    const eyebrow = document.getElementById('enquiryModalEyebrow');
-    if (!modal || !preview) return;
-
-    if (packageType === 'doha-zanzibar') {
-      this.currentEnquiryParams = {
-        packageId: 'doha-zanzibar',
-        packageName: 'Doha + Zanzibar',
-        travelDates: 'December 12–19, 2026',
-        price: '₦4,350,000 per person sharing'
-      };
-      if (title) title.textContent = 'Doha + Zanzibar Enquiry';
-      if (eyebrow) eyebrow.textContent = 'Package Reservation Details';
-    } else if (packageType === 'doha-grand-prix') {
-      const occupancy = this.selectedGrandPrixOccupancy || 'Double Occupancy (per person sharing)';
-      const price = this.selectedGrandPrixPrice || '₦3,400,000 per person';
-      this.currentEnquiryParams = {
-        packageId: 'doha-grand-prix',
-        packageName: 'Doha Grand Prix Experience',
-        travelDates: 'November 25 – December 1, 2026',
-        occupancy,
-        price
-      };
-      if (title) title.textContent = 'Doha Grand Prix Enquiry';
-      if (eyebrow) eyebrow.textContent = 'Motorsport Package Reservation';
-    } else {
-      this.currentEnquiryParams = {
-        packageId: 'general',
-        packageName: 'Rhordway Luxury Holiday Packages'
-      };
-      if (title) title.textContent = 'Speak with a Travel Consultant';
-      if (eyebrow) eyebrow.textContent = 'Rhordway Enquiry Desk';
-    }
-
-    const message = buildWhatsAppMessage(this.currentEnquiryParams);
-    preview.textContent = message;
-
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    this.scrollToConsultation();
   }
 
   closeEnquiryModal() {
@@ -478,30 +374,18 @@ class RhordwayApplication {
   copyEnquiryMessage() {
     const preview = document.getElementById('enquiryMessagePreview');
     if (!preview || !preview.textContent) return;
-
-    navigator.clipboard.writeText(preview.textContent).then(() => {
-      alert('Enquiry message copied to clipboard!');
-    }).catch(() => {
-      prompt('Copy your enquiry message below:', preview.textContent);
-    });
+    navigator.clipboard.writeText(preview.textContent);
   }
 
   sendWhatsAppDirect() {
     const preview = document.getElementById('enquiryMessagePreview');
-    const testInput = document.getElementById('testPhoneInput');
     const message = preview?.textContent || buildWhatsAppMessage(this.currentEnquiryParams);
-
-    const configuredNumber = (siteConfig.whatsappNumber || '').replace(/[^0-9]/g, '');
-    const userNumber = (testInput?.value || '').replace(/[^0-9]/g, '');
-
-    const targetNumber = userNumber || configuredNumber || '2348164206030';
-
+    const targetNumber = siteConfig.whatsappNumber || '2348164206030';
     const waUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   }
 }
 
-// Instantiate and expose globally
 const app = new RhordwayApplication();
 window.rhordwayApp = app;
 
