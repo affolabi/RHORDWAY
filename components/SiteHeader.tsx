@@ -54,7 +54,7 @@ export default function SiteHeader() {
           <div className="ref-header-actions mw-header-actions">
             <button 
               type="button" 
-              className="mw-black-pill-btn"
+              className="mw-black-pill-btn mobile-hide"
               style={{ letterSpacing: '0.05em', fontSize: '0.78rem', padding: '12px 24px' }}
               onClick={scrollToConsultation}
             >
