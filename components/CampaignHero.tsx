@@ -28,32 +28,50 @@ export default function CampaignHero() {
             <span className="mw-hero-title-soft hero-stage-3">The world, within your reach.</span>
           </h1>
 
-          {/* Bottom: Blurb + single CTA + trust line */}
+          {/* Bottom: Blurb + dual CTAs + worldwide offerings line */}
           <div className="mw-hero-bottom-stack anim-reveal-blurb">
             <p className="mw-hero-blurb mw-hero-blurb-centered">
-              Student visas, global migration, travel visas, passports and flights — handled end to end by one dedicated team.
-              <span className="mw-hero-blurb-soft"> Every application is prepared with care, so you can focus on the&nbsp;journey.</span>
+              From visa assistance and study abroad guidance to international tour packages, flights, hotel reservations and airport transfers, Rhordway brings your travel needs together under one&nbsp;roof.
             </p>
 
-            <button 
-              type="button" 
-              className="mw-action-group anim-reveal-cta"
-              onClick={scrollToConsultation}
-            >
-              <span className="mw-action-pill" style={{ background: '#FFFFFF', color: '#0F1115' }}>
-                Book a Consultation
-              </span>
-              <span className="mw-action-circle" style={{ background: '#FFFFFF', color: '#0F1115' }} aria-hidden="true">
-                ↗
-              </span>
-            </button>
+            <div className="mw-hero-cta-row anim-reveal-cta">
+              <a 
+                href="#home-migration-strip"
+                className="mw-action-group mw-action-primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('home-migration-strip')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <span className="mw-action-pill" style={{ background: '#FFFFFF', color: '#0F1115' }}>
+                  Explore Our Services
+                </span>
+                <span className="mw-action-circle" style={{ background: '#FFFFFF', color: '#0F1115' }} aria-hidden="true">
+                  ↓
+                </span>
+              </a>
+
+              <button 
+                type="button" 
+                className="mw-action-group mw-action-secondary"
+                onClick={scrollToConsultation}
+              >
+                <span className="mw-action-pill mw-pill-glass">
+                  Speak to a Travel Consultant
+                </span>
+                <span className="mw-action-circle mw-circle-glass" aria-hidden="true">
+                  ↗
+                </span>
+              </button>
+            </div>
 
             <p className="mw-hero-trust anim-reveal-trust">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
               </svg>
-              Embassy-ready documentation · UK · Canada · Schengen · USA
+              WORLDWIDE TOURS · FLIGHTS · HOTELS · VISA SUPPORT · STUDY ABROAD
             </p>
           </div>
         </div>
