@@ -7,8 +7,8 @@ export default function AboutHero() {
   const { scrollToConsultation } = useApp();
 
   return (
-    <div className="mw-split-feature-row anim-reveal-text is-inview" style={{ marginBottom: '56px' }}>
-      <div className="mw-split-feature-text">
+    <div className="mw-split-feature-row anim-reveal-text" style={{ marginBottom: '56px' }}>
+      <div className="mw-split-feature-text anim-reveal-text">
         <span className="mw-soft-pill" style={{ marginBottom: '14px' }}>
           <span className="mw-blue-dot"></span>
           About Rhordway™
@@ -34,7 +34,7 @@ export default function AboutHero() {
         </button>
       </div>
 
-      <div className="mw-split-feature-media">
+      <div className="mw-split-feature-media anim-reveal-text anim-delay-2">
         <img 
           src="/assets/images/doha-museum.jpg" 
           alt="About Rhordway — Global Migration, Student Visas & Travel Processing" 

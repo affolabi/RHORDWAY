@@ -11,7 +11,7 @@ export default function SplitFeatures() {
       <div className="mw-container">
         
         {/* Sticky What We Do Sub-header */}
-        <div className="mw-tours-header anim-reveal-text is-inview" style={{ marginTop: 0, marginBottom: '40px' }}>
+        <div className="mw-tours-header anim-reveal-text" style={{ marginTop: 0, marginBottom: '40px' }}>
           <div>
             <span className="mw-soft-pill">
               <span className="mw-blue-dot"></span>
@@ -26,7 +26,7 @@ export default function SplitFeatures() {
         <div className="mw-split-features-wrap">
           
           {/* Row 1: TEXTS LEFT · IMAGE RIGHT (Student Visa & Study Abroad) */}
-          <article className="mw-split-feature-row anim-reveal-text is-inview">
+          <article className="mw-split-feature-row anim-reveal-text">
             <div className="mw-split-feature-text">
               <span className="mw-soft-pill" style={{ marginBottom: '14px' }}>
                 <span className="mw-blue-dot"></span>
@@ -65,7 +65,7 @@ export default function SplitFeatures() {
           </article>
 
           {/* Row 2: TEXTS LEFT · IMAGE RIGHT (Travel Visas, Migration & Passports) */}
-          <article className="mw-split-feature-row anim-reveal-text anim-delay-1 is-inview">
+          <article className="mw-split-feature-row anim-reveal-text anim-delay-1">
             <div className="mw-split-feature-text">
               <span className="mw-soft-pill" style={{ marginBottom: '14px' }}>
                 <span className="mw-blue-dot"></span>

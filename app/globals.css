@@ -5433,4 +5433,269 @@ h1, h2, h3, h4 {
   }
 }
 
+/* ==========================================================================
+   RHORDWAY FLUID MOTION & ANIMATION SYSTEM
+   Cubic-bezier easing, cinematic hero reveal, scroll-triggered text cascades,
+   and responsive micro-interactions.
+   ========================================================================== */
+
+/* 1. Header scroll transition */
+.ref-header.mw-white-header {
+  transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease;
+}
+
+.ref-header.mw-white-header.scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 4px 20px rgba(15, 17, 21, 0.07);
+  padding: 12px 0;
+}
+
+/* 2. Hero Cinematic Entrance */
+.mw-hero-frame .mw-hero-img {
+  transform: scale(1.08);
+  transition: transform 2.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.mw-hero-frame.is-inview .mw-hero-img,
+.mw-hero-img.is-inview {
+  transform: scale(1);
+}
+
+.anim-reveal-hero {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(4px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1s ease;
+  will-change: opacity, transform, filter;
+}
+
+.anim-reveal-hero.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+}
+
+.anim-reveal-blurb {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+  will-change: opacity, transform;
+}
+
+.anim-reveal-blurb.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.anim-reveal-cta {
+  opacity: 0;
+  transform: translateY(18px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
+  will-change: opacity, transform;
+}
+
+.anim-reveal-cta.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.anim-reveal-trust {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.52s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.52s;
+  will-change: opacity, transform;
+}
+
+.anim-reveal-trust.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 3. Global Scroll-Triggered Reveal Animations */
+.anim-reveal-text,
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.anim-reveal-text.is-inview,
+.anim-fade-up.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.anim-fade-in {
+  opacity: 0;
+  transition: opacity 0.75s ease;
+}
+
+.anim-fade-in.is-inview {
+  opacity: 1 !important;
+}
+
+.anim-scale-up {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-scale-up.is-inview {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Cascade delays */
+.anim-delay-1 { transition-delay: 0.08s !important; }
+.anim-delay-2 { transition-delay: 0.16s !important; }
+.anim-delay-3 { transition-delay: 0.24s !important; }
+.anim-delay-4 { transition-delay: 0.32s !important; }
+.anim-delay-5 { transition-delay: 0.40s !important; }
+
+/* 4. Split Feature Rows & Blueprint Cards */
+.mw-split-feature-row {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mw-split-feature-row.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.mw-split-feature-media img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.mw-split-feature-row:hover .mw-split-feature-media img {
+  transform: scale(1.025);
+}
+
+.mw-process-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s ease;
+}
+
+.mw-process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+/* 5. Farer Magazine Cards Animation & Micro-Interactions */
+.farer-mag-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.farer-mag-card.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.farer-img-frame img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.farer-mag-card:hover .farer-img-frame img {
+  transform: scale(1.05);
+}
+
+.farer-corner-arrow {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              color 0.25s ease;
+}
+
+.farer-mag-card:hover .farer-corner-arrow {
+  transform: rotate(45deg) scale(1.08);
+  background-color: #0080E8;
+  color: #FFFFFF;
+}
+
+/* 6. Hugo Strip Interactive Hover */
+.hugo-strip-card .hugo-strip-img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.hugo-strip-card:hover .hugo-strip-img,
+.hugo-strip-card.active .hugo-strip-img {
+  transform: scale(1.035);
+}
+
+.hugo-strip-cta-pill .hugo-strip-arrow {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hugo-strip-cta-pill:hover .hugo-strip-arrow {
+  transform: rotate(45deg);
+}
+
+/* 7. Action Group Buttons Micro-Interaction */
+.mw-action-circle {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease;
+}
+
+.mw-action-group:hover .mw-action-circle {
+  transform: rotate(45deg);
+}
+
+.mw-action-pill {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.mw-action-group:hover .mw-action-pill {
+  box-shadow: 0 8px 24px rgba(0, 128, 232, 0.25);
+}
+
+/* 8. Magazine Editorial Spread & FAQ Items */
+.mw-magazine-feature-card,
+.mw-magazine-article-item {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s ease;
+}
+
+.mw-magazine-feature-card:hover,
+.mw-magazine-article-item:hover {
+  transform: translateY(-4px);
+}
+
+.faq-item {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item.open {
+  border-color: rgba(0, 128, 232, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 128, 232, 0.06);
+}
+
+/* 9. Accessibility: Respect User Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 

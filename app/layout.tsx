@@ -4,6 +4,7 @@ import { AppProvider } from '../context/AppContext';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import EnquiryModal from '../components/EnquiryModal';
+import ScrollObserver from '../components/ScrollObserver';
 
 export const viewport: Viewport = {
   themeColor: '#0080E8',
@@ -70,6 +71,7 @@ export default function RootLayout({
           </a>
 
           <SiteHeader />
+          <ScrollObserver />
           <main id="main-content">
             {children}
           </main>

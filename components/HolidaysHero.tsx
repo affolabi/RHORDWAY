@@ -20,7 +20,7 @@ export default function HolidaysHero() {
       <div className="mw-container">
         
         {/* Header Row */}
-        <div className="hugo-header-row anim-reveal-text is-inview">
+        <div className="hugo-header-row anim-reveal-text">
           <div className="hugo-header-left">
             <span className="hugo-eyebrow">
               <span className="mw-blue-dot"></span>

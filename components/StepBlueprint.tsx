@@ -29,7 +29,7 @@ export default function StepBlueprint() {
   return (
     <section className="mw-study-corp-section" style={{ padding: '64px 0' }}>
       <div className="mw-container">
-        <div className="mw-tours-header anim-reveal-text is-inview" style={{ marginTop: 0, marginBottom: '36px' }}>
+        <div className="mw-tours-header anim-reveal-text" style={{ marginTop: 0, marginBottom: '36px' }}>
           <div>
             <span className="mw-soft-pill">
               <span className="mw-blue-dot"></span>
@@ -45,8 +45,8 @@ export default function StepBlueprint() {
         </div>
 
         <div className="mw-process-grid">
-          {processSteps.map((s) => (
-            <div key={s.step} className="mw-process-card anim-reveal-text is-inview">
+          {processSteps.map((s, idx) => (
+            <div key={s.step} className={`mw-process-card anim-reveal-text anim-delay-${idx + 1}`}>
               <span className="mw-service-num">{s.step}</span>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0F1115', margin: 0 }}>{s.title}</h3>
               <p style={{ fontSize: '0.88rem', color: '#71717A', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>

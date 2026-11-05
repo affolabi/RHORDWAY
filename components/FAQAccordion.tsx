@@ -45,7 +45,7 @@ export default function FAQAccordion() {
   return (
     <section className="section-padding" id="faqs" style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid #F1F1F3' }}>
       <div className="mw-container">
-        <header className="section-header text-center">
+        <header className="section-header text-center anim-reveal-text">
           <span className="mw-soft-pill" style={{ marginBottom: '14px' }}>
             <span className="mw-blue-dot"></span>
             Clear Information
@@ -57,10 +57,14 @@ export default function FAQAccordion() {
         </header>
 
         <div className="faq-container" role="region" aria-label="Frequently Asked Questions Accordion">
-          {companyFaqs.map((faq) => {
+          {companyFaqs.map((faq, idx) => {
             const isOpen = openId === faq.id;
             return (
-              <div key={faq.id} className={`faq-item ${isOpen ? 'open' : ''}`} id={`faq-item-${faq.id}`}>
+              <div 
+                key={faq.id} 
+                className={`faq-item anim-reveal-text anim-delay-${(idx % 3) + 1} ${isOpen ? 'open' : ''}`} 
+                id={`faq-item-${faq.id}`}
+              >
                 <button 
                   type="button" 
                   className="faq-trigger" 

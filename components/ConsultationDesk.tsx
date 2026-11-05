@@ -92,7 +92,7 @@ export default function ConsultationDesk() {
         <div className="mw-consultation-shell">
           
           {/* Left Editorial Info Column */}
-          <div className="mw-consultation-left">
+          <div className="mw-consultation-left anim-reveal-text">
             <span className="mw-soft-pill">
               <span className="mw-blue-dot"></span>
               Rhordway Consultation Desk
@@ -129,7 +129,7 @@ export default function ConsultationDesk() {
           </div>
 
           {/* Right Clean Consultation Form */}
-          <div className="mw-consultation-card">
+          <div className="mw-consultation-card anim-reveal-text anim-delay-2">
             <form id="collationForm" onSubmit={handleSubmit}>
               
               <div className="mw-form-field" style={{ marginBottom: '18px' }}>

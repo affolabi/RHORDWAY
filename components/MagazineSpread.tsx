@@ -11,7 +11,7 @@ export default function MagazineSpread() {
       <div className="mw-container">
         
         {/* Editorial Masthead Header */}
-        <div className="mw-magazine-masthead anim-reveal-text is-inview">
+        <div className="mw-magazine-masthead anim-reveal-text">
           <div className="mw-magazine-eyebrow-row">
             <span className="mw-soft-pill">
               <span className="mw-blue-dot"></span>
@@ -30,10 +30,10 @@ export default function MagazineSpread() {
         </div>
 
         {/* Magazine Spread Grid */}
-        <div className="mw-magazine-spread anim-reveal-text anim-delay-1 is-inview">
+        <div className="mw-magazine-spread">
           
           {/* Left: Lead Feature Column (No. 01 Student Visa & POF Authority) */}
-          <article className="mw-magazine-feature-card">
+          <article className="mw-magazine-feature-card anim-reveal-text anim-delay-1">
             <div className="mw-magazine-card-meta">
               <span className="mw-magazine-tag-pill">SPECIAL REPORT · ADMISSIONS &amp; POF DESK</span>
               <span className="mw-magazine-folio">NO. 01</span>
@@ -69,7 +69,7 @@ export default function MagazineSpread() {
           <div className="mw-magazine-side-stack">
             
             {/* Article No. 02 */}
-            <article className="mw-magazine-article-item">
+            <article className="mw-magazine-article-item anim-reveal-text anim-delay-1">
               <div className="mw-magazine-article-header">
                 <span className="mw-magazine-num">02</span>
                 <div>
@@ -88,7 +88,7 @@ export default function MagazineSpread() {
             </article>
 
             {/* Article No. 03 */}
-            <article className="mw-magazine-article-item">
+            <article className="mw-magazine-article-item anim-reveal-text anim-delay-2">
               <div className="mw-magazine-article-header">
                 <span className="mw-magazine-num">03</span>
                 <div>
@@ -107,7 +107,7 @@ export default function MagazineSpread() {
             </article>
 
             {/* Article No. 04 */}
-            <article className="mw-magazine-article-item">
+            <article className="mw-magazine-article-item anim-reveal-text anim-delay-3">
               <div className="mw-magazine-article-header">
                 <span className="mw-magazine-num">04</span>
                 <div>
@@ -130,7 +130,7 @@ export default function MagazineSpread() {
         </div>
 
         {/* Editorial Bottom Verification Ribbon & CTA */}
-        <div className="mw-magazine-footer-ribbon anim-reveal-text anim-delay-2 is-inview">
+        <div className="mw-magazine-footer-ribbon anim-reveal-text anim-delay-2">
           <div className="mw-magazine-metrics-grid">
             <div className="mw-magazine-metric">
               <span className="mw-mag-stat">98%</span>

@@ -66,7 +66,7 @@ export default function CorridorsGrid() {
   return (
     <section className="mw-packages-section" id="visa-corridors" style={{ paddingTop: '64px' }}>
       <div className="mw-container">
-        <div className="mw-tours-header anim-reveal-text is-inview" style={{ marginTop: 0 }}>
+        <div className="mw-tours-header anim-reveal-text" style={{ marginTop: 0 }}>
           <div>
             <span className="mw-soft-pill">
               <span className="mw-blue-dot"></span>
@@ -91,7 +91,7 @@ export default function CorridorsGrid() {
           {visaCorridors.map((item, idx) => (
             <article 
               key={item.id}
-              className={`farer-mag-card anim-reveal-text anim-delay-${(idx % 3) + 1} is-inview`}
+              className={`farer-mag-card anim-reveal-text anim-delay-${(idx % 3) + 1}`}
               onClick={() => selectServiceAndScroll(item.service, item.country)}
               style={{ cursor: 'pointer' }}
             >

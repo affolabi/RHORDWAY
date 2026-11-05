@@ -23,7 +23,7 @@ export default function HolidaysGrid() {
     <section className="mw-packages-section" id="curated-holidays" style={{ paddingTop: '40px', paddingBottom: '64px' }}>
       <div className="mw-container">
         
-        <div className="mw-tours-header anim-reveal-text is-inview" style={{ marginTop: 0 }}>
+        <div className="mw-tours-header anim-reveal-text" style={{ marginTop: 0 }}>
           <div>
             <span className="mw-soft-pill">
               <span className="mw-blue-dot"></span>
@@ -52,7 +52,7 @@ export default function HolidaysGrid() {
             return (
               <article 
                 key={pkg.id}
-                className={`farer-mag-card anim-reveal-text anim-delay-${(idx % 3) + 1} is-inview`}
+                className={`farer-mag-card anim-reveal-text anim-delay-${(idx % 3) + 1}`}
                 onClick={() => selectServiceAndScroll('Vacation & Holiday Enquiry', pkg.title)}
                 style={{ cursor: 'pointer' }}
               >

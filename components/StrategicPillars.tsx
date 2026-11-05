@@ -8,7 +8,7 @@ export default function StrategicPillars() {
     <div className="mw-process-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
       
       {/* Pillar 1 */}
-      <div className="mw-process-card anim-reveal-text is-inview">
+      <div className="mw-process-card anim-reveal-text anim-delay-1">
         <span className="mw-service-num">01 · OUR MISSION</span>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F1115' }}>Removing Documentation Friction</h3>
         <p style={{ fontSize: '0.9rem', color: '#71717A', lineHeight: 1.65 }}>
@@ -17,7 +17,7 @@ export default function StrategicPillars() {
       </div>
 
       {/* Pillar 2 */}
-      <div className="mw-process-card anim-reveal-text is-inview">
+      <div className="mw-process-card anim-reveal-text anim-delay-2">
         <span className="mw-service-num">02 · OUR COVERAGE</span>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F1115' }}>End-to-End Global Mobility</h3>
         <p style={{ fontSize: '0.9rem', color: '#71717A', lineHeight: 1.65 }}>
@@ -26,7 +26,7 @@ export default function StrategicPillars() {
       </div>
 
       {/* Pillar 3 */}
-      <div className="mw-process-card anim-reveal-text is-inview">
+      <div className="mw-process-card anim-reveal-text anim-delay-3">
         <span className="mw-service-num">03 · DIRECT ACCESS</span>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F1115' }}>Speak Directly With Specialists</h3>
         <p style={{ fontSize: '0.9rem', color: '#71717A', lineHeight: 1.65, marginBottom: '8px' }}>

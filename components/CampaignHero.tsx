@@ -22,13 +22,13 @@ export default function CampaignHero() {
 
         <div className="mw-hero-inner mw-container mw-hero-centered-inner">
           {/* Top: Two-tone headline */}
-          <h1 className="mw-hero-title mw-hero-title-centered">
+          <h1 className="mw-hero-title mw-hero-title-centered anim-reveal-hero">
             Travel processing, made simple.<br />
             <span className="mw-hero-title-soft">The world, within reach.</span>
           </h1>
 
           {/* Bottom: Blurb + single CTA + trust line */}
-          <div className="mw-hero-bottom-stack">
+          <div className="mw-hero-bottom-stack anim-reveal-blurb">
             <p className="mw-hero-blurb mw-hero-blurb-centered">
               Student visas, global migration, travel visas, passports and flights — handled end to end by one dedicated team.
               <span className="mw-hero-blurb-soft"> Every application is prepared with care, so you can focus on the journey.</span>
@@ -36,7 +36,7 @@ export default function CampaignHero() {
 
             <button 
               type="button" 
-              className="mw-action-group"
+              className="mw-action-group anim-reveal-cta"
               onClick={scrollToConsultation}
             >
               <span className="mw-action-pill" style={{ background: '#FFFFFF', color: '#0F1115' }}>
@@ -47,7 +47,7 @@ export default function CampaignHero() {
               </span>
             </button>
 
-            <p className="mw-hero-trust">
+            <p className="mw-hero-trust anim-reveal-trust">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <rect x="3" y="11" width="18" height="11" rx="2"/>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
@@ -63,7 +63,7 @@ export default function CampaignHero() {
         <div className="mw-explore-split">
           
           {/* Left Text & Action Column */}
-          <div className="mw-explore-left anim-reveal-text is-inview">
+          <div className="mw-explore-left anim-reveal-text">
             <span className="mw-soft-pill">
               <span className="mw-blue-dot"></span>
               Welcome to Rhordway
@@ -86,7 +86,7 @@ export default function CampaignHero() {
           {/* Center Portrait Card: Student Visa & Study Abroad */}
           <Link 
             href="/migration-services" 
-            className="mw-explore-card-portrait anim-reveal-text anim-delay-1 is-inview" 
+            className="mw-explore-card-portrait anim-reveal-text anim-delay-1" 
             style={{ textDecoration: 'none', cursor: 'pointer' }}
           >
             <img 
@@ -106,7 +106,7 @@ export default function CampaignHero() {
           {/* Right Landscape Card + Underneath Caption */}
           <Link 
             href="/migration-services" 
-            className="mw-explore-card-landscape anim-reveal-text anim-delay-2 is-inview" 
+            className="mw-explore-card-landscape anim-reveal-text anim-delay-2" 
             style={{ textDecoration: 'none', cursor: 'pointer' }}
           >
             <div className="mw-landscape-img-wrap">

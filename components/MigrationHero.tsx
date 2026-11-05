@@ -9,8 +9,8 @@ export default function MigrationHero() {
   return (
     <section className="mw-packages-section" style={{ paddingTop: '32px', paddingBottom: '56px' }}>
       <div className="mw-container">
-        <div className="mw-split-feature-row anim-reveal-text is-inview">
-          <div className="mw-split-feature-text">
+        <div className="mw-split-feature-row anim-reveal-text">
+          <div className="mw-split-feature-text anim-reveal-text">
             <span className="mw-soft-pill" style={{ marginBottom: '14px' }}>
               <span className="mw-blue-dot"></span>
               Migration, Visas &amp; Admissions Hub
@@ -37,7 +37,7 @@ export default function MigrationHero() {
             </button>
           </div>
 
-          <div className="mw-split-feature-media">
+          <div className="mw-split-feature-media anim-reveal-text anim-delay-2">
             <img 
               src="/assets/images/singapore-bay.jpg" 
               alt="Rhordway Student Visa, Proof of Funds, Statement of Purpose & Global Migration" 
