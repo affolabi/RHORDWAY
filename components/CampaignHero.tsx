@@ -23,10 +23,9 @@ export default function CampaignHero() {
         <div className="mw-hero-inner mw-container mw-hero-centered-inner">
           {/* Top: Two-tone headline */}
           <h1 className="mw-hero-title mw-hero-title-centered anim-reveal-hero">
-            <span className="hero-title-part1">Travel processing,</span>{' '}
-            <span className="hero-title-part2">made simple.</span>
-            <br className="hero-desktop-br" />
-            <span className="mw-hero-title-soft hero-title-part3">The world, within reach.</span>
+            <span className="hero-stage-1">Travel processing,</span>
+            <span className="hero-stage-2">made simple &amp; seamless.</span>
+            <span className="mw-hero-title-soft hero-stage-3">The world, within your reach.</span>
           </h1>
 
           {/* Bottom: Blurb + single CTA + trust line */}
