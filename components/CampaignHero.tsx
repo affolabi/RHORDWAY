@@ -23,15 +23,17 @@ export default function CampaignHero() {
         <div className="mw-hero-inner mw-container mw-hero-centered-inner">
           {/* Top: Two-tone headline */}
           <h1 className="mw-hero-title mw-hero-title-centered anim-reveal-hero">
-            Travel processing, made simple.<br />
-            <span className="mw-hero-title-soft">The world, within reach.</span>
+            <span className="hero-title-part1">Travel processing,</span>{' '}
+            <span className="hero-title-part2">made simple.</span>
+            <br className="hero-desktop-br" />
+            <span className="mw-hero-title-soft hero-title-part3">The world, within reach.</span>
           </h1>
 
           {/* Bottom: Blurb + single CTA + trust line */}
           <div className="mw-hero-bottom-stack anim-reveal-blurb">
             <p className="mw-hero-blurb mw-hero-blurb-centered">
               Student visas, global migration, travel visas, passports and flights — handled end to end by one dedicated team.
-              <span className="mw-hero-blurb-soft"> Every application is prepared with care, so you can focus on the journey.</span>
+              <span className="mw-hero-blurb-soft"> Every application is prepared with care, so you can focus on the&nbsp;journey.</span>
             </p>
 
             <button 

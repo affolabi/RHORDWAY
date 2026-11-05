@@ -5362,11 +5362,21 @@ h1, h2, h3, h4 {
 .mw-hero-title-centered {
   font-weight: 400;
   font-size: clamp(2.2rem, 4.6vw, 3.9rem);
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.025em;
   color: #FFFFFF;
   max-width: 900px;
   text-shadow: 0 2px 24px rgba(4, 18, 40, 0.25);
+  text-wrap: balance;
+}
+
+.hero-desktop-br {
+  display: block;
+}
+
+.hero-title-part1,
+.hero-title-part2 {
+  display: inline;
 }
 
 .mw-hero-title-soft {
@@ -5387,6 +5397,7 @@ h1, h2, h3, h4 {
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   line-height: 1.6;
   color: #FFFFFF;
+  text-wrap: balance;
 }
 
 .mw-hero-blurb-soft {
@@ -5406,10 +5417,19 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 640px) {
+  .hero-desktop-br {
+    display: none;
+  }
+  .hero-title-part1,
+  .hero-title-part2,
+  .hero-title-part3 {
+    display: block;
+  }
   .mw-hero-title-centered {
-    font-size: clamp(1.85rem, 7.8vw, 2.3rem);
-    line-height: 1.15;
-    padding: 0 8px;
+    font-size: clamp(1.75rem, 7vw, 2.15rem);
+    line-height: 1.24;
+    padding: 0 12px;
+    text-wrap: balance;
   }
   .mw-hero-centered-inner {
     padding-top: 36px;
@@ -5418,18 +5438,23 @@ h1, h2, h3, h4 {
   .mw-hero-bottom-stack {
     margin-top: 10vh;
     gap: 16px;
-    padding: 0 12px;
+    padding: 0 14px;
   }
   .mw-hero-blurb-centered {
-    font-size: 0.88rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 330px;
+    text-wrap: balance;
   }
   .mw-hero-trust {
-    font-size: 0.6rem;
+    font-size: 0.62rem;
     letter-spacing: 0.08em;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    max-width: 300px;
+    margin: 4px auto 0;
+    line-height: 1.5;
   }
 }
 

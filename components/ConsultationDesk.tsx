@@ -100,31 +100,14 @@ export default function ConsultationDesk() {
             <h2 className="mw-services-heading" style={{ marginBottom: '14px' }}>
               Book a Consultation With Our Specialists<span style={{ color: '#0080E8' }}>.</span>
             </h2>
-            <p className="mw-services-lead" style={{ maxWidth: '440px', marginBottom: '28px' }}>
+            <p className="mw-services-lead" style={{ maxWidth: '440px', marginBottom: '24px' }}>
               Whether you are applying for a Student Visa (Undergraduate or Postgraduate, Proof of Funds &amp; Statement of Purpose), filing a Travel or Migration Visa, processing a Passport, or booking Flights, Transfers &amp; Travel Insurance—our team is ready to assist you.
             </p>
 
-            <div className="mw-consult-contact-cards">
-              <div className="mw-consult-contact-row">
-                <span className="mw-consult-dot"></span>
-                <div>
-                  <span className="mw-consult-label">Official Phone &amp; WhatsApp Lines</span>
-                  <strong className="mw-consult-val">
-                    <a href={`tel:+${siteConfig.whatsappNumber}`}>{siteConfig.primaryPhoneFormatted}</a> ·{' '}
-                    <a href={`tel:+${siteConfig.alternatePhoneClean}`}>{siteConfig.alternatePhone}</a>
-                  </strong>
-                </div>
-              </div>
-
-              <div className="mw-consult-contact-row">
-                <span className="mw-consult-dot"></span>
-                <div>
-                  <span className="mw-consult-label">Official Email &amp; Social Handle</span>
-                  <strong className="mw-consult-val">
-                    <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a> · {siteConfig.instagram}
-                  </strong>
-                </div>
-              </div>
+            <div className="mw-division-pills">
+              <span>✓ Pre-Submission File Audit</span>
+              <span>✓ Dedicated Visa &amp; SOP Advisors</span>
+              <span>✓ Instant WhatsApp Dispatch</span>
             </div>
           </div>
 
